@@ -13,7 +13,7 @@ class ProjectEntity {
     var name: String
     var tasks: [TaskEntity]
     
-    // содержит названия всех проектов
+    // содержит все уникальные проекты с задачами
     static var projects = Set<ProjectEntity>()
     
     /*
@@ -34,6 +34,11 @@ class ProjectEntity {
         return newProject
     }
     
+    /*
+    Приватный, т.к создание проектов происходит 
+    при создании задач в static методе addTaskToProject.
+    Нет смысла создавать пустые проекты.
+    */
     private init(name: String, tasks: [TaskEntity]) {
         self.name = name
         self.tasks = tasks
