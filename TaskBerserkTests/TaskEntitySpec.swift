@@ -30,7 +30,7 @@ class TaskEntitySpec: QuickSpec {
                 expect(task?.dueDate) == "Apr 1, 2015, 8:53 AM"
             }
             
-            it("to create a new instance when optional data is misssed") {
+            it("to create a new instance when optional data are misssed") {
                 var missingJSON = taskJSON
                 missingJSON["due"] = nil
                 missingJSON["priority"] = nil
