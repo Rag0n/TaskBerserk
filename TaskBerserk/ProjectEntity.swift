@@ -34,7 +34,7 @@ class ProjectEntity {
         return newProject
     }
     
-    init(name: String, tasks: [TaskEntity]) {
+    private init(name: String, tasks: [TaskEntity]) {
         self.name = name
         self.tasks = tasks
         self.uuid = NSUUID().UUIDString
