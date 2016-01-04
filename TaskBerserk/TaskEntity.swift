@@ -21,7 +21,7 @@ class TaskEntity {
     let status: String
     let tags: [String]?
     let uuid: String
-    let dueDate: NSDate?
+    let dueDate: String?
     
     init(description: String,
         id: UInt64,
@@ -29,7 +29,7 @@ class TaskEntity {
         urgency: Double,
         status: String,
         uuid: String,
-        dueDate: NSDate? = nil,
+        dueDate: String? = nil,
         tags: [String]? = nil,
         depends: UInt64? = nil,
         priority: String? = nil
@@ -45,24 +45,27 @@ class TaskEntity {
         self.dueDate = dueDate
         self.projectName = projectName
     }
-    
-    // TODO: переписать формат даты
-    private static func dateFromString(string: String?) throws -> NSDate? {
-        guard let string = string else {
-            return nil
-        }
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        
-        guard let result = dateFormatter.dateFromString(string) else {
-            throw ConvertError.InvalidParameter(type: "\(self)", from: string)
-        }
-        
-        return result
-    }
 }
+
+//// MARK: Helpers
+//extension TaskEntity {
+//    // TODO: переписать формат даты
+//    private static func dateFromString(string: String?) throws -> NSDate? {
+//        guard let string = string else {
+//            return nil
+//        }
+//        
+//        let dateFormatter = NSDateFormatter()
+//        dateFormatter.locale = NSLocale.currentLocale()
+//        dateFormatter.dateFormat = "yyyy-MM-dd: HH:mm"
+//        
+//        guard let result = dateFormatter.dateFromString(string) else {
+//            throw ConvertError.InvalidParameter(type: "\(self)", from: string)
+//        }
+//        
+//        return result
+//    }
+//}
 
 // MARK: Decodable
 extension TaskEntity: Decodable {
@@ -74,7 +77,7 @@ extension TaskEntity: Decodable {
             urgency: e <| "urgency",
             status: e <| "status",
             uuid: e <| "uuid",
-            dueDate: dateFromString(e <|? "due"),
+            dueDate: e <|? "due",
             tags: e <||? "tags",
             depends: e <|? "depends",
             priority: e <|? "priority")
