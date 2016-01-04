@@ -38,6 +38,10 @@
 		1F8697B71C3AD64E00CB3FFE /* TaskEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697B61C3AD64E00CB3FFE /* TaskEntitySpec.swift */; };
 		1F8697BC1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */; };
 		1F8697BE1C3B004600CB3FFE /* UITestSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697BD1C3B004600CB3FFE /* UITestSample.swift */; };
+		1F8697C11C3B070500CB3FFE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C01C3B070500CB3FFE /* Networking.swift */; };
+		1F8697C31C3B072500CB3FFE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C21C3B072500CB3FFE /* Network.swift */; };
+		1F8697C51C3B080D00CB3FFE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C41C3B080D00CB3FFE /* NetworkError.swift */; };
+		1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +135,10 @@
 		1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectEntitySpec.swift; sourceTree = "<group>"; };
 		1F8697BD1C3B004600CB3FFE /* UITestSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestSample.swift; sourceTree = "<group>"; };
 		1F8697BF1C3B00BD00CB3FFE /* TaskBerserkUITests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TaskBerserkUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		1F8697C01C3B070500CB3FFE /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		1F8697C21C3B072500CB3FFE /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		1F8697C41C3B080D00CB3FFE /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +298,9 @@
 			children = (
 				1F8697AF1C3AB77900CB3FFE /* TaskEntity.swift */,
 				1F8697B11C3ACCA000CB3FFE /* ProjectEntity.swift */,
+				1F8697C01C3B070500CB3FFE /* Networking.swift */,
+				1F8697C21C3B072500CB3FFE /* Network.swift */,
+				1F8697C41C3B080D00CB3FFE /* NetworkError.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -297,6 +308,7 @@
 		1F8697AD1C3AB6D300CB3FFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */,
 				1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */,
 				1F8697B61C3AD64E00CB3FFE /* TaskEntitySpec.swift */,
 				1F8697B41C3AD63800CB3FFE /* Dummy.swift */,
@@ -490,6 +502,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8697B01C3AB77900CB3FFE /* TaskEntity.swift in Sources */,
+				1F8697C51C3B080D00CB3FFE /* NetworkError.swift in Sources */,
+				1F8697C11C3B070500CB3FFE /* Networking.swift in Sources */,
+				1F8697C31C3B072500CB3FFE /* Network.swift in Sources */,
 				1F12FAC51C3AABB9000AC1A3 /* ViewController.swift in Sources */,
 				1F8697B21C3ACCA000CB3FFE /* ProjectEntity.swift in Sources */,
 				1F12FAC31C3AABB9000AC1A3 /* AppDelegate.swift in Sources */,
@@ -501,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8697B71C3AD64E00CB3FFE /* TaskEntitySpec.swift in Sources */,
+				1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */,
 				1F8697B51C3AD63800CB3FFE /* Dummy.swift in Sources */,
 				1F8697BC1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift in Sources */,
 			);
