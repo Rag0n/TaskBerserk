@@ -42,6 +42,13 @@
 		1F8697C31C3B072500CB3FFE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C21C3B072500CB3FFE /* Network.swift */; };
 		1F8697C51C3B080D00CB3FFE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C41C3B080D00CB3FFE /* NetworkError.swift */; };
 		1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */; };
+		1F8726B21C3BB14E00EEA569 /* Intheam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B11C3BB14E00EEA569 /* Intheam.swift */; };
+		1F8726B41C3BB43800EEA569 /* AppKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F8726B31C3BB43800EEA569 /* AppKey.plist */; };
+		1F8726B61C3BB7E800EEA569 /* TaskGrabbing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B51C3BB7E800EEA569 /* TaskGrabbing.swift */; };
+		1F8726B81C3BB87C00EEA569 /* TaskGrab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B71C3BB87C00EEA569 /* TaskGrab.swift */; };
+		1F8726BA1C3BBCB700EEA569 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B91C3BBCB700EEA569 /* ResponseEntity.swift */; };
+		1F8726BC1C3BBE6900EEA569 /* ResponseEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */; };
+		1F8726BF1C3BD2FB00EEA569 /* TaskGrabSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +146,13 @@
 		1F8697C21C3B072500CB3FFE /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1F8697C41C3B080D00CB3FFE /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSpec.swift; sourceTree = "<group>"; };
+		1F8726B11C3BB14E00EEA569 /* Intheam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intheam.swift; sourceTree = "<group>"; };
+		1F8726B31C3BB43800EEA569 /* AppKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppKey.plist; sourceTree = "<group>"; };
+		1F8726B51C3BB7E800EEA569 /* TaskGrabbing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskGrabbing.swift; sourceTree = "<group>"; };
+		1F8726B71C3BB87C00EEA569 /* TaskGrab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskGrab.swift; sourceTree = "<group>"; };
+		1F8726B91C3BBCB700EEA569 /* ResponseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
+		1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntitySpec.swift; sourceTree = "<group>"; };
+		1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskGrabSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +214,7 @@
 		1F12FAC11C3AABB9000AC1A3 /* TaskBerserk */ = {
 			isa = PBXGroup;
 			children = (
-				1F12FAC21C3AABB9000AC1A3 /* AppDelegate.swift */,
+				1F8726BD1C3BBF7000EEA569 /* Application */,
 				1F8697AC1C3AB67000CB3FFE /* Model */,
 				1F8697AB1C3AB66900CB3FFE /* ViewModel */,
 				1F8697AA1C3AB66400CB3FFE /* View */,
@@ -272,6 +286,7 @@
 			children = (
 				1F12FAC91C3AABB9000AC1A3 /* Assets.xcassets */,
 				1F12FACE1C3AABB9000AC1A3 /* Info.plist */,
+				1F8726B31C3BB43800EEA569 /* AppKey.plist */,
 			);
 			name = "Supporting files";
 			sourceTree = "<group>";
@@ -281,7 +296,6 @@
 			children = (
 				1F12FAC41C3AABB9000AC1A3 /* ViewController.swift */,
 				1F12FAC61C3AABB9000AC1A3 /* Main.storyboard */,
-				1F12FACB1C3AABB9000AC1A3 /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -298,9 +312,13 @@
 			children = (
 				1F8697AF1C3AB77900CB3FFE /* TaskEntity.swift */,
 				1F8697B11C3ACCA000CB3FFE /* ProjectEntity.swift */,
+				1F8726B91C3BBCB700EEA569 /* ResponseEntity.swift */,
 				1F8697C01C3B070500CB3FFE /* Networking.swift */,
 				1F8697C21C3B072500CB3FFE /* Network.swift */,
 				1F8697C41C3B080D00CB3FFE /* NetworkError.swift */,
+				1F8726B11C3BB14E00EEA569 /* Intheam.swift */,
+				1F8726B51C3BB7E800EEA569 /* TaskGrabbing.swift */,
+				1F8726B71C3BB87C00EEA569 /* TaskGrab.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -308,9 +326,11 @@
 		1F8697AD1C3AB6D300CB3FFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */,
 				1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */,
 				1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */,
 				1F8697B61C3AD64E00CB3FFE /* TaskEntitySpec.swift */,
+				1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */,
 				1F8697B41C3AD63800CB3FFE /* Dummy.swift */,
 				1F8697B31C3AD63800CB3FFE /* TaskBerserkTests-Bridging-Header.h */,
 			);
@@ -322,6 +342,15 @@
 			children = (
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		1F8726BD1C3BBF7000EEA569 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1F12FAC21C3AABB9000AC1A3 /* AppDelegate.swift */,
+				1F12FACB1C3AABB9000AC1A3 /* LaunchScreen.storyboard */,
+			);
+			name = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F8726B41C3BB43800EEA569 /* AppKey.plist in Resources */,
 				1F12FACD1C3AABB9000AC1A3 /* LaunchScreen.storyboard in Resources */,
 				1F12FACA1C3AABB9000AC1A3 /* Assets.xcassets in Resources */,
 				1F12FAC81C3AABB9000AC1A3 /* Main.storyboard in Resources */,
@@ -505,8 +535,12 @@
 				1F8697C51C3B080D00CB3FFE /* NetworkError.swift in Sources */,
 				1F8697C11C3B070500CB3FFE /* Networking.swift in Sources */,
 				1F8697C31C3B072500CB3FFE /* Network.swift in Sources */,
+				1F8726B81C3BB87C00EEA569 /* TaskGrab.swift in Sources */,
 				1F12FAC51C3AABB9000AC1A3 /* ViewController.swift in Sources */,
+				1F8726BA1C3BBCB700EEA569 /* ResponseEntity.swift in Sources */,
 				1F8697B21C3ACCA000CB3FFE /* ProjectEntity.swift in Sources */,
+				1F8726B61C3BB7E800EEA569 /* TaskGrabbing.swift in Sources */,
+				1F8726B21C3BB14E00EEA569 /* Intheam.swift in Sources */,
 				1F12FAC31C3AABB9000AC1A3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,8 +550,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8697B71C3AD64E00CB3FFE /* TaskEntitySpec.swift in Sources */,
+				1F8726BF1C3BD2FB00EEA569 /* TaskGrabSpec.swift in Sources */,
 				1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */,
 				1F8697B51C3AD63800CB3FFE /* Dummy.swift in Sources */,
+				1F8726BC1C3BBE6900EEA569 /* ResponseEntitySpec.swift in Sources */,
 				1F8697BC1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

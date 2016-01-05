@@ -21,3 +21,5 @@ DerivedData
 
 Carthage.pkg
 Carthage/Build
+
+AppKey.plist
