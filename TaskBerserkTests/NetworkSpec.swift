@@ -9,18 +9,18 @@
 import Quick
 import Nimble
 import RxSwift
+import Alamofire
 @testable import TaskBerserk
 
 class NetworkSpec: QuickSpec {
     override func spec() {
         var network: Network!
         let disposeBag = DisposeBag()
-        beforeEach {
-            network = Network()
-        }
         
         describe("JSON") {
+            
             it("eventually gets JSON data as specified with parameters.") {
+                network = Network()
                 var json: [String: AnyObject]? = nil
                 let url = "https://httpbin.org/get"
                 network.requestJSON(url, parameters: ["a": "b", "x": "y"])
@@ -35,6 +35,25 @@ class NetworkSpec: QuickSpec {
                     .toEventually(equal("b"), timeout: 5)
                 expect((json?["args"] as? [String: AnyObject])?["x"] as? String)
                     .toEventually(equal("y"), timeout: 5)
+            }
+            
+            it("eventually gets an error if the network has a problem.") {
+                var error: NetworkError? = nil
+                let url = "https://notexitsting.server"
+                let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+                configuration.timeoutIntervalForRequest = 3 // seconds
+                configuration.timeoutIntervalForResource = 3
+                let alamofireManager = Alamofire.Manager(configuration: configuration)
+                network = Network(alamofireManager: alamofireManager)
+                
+                network.requestJSON(url, parameters: ["a": "b", "x": "y"])
+                    .subscribeError {
+                        error = $0 as? NetworkError
+                    }
+                    .addDisposableTo(disposeBag)
+
+                expect(error).toEventuallyNot(beNil(), timeout: 4)
+                expect(error).toEventually(equal(NetworkError.NotReachedServer), timeout: 4)
             }
         }
     }
