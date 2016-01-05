@@ -43,5 +43,6 @@ final class Network: Networking {
             return AnonymousDisposable {
                 request.cancel()
             }
-        }    }
+        }
+    }
 }
