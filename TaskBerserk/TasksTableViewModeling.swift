@@ -6,6 +6,9 @@
 //  Copyright © 2016 Alexander Guschin. All rights reserved.
 //
 
+import RxSwift
+
 protocol TasksTableViewModeling {
-    
+    var cellModels: Observable<[TaskTableViewCellModeling]> { get }
+    func receiveTasks()
 }
