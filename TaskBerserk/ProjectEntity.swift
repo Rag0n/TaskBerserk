@@ -35,9 +35,9 @@ class ProjectEntity {
     }
     
     /*
-    Приватный, т.к создание проектов происходит 
-    при создании задач в static методе addTaskToProject.
-    Нет смысла создавать пустые проекты.
+        Приватный, т.к создание проектов происходит
+        при создании задач в static методе addTaskToProject.
+        Нет смысла создавать пустые проекты.
     */
     private init(name: String, tasks: [TaskEntity]) {
         self.name = name
