@@ -9,5 +9,15 @@
 import UIKit
 
 class TaskTableViewCell: UITableViewCell {
-    var viewModel: TaskTableViewCellModeling?
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var tagsLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    
+    var viewModel: TaskTableViewCellModeling? {
+        didSet {
+            descriptionLabel.text = viewModel?.description
+            tagsLabel.text = viewModel?.tagsText
+            statusLabel.text = viewModel?.status
+        }
+    }
 }
