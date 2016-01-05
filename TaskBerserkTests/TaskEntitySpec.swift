@@ -36,12 +36,14 @@ class TaskEntitySpec: QuickSpec {
                 missingJSON["priority"] = nil
                 missingJSON["depends"] = nil
                 missingJSON["tags"] = nil
+                missingJSON["project"] = nil
                 let task: TaskEntity? = try? decode(missingJSON)
                 
                 expect(task).notTo(beNil())
                 expect(task?.dueDate).to(beNil())
                 expect(task?.depends).to(beNil())
                 expect(task?.tags).to(beNil())
+                expect(task?.project?.name).toEventually(equal("default"))
             }
             
             it("throws an error if any of JSON elements except optional is missing.") {
@@ -49,7 +51,8 @@ class TaskEntitySpec: QuickSpec {
                     key != "tags" &&
                     key != "due" &&
                     key != "depends" &&
-                    key != "priority" {
+                    key != "priority" &&
+                    key != "project" {
                         
                     var missingJSON = taskJSON
                     missingJSON[key] = nil
