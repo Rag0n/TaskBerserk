@@ -57,6 +57,9 @@
 		1F8726CF1C3C2ED100EEA569 /* TaskTableViewCellModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726CE1C3C2ED100EEA569 /* TaskTableViewCellModeling.swift */; };
 		1F8726D11C3C2EDB00EEA569 /* TaskTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D01C3C2EDB00EEA569 /* TaskTableViewCellModel.swift */; };
 		1F8726D31C3C37DE00EEA569 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D21C3C37DE00EEA569 /* AppDelegateSpec.swift */; };
+		1F8726D51C3C54D700EEA569 /* DummyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D41C3C54D700EEA569 /* DummyResponse.swift */; };
+		1F8726D71C3C56C900EEA569 /* TasksTableViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D61C3C56C900EEA569 /* TasksTableViewModelSpec.swift */; };
+		1F8726D91C3C5F2100EEA569 /* TaskTableViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D81C3C5F2100EEA569 /* TaskTableViewCellSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +172,9 @@
 		1F8726CE1C3C2ED100EEA569 /* TaskTableViewCellModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCellModeling.swift; sourceTree = "<group>"; };
 		1F8726D01C3C2EDB00EEA569 /* TaskTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCellModel.swift; sourceTree = "<group>"; };
 		1F8726D21C3C37DE00EEA569 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
+		1F8726D41C3C54D700EEA569 /* DummyResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyResponse.swift; sourceTree = "<group>"; };
+		1F8726D61C3C56C900EEA569 /* TasksTableViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewModelSpec.swift; sourceTree = "<group>"; };
+		1F8726D81C3C5F2100EEA569 /* TaskTableViewCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCellSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +370,9 @@
 		1F8697AE1C3AB6D800CB3FFE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1F8726D61C3C56C900EEA569 /* TasksTableViewModelSpec.swift */,
+				1F8726D41C3C54D700EEA569 /* DummyResponse.swift */,
+				1F8726D81C3C5F2100EEA569 /* TaskTableViewCellSpec.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -581,8 +590,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8697B71C3AD64E00CB3FFE /* TaskEntitySpec.swift in Sources */,
+				1F8726D51C3C54D700EEA569 /* DummyResponse.swift in Sources */,
 				1F8726D31C3C37DE00EEA569 /* AppDelegateSpec.swift in Sources */,
+				1F8726D71C3C56C900EEA569 /* TasksTableViewModelSpec.swift in Sources */,
 				1F8726BF1C3BD2FB00EEA569 /* TaskGrabSpec.swift in Sources */,
+				1F8726D91C3C5F2100EEA569 /* TaskTableViewCellSpec.swift in Sources */,
 				1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */,
 				1F8697B51C3AD63800CB3FFE /* Dummy.swift in Sources */,
 				1F8726BC1C3BBE6900EEA569 /* ResponseEntitySpec.swift in Sources */,
