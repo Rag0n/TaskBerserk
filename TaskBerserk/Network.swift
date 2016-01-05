@@ -11,18 +11,26 @@ import Alamofire
 
 // Инкапсуляруем Alamofire
 final class Network: Networking {
+    let alamofireManager: Alamofire.Manager
+    
     // По умолчанию Alamofire запускает response на main потоке
     // поэтому создадим свой background поток
     private let queue = dispatch_queue_create(
         "TaskBerserk.Network.Queue",
         DISPATCH_QUEUE_SERIAL)
     
-    init() { }
+    init(alamofireManager: Alamofire.Manager? = nil) {
+        if let alamofireManager = alamofireManager {
+            self.alamofireManager = alamofireManager
+        } else {
+            self.alamofireManager = Alamofire.Manager()
+        }
+    }
     
     func requestJSON(url: String, parameters: [String: AnyObject]?) -> Observable<AnyObject> {
         return Observable.create { observer -> Disposable in
             let serializer = Alamofire.Request.JSONResponseSerializer()
-            let request = Alamofire.request(.GET, url, parameters: parameters)
+            let request = self.alamofireManager.request(.GET, url, parameters: parameters)
                 .response(queue: self.queue, responseSerializer: serializer) { response in
                     switch response.result {
                     case .Success(let value):
