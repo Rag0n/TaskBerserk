@@ -13,6 +13,25 @@ import Swinject
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let container = Container() { container in
+        // Models
+        container.register(Networking.self) { _ in Network() }
+        container.register(TaskGrabbing.self) { r in
+            TaskGrab(network: r.resolve(Networking.self)!)
+        }
+        
+        // ViewModels
+        container.register(TasksTableViewModeling.self) { r in
+            TasksTableViewModel(taskGrab: r.resolve(TaskGrabbing.self)!)
+        }
+        
+        // Views
+        container.registerForStoryboard(TasksTableViewController.self) { r, c in
+            c.viewModel = r.resolve(TasksTableViewModeling.self)!
+        }
+        
+        
+    }
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -22,7 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         
         let bundle = NSBundle.mainBundle()
-        let storyboard = SwinjectStoryboard.create(name: "Main", bundle: bundle)
+        let storyboard = SwinjectStoryboard.create(name: "Main",
+            bundle: bundle,
+            container: container)
         window.rootViewController = storyboard.instantiateInitialViewController()
         
         return true
