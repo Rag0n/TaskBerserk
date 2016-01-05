@@ -9,5 +9,13 @@
 import Foundation
 
 class TaskTableViewCellModel: TaskTableViewCellModeling {
+    let description: String
+    let status: String
+    let tagsText: String
     
+    init(task: TaskEntity) {
+        self.description = task.description
+        self.status = task.status
+        self.tagsText = task.tags?.joinWithSeparator(", ") ?? ""
+    }
 }

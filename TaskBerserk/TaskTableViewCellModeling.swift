@@ -7,5 +7,7 @@
 //
 
 protocol TaskTableViewCellModeling {
-    
+    var description: String { get }
+    var status: String { get }
+    var tagsText: String { get }
 }
