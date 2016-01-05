@@ -73,7 +73,7 @@ extension TaskEntity: Decodable {
         return try TaskEntity(
             description: e <| "description",
             id: e <| "id",
-            projectName: e <| "project",
+            projectName: (e <|? "project") ?? "default",
             urgency: e <| "urgency",
             status: e <| "status",
             uuid: e <| "uuid",
