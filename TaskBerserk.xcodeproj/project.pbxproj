@@ -56,6 +56,7 @@
 		1F8726CD1C3C2E1C00EEA569 /* TasksTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726CC1C3C2E1C00EEA569 /* TasksTableViewModel.swift */; };
 		1F8726CF1C3C2ED100EEA569 /* TaskTableViewCellModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726CE1C3C2ED100EEA569 /* TaskTableViewCellModeling.swift */; };
 		1F8726D11C3C2EDB00EEA569 /* TaskTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D01C3C2EDB00EEA569 /* TaskTableViewCellModel.swift */; };
+		1F8726D31C3C37DE00EEA569 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D21C3C37DE00EEA569 /* AppDelegateSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		1F8726CC1C3C2E1C00EEA569 /* TasksTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewModel.swift; sourceTree = "<group>"; };
 		1F8726CE1C3C2ED100EEA569 /* TaskTableViewCellModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCellModeling.swift; sourceTree = "<group>"; };
 		1F8726D01C3C2EDB00EEA569 /* TaskTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCellModel.swift; sourceTree = "<group>"; };
+		1F8726D21C3C37DE00EEA569 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 		1F12FAD61C3AABB9000AC1A3 /* TaskBerserkTests */ = {
 			isa = PBXGroup;
 			children = (
+				1F8726D21C3C37DE00EEA569 /* AppDelegateSpec.swift */,
 				1F8697AD1C3AB6D300CB3FFE /* Model */,
 				1F8697AE1C3AB6D800CB3FFE /* ViewModel */,
 				1F12FAD91C3AABB9000AC1A3 /* Info.plist */,
@@ -578,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8697B71C3AD64E00CB3FFE /* TaskEntitySpec.swift in Sources */,
+				1F8726D31C3C37DE00EEA569 /* AppDelegateSpec.swift in Sources */,
 				1F8726BF1C3BD2FB00EEA569 /* TaskGrabSpec.swift in Sources */,
 				1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */,
 				1F8697B51C3AD63800CB3FFE /* Dummy.swift in Sources */,
