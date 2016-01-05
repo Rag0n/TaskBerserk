@@ -9,5 +9,5 @@
 import UIKit
 
 class TasksTableViewController: UITableViewController {
-    
+    var viewModel: TasksTableViewModeling?
 }

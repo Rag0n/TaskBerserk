@@ -9,5 +9,5 @@
 import UIKit
 
 class TaskTableViewCell: UITableViewCell {
-    
+    var viewModel: TaskTableViewCellModeling?
 }
