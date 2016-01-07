@@ -8,6 +8,14 @@
 
 import UIKit
 
-private final class ProjectTableViewCell: UITableViewCell {
+final class ProjectTableViewCell: UITableViewCell {
+    @IBOutlet weak var projectNameLabel: UILabel!
+    @IBOutlet weak var taskCount: UILabel!
     
+    var viewModel: ProjectTableViewCellModeling? {
+        didSet {
+            projectNameLabel.text = viewModel?.projectName
+            taskCount.text = viewModel?.taskCount
+        }
+    }
 }
