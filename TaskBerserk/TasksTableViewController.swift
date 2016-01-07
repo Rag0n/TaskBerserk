@@ -7,7 +7,57 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class TasksTableViewController: UITableViewController {
-    var viewModel: TasksTableViewModeling?
+    private var autoSearchStarted = false
+    private let disposeBag = DisposeBag()
+    private var cells: [TaskTableViewCellModeling]?
+    
+    private struct Constants {
+        static let taskCellIdentifier = "TaskTableViewCell"
+    }
+    
+    var viewModel: TasksTableViewModeling? {
+        didSet {
+            guard let viewModel = viewModel else {
+                return
+            }
+            
+            viewModel.cellModels.bindNext { cellModels in
+                self.cells = cellModels
+                self.tableView.reloadData()
+            }.addDisposableTo(disposeBag)
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if !autoSearchStarted {
+            autoSearchStarted = true
+            viewModel?.receiveTasks()
+        }
+    }
+}
+
+// MARK: UITableViewDataSource
+extension TasksTableViewController {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cells?.count ?? 0
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            Constants.taskCellIdentifier, forIndexPath: indexPath) as! TaskTableViewCell
+        
+        if let cells = cells {
+            cell.viewModel = cells[indexPath.row]
+        } else {
+            cell.viewModel = nil
+        }
+        
+        return cell
+    }
 }
