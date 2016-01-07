@@ -10,8 +10,7 @@ import Himotoki
 
 class TaskEntity {
     let description: String
-    let depends: UInt64?
-    let id: UInt64
+    let id: String
     let priority: String?
     private let projectName:String
     lazy var project: ProjectEntity? = {
@@ -20,28 +19,23 @@ class TaskEntity {
     let urgency: Double
     let status: String
     let tags: [String]?
-    let uuid: String
     let dueDate: String?
     
     init(description: String,
-        id: UInt64,
+        id: String,
         projectName: String,
         urgency: Double,
         status: String,
-        uuid: String,
         dueDate: String? = nil,
         tags: [String]? = nil,
-        depends: UInt64? = nil,
         priority: String? = nil
     ) {
         self.description = description
-        self.depends = depends
         self.id = id
         self.priority = priority
         self.urgency = urgency
         self.status = status
         self.tags = tags
-        self.uuid = uuid
         self.dueDate = dueDate
         self.projectName = projectName
     }
@@ -76,10 +70,8 @@ extension TaskEntity: Decodable {
             projectName: (e <|? "project") ?? "default",
             urgency: e <| "urgency",
             status: e <| "status",
-            uuid: e <| "uuid",
             dueDate: e <|? "due",
             tags: e <||? "tags",
-            depends: e <|? "depends",
             priority: e <|? "priority")
     }
 }
