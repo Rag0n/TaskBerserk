@@ -22,7 +22,7 @@ class ResponseEntity {
 extension ResponseEntity: Decodable {
     static func decode(e: Extractor) throws -> ResponseEntity {
         return try ResponseEntity(
-            totalCount: e <| "total_count",
+            totalCount: e <| ["meta", "total_count"],
             tasks: e <|| "objects")
     }
 }
