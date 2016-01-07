@@ -14,7 +14,7 @@ import Himotoki
 class ResponseEntitySpec: QuickSpec {
     override func spec() {
         let json: [String: AnyObject] = [
-            "total_count": 95,
+            "meta": ["total_count": 95],
             "objects": [taskJSON, taskJSON]
         ]
         

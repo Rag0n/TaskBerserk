@@ -17,12 +17,12 @@ class TaskGrabSpec: QuickSpec {
     class GoodStubNetwork: Networking {
         func requestJSON(url: String, parameters: [String: AnyObject]?) -> Observable<AnyObject> {
             var taskJSONFirst = taskJSON
-            taskJSONFirst["id"] = 0
+            taskJSONFirst["id"] = "0"
             var taskJSONSecond = taskJSON
-            taskJSONSecond["id"] = 1
+            taskJSONSecond["id"] = "1"
             
             let json: [String: AnyObject] = [
-                "total_count": 95,
+                "meta": ["total_count": 95],
                 "objects": [taskJSONFirst, taskJSONSecond]
             ]
             
@@ -75,8 +75,8 @@ class TaskGrabSpec: QuickSpec {
             expect(response).toEventuallyNot(beNil())
             expect(response?.totalCount) == 95
             expect(response?.tasks.count) == 2
-            expect(response?.tasks[0].id) == 0
-            expect(response?.tasks[1].id) == 1
+            expect(response?.tasks[0].id) == "0"
+            expect(response?.tasks[1].id) == "1"
         }
         
         it("returns an error if the network returns incorrect data") {
