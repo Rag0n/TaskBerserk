@@ -10,24 +10,41 @@ import Foundation
 @testable import TaskBerserk
 
 let dummyResponse: ResponseEntity = {
-   let taskFirst = TaskEntity(
+    let taskFirst = TaskEntity(
         description: "Task 1 description",
-        id: 1,
+        id: "1",
         projectName: "default",
         urgency: 2.31,
         status: "waiting",
-        uuid: "b8d05cfe-8464-44ef-9d99-eb3e7809d337",
         tags: ["@computer", "online"]
     )
     
     let taskSecond = TaskEntity(
         description: "Task 2 description",
-        id: 2,
+        id: "2",
         projectName: "shopping list",
         urgency: 1.25,
         status: "waiting",
-        uuid: "b8d05cfe-8464-44ef-9d99-eb3e7809d338",
         tags: ["@walk", "store"]
     )
+//    TaskEntity(
+//        description: "Task 1 description",
+//        id: 1,
+//        projectName: "default",
+//        urgency: 2.31,
+//        status: "waiting",
+//        uuid: "b8d05cfe-8464-44ef-9d99-eb3e7809d337",
+//        tags: ["@computer", "online"]
+//    )
+//    
+//    let taskSecond = TaskEntity(
+//        description: "Task 2 description",
+//        id: 2,
+//        projectName: "shopping list",
+//        urgency: 1.25,
+//        status: "waiting",
+//        uuid: "b8d05cfe-8464-44ef-9d99-eb3e7809d338",
+//        tags: ["@walk", "store"]
+//    )
     return ResponseEntity(totalCount: 51, tasks: [taskFirst, taskSecond])
 }()

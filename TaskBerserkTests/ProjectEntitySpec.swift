@@ -27,7 +27,7 @@ class ProjectEntitySpec: QuickSpec {
         it("adds task and creates new project") {
             let newTask: TaskEntity = try! decode(taskJSON)
             
-            expect(newTask.project?.name) == "Shopping list"
+            expect(newTask.project?.name) == "testproject"
         }
     }
 }

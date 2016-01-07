@@ -18,30 +18,25 @@ class TaskEntitySpec: QuickSpec {
                 let task: TaskEntity? = try? decode(taskJSON)
                 
                 expect(task).notTo(beNil())
-                expect(task?.description) == "Task description"
-                expect(task?.id) == 123
-                expect(task?.project?.name) == "Shopping list"
-                expect(task?.urgency) == 2.31
-                expect(task?.status) == "waiting"
-                expect(task?.uuid) == "b8d05cfe-8464-44ef-9d99-eb3e7809d337"
+                expect(task?.description) == "first task"
+                expect(task?.project?.name) == "testproject"
+                expect(task?.urgency) == 8.00959
+                expect(task?.status) == "pending"
                 expect(task?.tags) == ["first tag", "second tag"]
-                expect(task?.depends) == 251
                 expect(task?.priority) == "H"
-                expect(task?.dueDate) == "Apr 1, 2015, 8:53 AM"
+                expect(task?.dueDate) == "Wed, 6 Jan 2016 20:06:47 +0000"
             }
             
             it("to create a new instance when optional data are misssed") {
                 var missingJSON = taskJSON
                 missingJSON["due"] = nil
                 missingJSON["priority"] = nil
-                missingJSON["depends"] = nil
                 missingJSON["tags"] = nil
                 missingJSON["project"] = nil
                 let task: TaskEntity? = try? decode(missingJSON)
                 
                 expect(task).notTo(beNil())
                 expect(task?.dueDate).to(beNil())
-                expect(task?.depends).to(beNil())
                 expect(task?.tags).to(beNil())
                 expect(task?.project?.name).toEventually(equal("default"))
             }
@@ -50,7 +45,6 @@ class TaskEntitySpec: QuickSpec {
                 for key in taskJSON.keys where
                     key != "tags" &&
                     key != "due" &&
-                    key != "depends" &&
                     key != "priority" &&
                     key != "project" {
                         
@@ -79,20 +73,15 @@ dateFormatter.dateFormat = "yyyy-MM-dd: HH:mm"
 
 dueDate: NSDate? = nil,
 tags: [String]? = nil,
-depends: UInt64? = nil,
 priority: String? = nil
 
-let taskJSON: [String: AnyObject] = [
-"description": "Task description",
-"id": 123,
-"project": "Shopping list",
-"urgency": 2.31,
-"status": "waiting",
-"uuid": "b8d05cfe-8464-44ef-9d99-eb3e7809d337",
-"due": "Apr 1, 2015, 8:53 AM",
+"description": "first task",
+"id": "1ec9e89b-7dab-4246-9f05-6fd5e0cc1c81",
+"project": "testproject",
+"urgency": 8.00959,
+"status": "pending",
+"due": "Wed, 6 Jan 2016 20:06:47 +0000",
 "tags": ["first tag", "second tag"],
-"depends": 251,
 "priority": "H"
-]
 
 */

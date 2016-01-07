@@ -9,14 +9,43 @@
 import Foundation
 
 let taskJSON: [String: AnyObject] = [
-    "description": "Task description",
-    "id": 123,
-    "project": "Shopping list",
-    "urgency": 2.31,
-    "status": "waiting",
-    "uuid": "b8d05cfe-8464-44ef-9d99-eb3e7809d337",
-    "due": "Apr 1, 2015, 8:53 AM",
+    "description": "first task",
+    "id": "1ec9e89b-7dab-4246-9f05-6fd5e0cc1c81",
+    "project": "testproject",
+    "urgency": 8.00959,
+    "status": "pending",
+    "due": "Wed, 6 Jan 2016 20:06:47 +0000",
     "tags": ["first tag", "second tag"],
-    "depends": 251,
     "priority": "H"
 ]
+
+/*
+"description": "first task",
+"due": null,
+"entry": "Thu, 17 Dec 2015 14:22:25 +0000",
+"id": "1ec9e89b-7dab-4246-9f05-6fd5e0cc1c81",
+"imask": null,
+"intheamattachments": null,
+"intheamoriginalemailid": null,
+"intheamoriginalemailsubject": null,
+"intheamtrelloboardid": null,
+"intheamtrellodescription": null,
+"intheamtrelloid": null,
+"intheamtrellolistid": null,
+"intheamtrellolistname": null,
+"intheamtrellourl": null,
+"modified": "Wed, 6 Jan 2016 20:06:47 +0000",
+"priority": "H",
+"project": "testproject",
+"resource_uri": "/api/v1/task/1ec9e89b-7dab-4246-9f05-6fd5e0cc1c81/",
+"scheduled": null,
+"short_id": 1,
+"start": null,
+"status": "pending",
+"tags":
+[
+"tag1",
+"tag2"
+],
+"urgency": 8.00959,
+*/
