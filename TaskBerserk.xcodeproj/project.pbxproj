@@ -310,6 +310,7 @@
 		1F8697A91C3AB65300CB3FFE /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				1F12FACB1C3AABB9000AC1A3 /* LaunchScreen.storyboard */,
 				1F12FAC91C3AABB9000AC1A3 /* Assets.xcassets */,
 				1F12FACE1C3AABB9000AC1A3 /* Info.plist */,
 				1F8726B31C3BB43800EEA569 /* AppKey.plist */,
@@ -332,10 +333,8 @@
 		1F8697AB1C3AB66900CB3FFE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1F8726CA1C3C2E0C00EEA569 /* TasksTableViewModeling.swift */,
-				1F8726CC1C3C2E1C00EEA569 /* TasksTableViewModel.swift */,
-				1F8726CE1C3C2ED100EEA569 /* TaskTableViewCellModeling.swift */,
-				1F8726D01C3C2EDB00EEA569 /* TaskTableViewCellModel.swift */,
+				1FFDFE4E1C3ED61100DA25DD /* ProjectsTableView */,
+				1FFDFE4D1C3ED60300DA25DD /* TasksTableView */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -384,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				1F12FAC21C3AABB9000AC1A3 /* AppDelegate.swift */,
-				1F12FACB1C3AABB9000AC1A3 /* LaunchScreen.storyboard */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -395,6 +393,24 @@
 				1FFDFE231C3E687C00DA25DD /* TasksTableViewControllerSpec.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		1FFDFE4D1C3ED60300DA25DD /* TasksTableView */ = {
+			isa = PBXGroup;
+			children = (
+				1F8726CA1C3C2E0C00EEA569 /* TasksTableViewModeling.swift */,
+				1F8726CC1C3C2E1C00EEA569 /* TasksTableViewModel.swift */,
+				1F8726CE1C3C2ED100EEA569 /* TaskTableViewCellModeling.swift */,
+				1F8726D01C3C2EDB00EEA569 /* TaskTableViewCellModel.swift */,
+			);
+			name = TasksTableView;
+			sourceTree = "<group>";
+		};
+		1FFDFE4E1C3ED61100DA25DD /* ProjectsTableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ProjectsTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
