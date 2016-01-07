@@ -15,7 +15,7 @@ class TaskGrabSpec: QuickSpec {
     // MARK: stubs
     // emulating an asynchronous network response
     class GoodStubNetwork: Networking {
-        func requestJSON(url: String, parameters: [String: AnyObject]?) -> Observable<AnyObject> {
+        func requestJSON(url: String, parameters: [String: AnyObject]?, headers: [String: String]?) -> Observable<AnyObject> {
             var taskJSONFirst = taskJSON
             taskJSONFirst["id"] = "0"
             var taskJSONSecond = taskJSON
@@ -36,7 +36,7 @@ class TaskGrabSpec: QuickSpec {
     }
     
     class BadStubNetwork: Networking {
-        func requestJSON(url: String, parameters: [String : AnyObject]?) -> Observable<AnyObject> {
+        func requestJSON(url: String, parameters: [String: AnyObject]?, headers: [String: String]?) -> Observable<AnyObject> {
             let json = [String: AnyObject]()
             
             return Observable.create { observer -> Disposable in
@@ -49,7 +49,7 @@ class TaskGrabSpec: QuickSpec {
     }
     
     class ErrorStubNetwork: Networking {
-        func requestJSON(url: String, parameters: [String : AnyObject]?) -> Observable<AnyObject> {
+        func requestJSON(url: String, parameters: [String: AnyObject]?, headers: [String: String]?) -> Observable<AnyObject> {
             return Observable.create { observer -> Disposable in
                 observer.onError(NetworkError.NotConnectedToInternet)
                 return NopDisposable.instance

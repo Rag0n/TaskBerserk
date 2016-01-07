@@ -41,10 +41,9 @@ class NetworkSpec: QuickSpec {
                 var error: NetworkError? = nil
                 let url = "https://notexitsting.server"
                 let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+                // by default timeout is 60s, it is too long for tests
                 configuration.timeoutIntervalForRequest = 3 // seconds
                 configuration.timeoutIntervalForResource = 3
-                let alamofireManager = Alamofire.Manager(configuration: configuration)
-                network = Network(alamofireManager: alamofireManager)
                 
                 network.requestJSON(url, parameters: ["a": "b", "x": "y"])
                     .subscribeError {
