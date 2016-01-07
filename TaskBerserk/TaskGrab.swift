@@ -19,9 +19,9 @@ class TaskGrab: TaskGrabbing {
 
     // receives all pending tasks(encapsulate into ResponseEntity)
     func grabTasks() -> Observable<ResponseEntity> {
-        let url = Intheam.apiURL + "task/"
+        let url = Intheam.apiURL + "task/?format=json"
         let parametres = Intheam.requestParameters
-        return network.requestJSON(url, parameters: parametres)
+        return network.requestJSON(url, parameters: nil)
             .flatMap { json -> Observable<ResponseEntity> in
                 return Observable.create { observer -> Disposable in
                     if let response = (try? decode(json)) as ResponseEntity? {
