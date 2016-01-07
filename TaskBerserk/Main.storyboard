@@ -110,14 +110,23 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 task left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4h-Xl-WvT">
+                                            <rect key="frame" x="516" y="11" width="76" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Q4h-Xl-WvT" firstAttribute="baseline" secondItem="YSt-Z8-oPK" secondAttribute="baseline" id="9Fy-YY-v0o"/>
                                         <constraint firstItem="YSt-Z8-oPK" firstAttribute="top" secondItem="lcS-D7-IQj" secondAttribute="top" constant="11" id="D4B-ug-prZ"/>
                                         <constraint firstItem="YSt-Z8-oPK" firstAttribute="leading" secondItem="lcS-D7-IQj" secondAttribute="leading" constant="20" symbolic="YES" id="gZK-82-yPK"/>
+                                        <constraint firstAttribute="trailing" secondItem="Q4h-Xl-WvT" secondAttribute="trailing" constant="8" id="q1f-do-pB7"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="projectNameLabel" destination="YSt-Z8-oPK" id="Xbw-LW-mGi"/>
+                                    <outlet property="taskCount" destination="Q4h-Xl-WvT" id="anR-Gv-gMD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

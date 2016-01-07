@@ -61,6 +61,10 @@
 		1F8726D71C3C56C900EEA569 /* TasksTableViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D61C3C56C900EEA569 /* TasksTableViewModelSpec.swift */; };
 		1F8726D91C3C5F2100EEA569 /* TaskTableViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D81C3C5F2100EEA569 /* TaskTableViewCellSpec.swift */; };
 		1FFDFE241C3E687C00DA25DD /* TasksTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE231C3E687C00DA25DD /* TasksTableViewControllerSpec.swift */; };
+		1FFDFE501C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE4F1C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift */; };
+		1FFDFE521C3ED8DD00DA25DD /* ProjectsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE511C3ED8DD00DA25DD /* ProjectsTableViewModel.swift */; };
+		1FFDFE541C3ED92900DA25DD /* ProjectTableViewCellModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE531C3ED92900DA25DD /* ProjectTableViewCellModeling.swift */; };
+		1FFDFE561C3ED93600DA25DD /* ProjectTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE551C3ED93600DA25DD /* ProjectTableViewCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +181,10 @@
 		1F8726D61C3C56C900EEA569 /* TasksTableViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewModelSpec.swift; sourceTree = "<group>"; };
 		1F8726D81C3C5F2100EEA569 /* TaskTableViewCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCellSpec.swift; sourceTree = "<group>"; };
 		1FFDFE231C3E687C00DA25DD /* TasksTableViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewControllerSpec.swift; sourceTree = "<group>"; };
+		1FFDFE4F1C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewModeling.swift; sourceTree = "<group>"; };
+		1FFDFE511C3ED8DD00DA25DD /* ProjectsTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewModel.swift; sourceTree = "<group>"; };
+		1FFDFE531C3ED92900DA25DD /* ProjectTableViewCellModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCellModeling.swift; sourceTree = "<group>"; };
+		1FFDFE551C3ED93600DA25DD /* ProjectTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +417,10 @@
 		1FFDFE4E1C3ED61100DA25DD /* ProjectsTableView */ = {
 			isa = PBXGroup;
 			children = (
+				1FFDFE4F1C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift */,
+				1FFDFE511C3ED8DD00DA25DD /* ProjectsTableViewModel.swift */,
+				1FFDFE531C3ED92900DA25DD /* ProjectTableViewCellModeling.swift */,
+				1FFDFE551C3ED93600DA25DD /* ProjectTableViewCellModel.swift */,
 			);
 			name = ProjectsTableView;
 			sourceTree = "<group>";
@@ -592,17 +604,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F8726C91C3C2D3200EEA569 /* TaskTableViewCell.swift in Sources */,
+				1FFDFE561C3ED93600DA25DD /* ProjectTableViewCellModel.swift in Sources */,
 				1F8697B01C3AB77900CB3FFE /* TaskEntity.swift in Sources */,
 				1F8726D11C3C2EDB00EEA569 /* TaskTableViewCellModel.swift in Sources */,
 				1F8697C51C3B080D00CB3FFE /* NetworkError.swift in Sources */,
+				1FFDFE541C3ED92900DA25DD /* ProjectTableViewCellModeling.swift in Sources */,
 				1F8697C11C3B070500CB3FFE /* Networking.swift in Sources */,
 				1F8726CF1C3C2ED100EEA569 /* TaskTableViewCellModeling.swift in Sources */,
 				1F8697C31C3B072500CB3FFE /* Network.swift in Sources */,
+				1FFDFE501C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift in Sources */,
 				1F8726B81C3BB87C00EEA569 /* TaskGrab.swift in Sources */,
 				1F8726BA1C3BBCB700EEA569 /* ResponseEntity.swift in Sources */,
 				1F8697B21C3ACCA000CB3FFE /* ProjectEntity.swift in Sources */,
 				1F8726CB1C3C2E0C00EEA569 /* TasksTableViewModeling.swift in Sources */,
 				1F8726C71C3C2D2400EEA569 /* TasksTableViewController.swift in Sources */,
+				1FFDFE521C3ED8DD00DA25DD /* ProjectsTableViewModel.swift in Sources */,
 				1F8726C31C3C273100EEA569 /* ProjectTableViewCell.swift in Sources */,
 				1F8726B61C3BB7E800EEA569 /* TaskGrabbing.swift in Sources */,
 				1F8726C11C3C265000EEA569 /* ProjectsTableViewController.swift in Sources */,
