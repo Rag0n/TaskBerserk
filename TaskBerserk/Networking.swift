@@ -10,5 +10,5 @@ import RxSwift
 import Alamofire
 
 protocol Networking {
-    func requestJSON(url: String, parameters: [String: AnyObject]?) -> Observable<AnyObject>
+    func requestJSON(url: String, parameters: [String: AnyObject]?, headers: [String: String]?) -> Observable<AnyObject>
 }

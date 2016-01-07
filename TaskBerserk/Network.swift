@@ -14,7 +14,7 @@ final class Network: Networking {
     let alamofireManager: Alamofire.Manager
     
     // По умолчанию Alamofire запускает response на main потоке
-    // поэтому создадим свой background поток
+    // поэтому создадим свой последовательный поток
     private let queue = dispatch_queue_create(
         "TaskBerserk.Network.Queue",
         DISPATCH_QUEUE_SERIAL)
@@ -25,19 +25,16 @@ final class Network: Networking {
         } else {
             self.alamofireManager = Alamofire.Manager.sharedInstance
         }
-        
-//        self.alamofireManager.session.configuration.HTTPAdditionalHeaders = ["Authorization": "ApiKey botvafun:09fcdd34040dc44dd47e08ef3fecb2ca8a97c375"]
     }
     
-    func requestJSON(url: String, parameters: [String: AnyObject]?) -> Observable<AnyObject> {
-        let headers = [
-            "Authorization": "ApiKey \(Intheam.Config.apiKey)"
-        ]
+    func requestJSON(url: String,
+        parameters: [String: AnyObject]?,
+        headers: [String: String]?) -> Observable<AnyObject> {
+            
         return Observable.create { observer -> Disposable in
             let serializer = Alamofire.Request.JSONResponseSerializer()
             let request = self.alamofireManager.request(.GET, url, parameters: parameters, headers: headers)
                 .response(queue: self.queue, responseSerializer: serializer) { response in
-//                    print(response.debugDescription)
                     switch response.result {
                     case .Success(let value):
                         observer.onNext(value)
