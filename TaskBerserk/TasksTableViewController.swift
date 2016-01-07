@@ -19,13 +19,11 @@ class TasksTableViewController: UITableViewController {
         static let taskCellIdentifier = "TaskTableViewCell"
     }
     
+    var project: ProjectEntity? // TODO
+    
     var viewModel: TasksTableViewModeling? {
         didSet {
-            guard let viewModel = viewModel else {
-                return
-            }
-            
-            viewModel.cellModels.bindNext { cellModels in
+            viewModel?.cellModels.bindNext { cellModels in
                 self.cells = cellModels
                 self.tableView.reloadData()
             }.addDisposableTo(disposeBag)

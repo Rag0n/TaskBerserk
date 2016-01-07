@@ -17,5 +17,6 @@ class TaskTableViewCellModel: TaskTableViewCellModeling {
         self.description = task.description
         self.status = task.status
         self.tagsText = task.tags?.joinWithSeparator(", ") ?? ""
+        print("\(task.project.name): \(task.project.tasks.count)")
     }
 }
