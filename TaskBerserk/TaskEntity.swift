@@ -13,7 +13,8 @@ class TaskEntity {
     let id: String
     let priority: String?
     private let projectName:String
-    lazy var project: ProjectEntity? = {
+//    var project: ProjectEntity
+    lazy var project: ProjectEntity = {
        return ProjectEntity.addTaskToProject(self, projectName: self.projectName)
     }()
     let urgency: Double
