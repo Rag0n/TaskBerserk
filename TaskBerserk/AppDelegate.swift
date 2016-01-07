@@ -24,10 +24,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container.register(TasksTableViewModeling.self) { r in
             TasksTableViewModel(taskGrab: r.resolve(TaskGrabbing.self)!)
         }
+        container.register(ProjectsTableViewModeling.self) { _ in
+            ProjectsTableViewModel()
+        }
         
         // Views
         container.registerForStoryboard(TasksTableViewController.self) { r, c in
             c.viewModel = r.resolve(TasksTableViewModeling.self)!
+        }
+
+        container.registerForStoryboard(ProjectsTableViewController.self) { r, c in
+            c.viewModel = r.resolve(ProjectsTableViewModeling.self)!
         }
         
         
