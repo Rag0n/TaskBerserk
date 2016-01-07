@@ -60,6 +60,7 @@
 		1F8726D51C3C54D700EEA569 /* DummyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D41C3C54D700EEA569 /* DummyResponse.swift */; };
 		1F8726D71C3C56C900EEA569 /* TasksTableViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D61C3C56C900EEA569 /* TasksTableViewModelSpec.swift */; };
 		1F8726D91C3C5F2100EEA569 /* TaskTableViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726D81C3C5F2100EEA569 /* TaskTableViewCellSpec.swift */; };
+		1FFDFE241C3E687C00DA25DD /* TasksTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE231C3E687C00DA25DD /* TasksTableViewControllerSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +118,7 @@
 		1F12FACC1C3AABB9000AC1A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F12FACE1C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F12FAD31C3AABB9000AC1A3 /* TaskBerserkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskBerserkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F12FAD91C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F12FAD91C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = TaskBerserkTests/Info.plist; sourceTree = "<group>"; };
 		1F12FADE1C3AABB9000AC1A3 /* TaskBerserkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskBerserkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F12FAE41C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F8697671C3AAF4F00CB3FFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 		1F8726D41C3C54D700EEA569 /* DummyResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyResponse.swift; sourceTree = "<group>"; };
 		1F8726D61C3C56C900EEA569 /* TasksTableViewModelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewModelSpec.swift; sourceTree = "<group>"; };
 		1F8726D81C3C5F2100EEA569 /* TaskTableViewCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCellSpec.swift; sourceTree = "<group>"; };
+		1FFDFE231C3E687C00DA25DD /* TasksTableViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewControllerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			children = (
 				1F12FAC11C3AABB9000AC1A3 /* TaskBerserk */,
 				1F12FAD61C3AABB9000AC1A3 /* TaskBerserkTests */,
+				1F12FAD91C3AABB9000AC1A3 /* Info.plist */,
 				1F12FAE11C3AABB9000AC1A3 /* TaskBerserkUITests */,
 				1F12FAC01C3AABB9000AC1A3 /* Products */,
 				1F8697A81C3AB53D00CB3FFE /* Frameworks */,
@@ -251,7 +254,7 @@
 				1F8726D21C3C37DE00EEA569 /* AppDelegateSpec.swift */,
 				1F8697AD1C3AB6D300CB3FFE /* Model */,
 				1F8697AE1C3AB6D800CB3FFE /* ViewModel */,
-				1F12FAD91C3AABB9000AC1A3 /* Info.plist */,
+				1FFDFE221C3E686300DA25DD /* Views */,
 			);
 			path = TaskBerserkTests;
 			sourceTree = "<group>";
@@ -384,6 +387,14 @@
 				1F12FACB1C3AABB9000AC1A3 /* LaunchScreen.storyboard */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		1FFDFE221C3E686300DA25DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FFDFE231C3E687C00DA25DD /* TasksTableViewControllerSpec.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,6 +609,7 @@
 				1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */,
 				1F8697B51C3AD63800CB3FFE /* Dummy.swift in Sources */,
 				1F8726BC1C3BBE6900EEA569 /* ResponseEntitySpec.swift in Sources */,
+				1FFDFE241C3E687C00DA25DD /* TasksTableViewControllerSpec.swift in Sources */,
 				1F8697BC1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,15 +23,21 @@ final class Network: Networking {
         if let alamofireManager = alamofireManager {
             self.alamofireManager = alamofireManager
         } else {
-            self.alamofireManager = Alamofire.Manager()
+            self.alamofireManager = Alamofire.Manager.sharedInstance
         }
+        
+//        self.alamofireManager.session.configuration.HTTPAdditionalHeaders = ["Authorization": "ApiKey botvafun:09fcdd34040dc44dd47e08ef3fecb2ca8a97c375"]
     }
     
     func requestJSON(url: String, parameters: [String: AnyObject]?) -> Observable<AnyObject> {
+        let headers = [
+            "Authorization": "ApiKey \(Intheam.Config.apiKey)"
+        ]
         return Observable.create { observer -> Disposable in
             let serializer = Alamofire.Request.JSONResponseSerializer()
-            let request = self.alamofireManager.request(.GET, url, parameters: parameters)
+            let request = self.alamofireManager.request(.GET, url, parameters: parameters, headers: headers)
                 .response(queue: self.queue, responseSerializer: serializer) { response in
+//                    print(response.debugDescription)
                     switch response.result {
                     case .Success(let value):
                         observer.onNext(value)
