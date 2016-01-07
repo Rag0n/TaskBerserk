@@ -7,14 +7,35 @@
 //
 
 import Foundation
+import RxSwift
 
 class ProjectEntity {
     private let uuid: String
     var name: String
-    var tasks: [TaskEntity]
+    var tasks: [TaskEntity] {
+        // should update all array of projects if some tasks were added
+        didSet {
+            ProjectEntity._cellModels.onNext(Array(ProjectEntity.projectsSet))
+        }
+    }
     
     // содержит все уникальные проекты с задачами
-    static var projects = Set<ProjectEntity>()
+    static private var projectsSet = Set<ProjectEntity>() {
+        didSet {
+            _cellModels.onNext(Array(projectsSet))
+        }
+    }
+    
+//    static private var projectsArray: Array<ProjectEntity> = Array(ProjectEntity.projectsSet) {
+//        didSet {
+//            _cellModels
+//        }
+//    }
+    
+    static private let _cellModels = BehaviorSubject<[ProjectEntity]>(value: [])
+    static var projects: Observable<[ProjectEntity]> {
+        return _cellModels.asObservable()
+    }
     
     /*
         проверяем, существует ли проект с таким названием
@@ -22,7 +43,7 @@ class ProjectEntity {
         иначе создаем новый проект
     */
     class func addTaskToProject(task: TaskEntity, projectName: String) -> ProjectEntity {
-        for project in projects {
+        for project in projectsSet {
             if project.name == projectName {
                 project.addTask(task)
                 return project
@@ -30,7 +51,7 @@ class ProjectEntity {
         }
         
         let newProject = ProjectEntity(name: projectName, tasks: [task])
-        projects.insert(newProject)
+        projectsSet.insert(newProject)
         return newProject
     }
     
