@@ -10,16 +10,17 @@ import Foundation
 
 struct Intheam {
     static let apiURL = "https://inthe.am/api/v1/"
+    static let apiURLEnd = "task/?format=json"
     
-    static var requestParameters: [String: AnyObject] {
+    static var requestHeaders: [String: String] {
         return [
-            "Authorization": Config.apiKey
+            "Authorization": "ApiKey \(Intheam.Config.apiKey)"
         ]
     }
 }
 
 extension Intheam {
-    struct Config {
+    private struct Config {
         static let apiKey = Intheam.getAppKey()
     }
     
