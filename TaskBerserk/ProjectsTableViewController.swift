@@ -15,6 +15,7 @@ final class ProjectsTableViewController: UITableViewController {
     
     private struct Constants {
         static let projectCellIdentifier = "ProjectTableViewCell"
+        static let tasksTableViewSegueIdentifier = "ShowTasks"
     }
     
     var viewModel: ProjectsTableViewModeling? {
@@ -35,6 +36,18 @@ final class ProjectsTableViewController: UITableViewController {
 //        super.viewWillAppear(animated)
 //        viewModel?.updateTasks()
 //    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == Constants.tasksTableViewSegueIdentifier {
+            guard let vc = segue.destinationViewController.contentViewController as? TasksTableViewController else {
+                fatalError("Wrong view controller")
+            }
+            guard let indexPath = tableView.indexPathForSelectedRow else {
+                fatalError("Impossible to show detail without selected object")
+            }
+            vc.viewModel = viewModel?.viewModelForIndexPath(indexPath)
+        }
+    }
 }
 
 // MARK: UITableViewDataSource
