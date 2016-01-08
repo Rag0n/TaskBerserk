@@ -10,4 +10,5 @@ import RxSwift
 
 protocol ProjectsTableViewModeling {
     var cellModels: Observable<[ProjectTableViewCellModeling]> { get }
+    func updateTasks()
 }

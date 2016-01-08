@@ -9,6 +9,7 @@
 import RxSwift
 
 class ProjectsTableViewModel: ProjectsTableViewModeling {
+    private let taskGrab: TaskGrabbing
     private let disposeBag = DisposeBag()
     private let _cellModels = BehaviorSubject<[ProjectTableViewCellModeling]>(value: [])
     
@@ -16,7 +17,12 @@ class ProjectsTableViewModel: ProjectsTableViewModeling {
         return _cellModels.asObservable()
     }
     
-    init() {
+    init(taskGrab: TaskGrabbing) {
+        self.taskGrab = taskGrab
+        bindCellModelsToProjects()
+    }
+    
+    private func bindCellModelsToProjects() {
         ProjectEntity.projects
             .map { projects in
                 projects.map { project in
@@ -27,5 +33,27 @@ class ProjectsTableViewModel: ProjectsTableViewModeling {
                 self._cellModels.onNext(cellModels)
             }
             .addDisposableTo(disposeBag)
+    }
+    
+    func updateTasks() {
+        taskGrab.grabTasks()
+//            .flatMap { _ in
+//                ProjectEntity.projects
+//            }
+//            .map { projects in
+//                projects.map { project in
+//                    ProjectTableViewCellModel(project: project) as ProjectTableViewCellModeling
+//                }
+//            }
+            // grabTasks returns response on the background thread
+//            .observeOn(MainScheduler.instance)
+//            .subscribeNext { cellModels in
+//                self._cellModels.onNext(cellModels)
+//            }
+            .subscribeNext { response in
+                print("\(response.totalCount) tasks updated")
+            }
+            .addDisposableTo(disposeBag)
+        
     }
 }
