@@ -30,6 +30,7 @@ final class ProjectsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel?.updateTasks()
+        self.splitViewController?.delegate = self
     }
     
 //    override func viewWillAppear(animated: Bool) {
@@ -66,5 +67,20 @@ extension ProjectsTableViewController {
         }
         
         return cell
+    }
+}
+
+// MARK: UISplitViewControllerDelegate
+extension ProjectsTableViewController: UISplitViewControllerDelegate{
+    // check if secondary VC has a model, if so - show secondary VC, else show primary
+    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
+        
+        if let secondaryVC = secondaryViewController.contentViewController as? TasksTableViewController {
+            if secondaryVC.viewModel == nil {
+                return true
+            }
+        }
+        
+        return false
     }
 }
