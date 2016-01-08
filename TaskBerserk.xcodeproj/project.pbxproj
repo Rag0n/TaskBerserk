@@ -10,6 +10,7 @@
 		1F12FAC31C3AABB9000AC1A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12FAC21C3AABB9000AC1A3 /* AppDelegate.swift */; };
 		1F12FACA1C3AABB9000AC1A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F12FAC91C3AABB9000AC1A3 /* Assets.xcassets */; };
 		1F12FACD1C3AABB9000AC1A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F12FACB1C3AABB9000AC1A3 /* LaunchScreen.storyboard */; };
+		1F79B7B01C3FFF2600976A35 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F79B7AF1C3FFF2600976A35 /* UIViewController+extensions.swift */; };
 		1F8697711C3AAF4F00CB3FFE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8697671C3AAF4F00CB3FFE /* Alamofire.framework */; };
 		1F8697721C3AAF4F00CB3FFE /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8697681C3AAF4F00CB3FFE /* Cartography.framework */; };
 		1F8697731C3AAF4F00CB3FFE /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8697691C3AAF4F00CB3FFE /* Himotoki.framework */; };
@@ -125,6 +126,7 @@
 		1F12FAD91C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = TaskBerserkTests/Info.plist; sourceTree = "<group>"; };
 		1F12FADE1C3AABB9000AC1A3 /* TaskBerserkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskBerserkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F12FAE41C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F79B7AF1C3FFF2600976A35 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		1F8697671C3AAF4F00CB3FFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		1F8697681C3AAF4F00CB3FFE /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		1F8697691C3AAF4F00CB3FFE /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				1F8697AC1C3AB67000CB3FFE /* Model */,
 				1F8697AB1C3AB66900CB3FFE /* ViewModel */,
 				1F8697AA1C3AB66400CB3FFE /* View */,
+				1F79B7AE1C3FFF0D00976A35 /* Extensions */,
 				1F8697A91C3AB65300CB3FFE /* Supporting files */,
 			);
 			path = TaskBerserk;
@@ -275,6 +278,14 @@
 				1F8697BF1C3B00BD00CB3FFE /* TaskBerserkUITests-Bridging-Header.h */,
 			);
 			path = TaskBerserkUITests;
+			sourceTree = "<group>";
+		};
+		1F79B7AE1C3FFF0D00976A35 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1F79B7AF1C3FFF2600976A35 /* UIViewController+extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		1F8697A71C3AB52B00CB3FFE /* dSYM */ = {
@@ -625,6 +636,7 @@
 				1F8726B21C3BB14E00EEA569 /* Intheam.swift in Sources */,
 				1F8726CD1C3C2E1C00EEA569 /* TasksTableViewModel.swift in Sources */,
 				1F12FAC31C3AABB9000AC1A3 /* AppDelegate.swift in Sources */,
+				1F79B7B01C3FFF2600976A35 /* UIViewController+extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

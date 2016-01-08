@@ -127,6 +127,7 @@
                                 <connections>
                                     <outlet property="projectNameLabel" destination="YSt-Z8-oPK" id="Xbw-LW-mGi"/>
                                     <outlet property="taskCount" destination="Q4h-Xl-WvT" id="anR-Gv-gMD"/>
+                                    <segue destination="RrT-O9-4lB" kind="showDetail" identifier="ShowTasks" id="H5g-BY-0g6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -176,4 +177,7 @@
             <point key="canvasLocation" x="-139" y="-404"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="H5g-BY-0g6"/>
+    </inferredMetricsTieBreakers>
 </document>
