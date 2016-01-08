@@ -22,6 +22,7 @@ class ProjectEntity {
     // содержит все уникальные проекты с задачами
     static private var projectsSet = Set<ProjectEntity>() {
         didSet {
+//            print("Array: \(Array(projectsSet))")
             _cellModels.onNext(Array(projectsSet))
         }
     }
@@ -66,6 +67,8 @@ class ProjectEntity {
         self.uuid = NSUUID().UUIDString
     }
     
+    // TODO: не добавлять задачу, а проверять уникальность id
+    // если задача с таким номером в проекте уже есть, то надо обновить ее данные
     func addTask(task: TaskEntity) {
         tasks.append(task)
     }
