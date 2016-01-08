@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container.register(TasksTableViewModeling.self) { r in
             TasksTableViewModel(taskGrab: r.resolve(TaskGrabbing.self)!)
         }
-        container.register(ProjectsTableViewModeling.self) { _ in
-            ProjectsTableViewModel()
+        container.register(ProjectsTableViewModeling.self) { r in
+            ProjectsTableViewModel(taskGrab: r.resolve(TaskGrabbing.self)!)
         }
         
         // Views
