@@ -12,11 +12,16 @@ class TaskEntity {
     let description: String
     let id: String
     let priority: String?
-    private let projectName:String
-//    var project: ProjectEntity
-    lazy var project: ProjectEntity = {
-       return ProjectEntity.addTaskToProject(self, projectName: self.projectName)
-    }()
+    var projectName:String {
+        get {
+            return project!.name
+        }
+        
+        set {
+            setProject(newValue)
+        }
+    }
+    private(set) var project: ProjectEntity!
     let urgency: Double
     let status: String
     let tags: [String]?
@@ -39,6 +44,11 @@ class TaskEntity {
         self.tags = tags
         self.dueDate = dueDate
         self.projectName = projectName
+    }
+    
+    // Need this func because we can't use addTaskToProject during initialization
+    private func setProject(projectName: String) {
+        self.project = ProjectEntity.addTaskToProject(self, projectName: projectName)
     }
 }
 
