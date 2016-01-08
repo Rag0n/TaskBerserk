@@ -25,6 +25,16 @@ final class ProjectsTableViewController: UITableViewController {
             }.addDisposableTo(disposeBag)
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel?.updateTasks()
+    }
+    
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        viewModel?.updateTasks()
+//    }
 }
 
 // MARK: UITableViewDataSource
