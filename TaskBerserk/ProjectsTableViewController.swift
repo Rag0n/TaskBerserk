@@ -29,7 +29,7 @@ final class ProjectsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel?.updateTasks()
+//        viewModel?.updateTasks()
         self.splitViewController?.delegate = self
     }
     

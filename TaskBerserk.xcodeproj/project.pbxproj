@@ -10,6 +10,7 @@
 		1F12FAC31C3AABB9000AC1A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12FAC21C3AABB9000AC1A3 /* AppDelegate.swift */; };
 		1F12FACA1C3AABB9000AC1A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F12FAC91C3AABB9000AC1A3 /* Assets.xcassets */; };
 		1F12FACD1C3AABB9000AC1A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F12FACB1C3AABB9000AC1A3 /* LaunchScreen.storyboard */; };
+		1F78AC721C402D88006F17D2 /* ProjectTableViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78AC711C402D88006F17D2 /* ProjectTableViewCellSpec.swift */; };
 		1F79B7B01C3FFF2600976A35 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F79B7AF1C3FFF2600976A35 /* UIViewController+extensions.swift */; };
 		1F8697711C3AAF4F00CB3FFE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8697671C3AAF4F00CB3FFE /* Alamofire.framework */; };
 		1F8697721C3AAF4F00CB3FFE /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8697681C3AAF4F00CB3FFE /* Cartography.framework */; };
@@ -126,6 +127,7 @@
 		1F12FAD91C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = TaskBerserkTests/Info.plist; sourceTree = "<group>"; };
 		1F12FADE1C3AABB9000AC1A3 /* TaskBerserkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskBerserkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F12FAE41C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F78AC711C402D88006F17D2 /* ProjectTableViewCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCellSpec.swift; sourceTree = "<group>"; };
 		1F79B7AF1C3FFF2600976A35 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		1F8697671C3AAF4F00CB3FFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		1F8697681C3AAF4F00CB3FFE /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 				1F8726D61C3C56C900EEA569 /* TasksTableViewModelSpec.swift */,
 				1F8726D41C3C54D700EEA569 /* DummyResponse.swift */,
 				1F8726D81C3C5F2100EEA569 /* TaskTableViewCellSpec.swift */,
+				1F78AC711C402D88006F17D2 /* ProjectTableViewCellSpec.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 			files = (
 				1F8697B71C3AD64E00CB3FFE /* TaskEntitySpec.swift in Sources */,
 				1F8726D51C3C54D700EEA569 /* DummyResponse.swift in Sources */,
+				1F78AC721C402D88006F17D2 /* ProjectTableViewCellSpec.swift in Sources */,
 				1F8726D31C3C37DE00EEA569 /* AppDelegateSpec.swift in Sources */,
 				1F8726D71C3C56C900EEA569 /* TasksTableViewModelSpec.swift in Sources */,
 				1F8726BF1C3BD2FB00EEA569 /* TaskGrabSpec.swift in Sources */,
