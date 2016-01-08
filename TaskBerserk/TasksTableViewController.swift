@@ -11,7 +11,6 @@ import RxCocoa
 import RxSwift
 
 class TasksTableViewController: UITableViewController {
-    private var autoSearchStarted = false
     private let disposeBag = DisposeBag()
     private var cells: [TaskTableViewCellModeling]?
     
@@ -19,23 +18,12 @@ class TasksTableViewController: UITableViewController {
         static let taskCellIdentifier = "TaskTableViewCell"
     }
     
-    var project: ProjectEntity? // TODO
-    
     var viewModel: TasksTableViewModeling? {
         didSet {
             viewModel?.cellModels.bindNext { cellModels in
                 self.cells = cellModels
                 self.tableView.reloadData()
             }.addDisposableTo(disposeBag)
-        }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if !autoSearchStarted {
-            autoSearchStarted = true
-            viewModel?.receiveTasks()
         }
     }
 }

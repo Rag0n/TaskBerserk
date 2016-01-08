@@ -10,5 +10,4 @@ import RxSwift
 
 protocol TasksTableViewModeling {
     var cellModels: Observable<[TaskTableViewCellModeling]> { get }
-    func receiveTasks()
 }
