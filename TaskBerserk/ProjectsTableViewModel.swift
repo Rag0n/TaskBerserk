@@ -5,7 +5,7 @@
 //  Created by Александр on 07.01.16.
 //  Copyright © 2016 Alexander Guschin. All rights reserved.
 //
-
+import Foundation
 import RxSwift
 
 class ProjectsTableViewModel: ProjectsTableViewModeling {
@@ -55,5 +55,10 @@ class ProjectsTableViewModel: ProjectsTableViewModeling {
             }
             .addDisposableTo(disposeBag)
         
+    }
+    
+    func viewModelForIndexPath(indexPath: NSIndexPath) -> TasksTableViewModeling {
+        let project = ProjectEntity.projectsArray[indexPath.row]
+        return TasksTableViewModel(project: project)
     }
 }
