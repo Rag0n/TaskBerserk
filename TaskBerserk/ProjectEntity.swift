@@ -13,29 +13,27 @@ class ProjectEntity {
     private let uuid: String
     var name: String
     var tasks: [TaskEntity] {
-        // should update all array of projects if some tasks were added
         didSet {
-            ProjectEntity._cellModels.onNext(Array(ProjectEntity.projectsSet))
+            // should update all array of projects if some tasks were added
+            ProjectEntity._projects.onNext(Array(ProjectEntity.projectsSet))
         }
     }
     
     // содержит все уникальные проекты с задачами
     static private var projectsSet = Set<ProjectEntity>() {
         didSet {
-//            print("Array: \(Array(projectsSet))")
-            _cellModels.onNext(Array(projectsSet))
+            _projects.onNext(Array(projectsSet))
         }
     }
     
-//    static private var projectsArray: Array<ProjectEntity> = Array(ProjectEntity.projectsSet) {
-//        didSet {
-//            _cellModels
-//        }
-//    }
+    // used in segue to show project tasks
+    static var projectsArray: Array<ProjectEntity> {
+        return Array(ProjectEntity.projectsSet)
+    }
     
-    static private let _cellModels = BehaviorSubject<[ProjectEntity]>(value: [])
+    static private let _projects = BehaviorSubject<[ProjectEntity]>(value: [])
     static var projects: Observable<[ProjectEntity]> {
-        return _cellModels.asObservable()
+        return _projects.asObservable()
     }
     
     /*
