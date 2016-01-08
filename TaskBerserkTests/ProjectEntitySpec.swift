@@ -9,10 +9,12 @@
 import Quick
 import Nimble
 import Himotoki
+import RxSwift
 @testable import TaskBerserk
 
 class ProjectEntitySpec: QuickSpec {
     override func spec() {
+        let disposeBag = DisposeBag()
         it("adds task to existing project") {
             var newTaskJSON = taskJSON
             newTaskJSON["project"] = "Existing project"
@@ -28,6 +30,17 @@ class ProjectEntitySpec: QuickSpec {
             let newTask: TaskEntity = try! decode(taskJSON)
             
             expect(newTask.project?.name) == "testproject"
+        }
+        
+        it("updates static projects if new task was added") {
+            var projectsUpdated = false
+            ProjectEntity.projects.subscribeNext { _ in
+                projectsUpdated = true
+            }.addDisposableTo(disposeBag)
+            
+            let _: TaskEntity = try! decode(taskJSON)
+            
+            expect(projectsUpdated).toEventually(beTrue())
         }
     }
 }
