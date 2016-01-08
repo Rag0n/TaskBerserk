@@ -29,15 +29,10 @@ final class ProjectsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        viewModel?.updateTasks()
         self.splitViewController?.delegate = self
-    }
-    
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
 //        viewModel?.updateTasks()
-//    }
-    
+    }
+        
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.tasksTableViewSegueIdentifier {
             guard let vc = segue.destinationViewController.contentViewController as? TasksTableViewController else {
