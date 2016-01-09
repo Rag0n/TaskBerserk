@@ -18,9 +18,9 @@ class TasksTableViewModel: TasksTableViewModeling {
         return _cellModels.asObservable()
     }
     
-    init(project: ProjectEntity) {
+    init(project: ProjectEntity?) {
         self.project = project
-        updateCellModels()
+//        updateCellModels()
     }
     
     // MARK: Private

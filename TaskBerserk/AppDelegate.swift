@@ -29,9 +29,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return viewModel
         }
         
+        // temporary
+        container.register(TasksTableViewModeling.self) { r in
+            let viewModel = TasksTableViewModel(project: nil)
+            viewModel.managedObjectContext = createMainContext()
+            return viewModel
+        }
+        
         // Views
         container.registerForStoryboard(ProjectsTableViewController.self) { r, c in
             c.viewModel = r.resolve(ProjectsTableViewModeling.self)!
+        }
+        
+        // temporary
+        container.registerForStoryboard(TasksTableViewController.self) { r, c in
+            c.viewModel = r.resolve(TasksTableViewModeling.self)!
         }
         
         
