@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import RxSwift
 
 // encapsulates FetchedResultsController delegates methods
 class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFetchedResultsControllerDelegate, DataProvider {
@@ -69,9 +70,13 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFe
         }
     }
     
+    
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
-        delegate.dataProviderDidUpdate(updates)
+        updatesSignal.onNext(updates)
+//        delegate.dataProviderDidUpdate(updates)
     }
+    
+    var updatesSignal = BehaviorSubject<[DataProviderUpdate<Object>]>(value: [])
     
     // MARK: Private
     private let fetchedResultsController: NSFetchedResultsController

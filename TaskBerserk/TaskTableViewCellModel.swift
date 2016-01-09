@@ -13,8 +13,8 @@ class TaskTableViewCellModel: TaskTableViewCellModeling {
     let status: String
     let tagsText: String
     
-    init(task: TaskEntity) {
-        self.description = task.description
+    init(task: Task) {
+        self.description = task.desc
         self.status = task.status
         self.tagsText = task.tags?.joinWithSeparator(", ") ?? ""
     }
