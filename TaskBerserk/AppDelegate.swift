@@ -8,11 +8,13 @@
 
 import UIKit
 import Swinject
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let managedObjectContext = createMainContext()
     let container = Container() { container in
         // Models
         container.register(Networking.self) { _ in Network() }
