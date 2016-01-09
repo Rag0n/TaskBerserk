@@ -428,8 +428,8 @@
 			children = (
 				1FED43A31C4112270085A5A2 /* TaskBerserk.xcdatamodeld */,
 				1FED43A61C41159D0085A5A2 /* Task.swift */,
-				1FED43A81C4115DD0085A5A2 /* ManagedObject.swift */,
 				1FED43AA1C4119690085A5A2 /* CoreDataStack.swift */,
+				1FED43A81C4115DD0085A5A2 /* ManagedObject.swift */,
 				1FED43AE1C411FF10085A5A2 /* Protocols */,
 			);
 			name = CoreData;

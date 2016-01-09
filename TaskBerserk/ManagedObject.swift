@@ -12,3 +12,20 @@ import CoreData
 class ManagedObject: NSManagedObject {
     
 }
+
+protocol ManagedObjectType {
+    static var entityName: String { get }
+    static var defaultSortDescriptors: [NSSortDescriptor] { get }
+}
+
+extension ManagedObjectType {
+    static var defaultSortDescriptors: [NSSortDescriptor] {
+        return []
+    }
+    
+    static var sortedFetchRequest: NSFetchRequest {
+        let request = NSFetchRequest(entityName: entityName)
+        request.sortDescriptors = defaultSortDescriptors
+        return request
+    }
+}
