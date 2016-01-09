@@ -19,3 +19,9 @@ class TaskTableViewCellModel: TaskTableViewCellModeling {
         self.tagsText = task.tags?.joinWithSeparator(", ") ?? ""
     }
 }
+
+extension TaskTableViewCellModel: ConfigurableCell {
+    func configureForObject(object: Task) {
+        print("configure for object")
+    }
+}

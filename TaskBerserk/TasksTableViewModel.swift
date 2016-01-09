@@ -10,6 +10,8 @@ import Foundation
 import RxSwift
 import CoreData
 
+import UIKit
+
 class TasksTableViewModel: TasksTableViewModeling {
 
     var managedObjectContext: NSManagedObjectContext!
@@ -21,7 +23,25 @@ class TasksTableViewModel: TasksTableViewModeling {
     init(project: ProjectEntity?) {
         self.project = project
 //        updateCellModels()
+        setupDataProvider()
     }
+    
+    private typealias Data = FetchedResultsDataProvider<TasksTableViewModel>
+//    private var dataSource: TableViewDataSource<TasksTableViewModel, Data, TaskTableViewCellModel>!
+    
+    func setupDataProvider() {
+        let request = Task.sortedFetchRequest
+        request.returnsObjectsAsFaults = false
+        request.fetchBatchSize = 20
+        let frc = NSFetchedResultsController(fetchRequest: request,
+            managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        
+        let dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
+        
+        // TODO: Fix
+//        let dataSource = TableViewDataSource(tableView: UITableView(), dataProvider: dataProvider, delegate: self)
+    }
+    
     
     // MARK: Private
     private let disposeBag = DisposeBag()
@@ -36,5 +56,18 @@ class TasksTableViewModel: TasksTableViewModeling {
         if let updatedCellModels = updatedCellModels {
             _cellModels.onNext(updatedCellModels)    
         }
+    }
+}
+
+extension TasksTableViewModel: DataProviderDelegate {
+    func dataProviderDidUpdate(updates: [DataProviderUpdate<Task>]?) {
+//        dataSource.processUpdates(updates)
+        print("data provider did update")
+    }
+}
+
+extension TasksTableViewModel: DataSourceDelegate {
+    func cellIdentifierForObject(object: Task) -> String {
+        return "TaskTableViewCell"
     }
 }
