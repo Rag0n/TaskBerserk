@@ -18,3 +18,15 @@ final class Task: ManagedObject {
     @NSManaged private(set) var tags: [String]?
     @NSManaged private(set) var dueDate: NSDate?
 }
+
+// MARK: ManagedObjectType
+extension Task: ManagedObjectType {
+    static var entityName: String {
+        return "Task"
+    }
+    
+    // default sort by urgency
+    static var defaultSortDescriptors: [NSSortDescriptor] {
+        return [NSSortDescriptor(key: "urgency", ascending: false)]
+    }
+}
