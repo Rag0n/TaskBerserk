@@ -14,8 +14,9 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-//    let managedObjectContext = createMainContext()
+    let managedObjectContext = createMainContext()
     let container = Container() { container in
+        let managedObjectContext = createMainContext()
         // Models
         container.register(Networking.self) { _ in Network() }
         container.register(TaskGrabbing.self) { r in
@@ -31,8 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // temporary
         container.register(TasksTableViewModeling.self) { r in
-            let viewModel = TasksTableViewModel(project: nil)
-            viewModel.managedObjectContext = createMainContext()
+            let viewModel = TasksTableViewModel(project: nil, managedObject: managedObjectContext)
             return viewModel
         }
         

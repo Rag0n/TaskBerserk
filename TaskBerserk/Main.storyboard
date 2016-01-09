@@ -8,7 +8,7 @@
         <!--Tasks-->
         <scene sceneID="7xv-Fo-7Wm">
             <objects>
-                <tableViewController storyboardIdentifier="TasksTableViewController" id="a3r-1i-IBz" customClass="TasksTableViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TasksTableViewController2" id="a3r-1i-IBz" customClass="TasksTableViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="Va8-VK-3rw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,7 +179,7 @@
         <!--Tasks-->
         <scene sceneID="yed-LI-M37">
             <objects>
-                <tableViewController storyboardIdentifier="TasksTableViewController2" id="Ssd-Ik-bAN" customClass="TasksTableViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TasksTableViewController" id="Ssd-Ik-bAN" customClass="TasksTableViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qgp-yg-wsT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

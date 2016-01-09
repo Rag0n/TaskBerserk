@@ -41,9 +41,9 @@ class TasksTableViewModel: TasksTableViewModeling {
         return TaskTableViewCellModel(task: object)
     }
     
-    init(project: ProjectEntity?) {
+    init(project: ProjectEntity?, managedObject: NSManagedObjectContext?) {
         self.project = project
-        
+        self.managedObjectContext = managedObject!
 //        updateCellModels()
         setupDataProvider()
     }
@@ -65,7 +65,7 @@ class TasksTableViewModel: TasksTableViewModeling {
             .map { updates in
                 var transformedUpdate: [DataProviderUpdate<TaskTableViewCellModeling>]
                 
-               transformedUpdate = updates.map { update in
+                transformedUpdate = updates.map { update in
                     switch update {
                     case .Insert(let indexPath):
                         return (.Insert(indexPath))
