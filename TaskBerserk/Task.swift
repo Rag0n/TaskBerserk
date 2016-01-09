@@ -17,6 +17,19 @@ final class Task: ManagedObject {
     @NSManaged private(set) var priority: String?
     @NSManaged private(set) var tags: [String]?
     @NSManaged private(set) var dueDate: NSDate?
+    
+    static func insertIntoContext(moc: NSManagedObjectContext, taskEntity: TaskEntity) -> Task {
+        let task: Task = moc.insertObject()
+        task.id = taskEntity.id
+        task.desc = taskEntity.description
+        task.status = taskEntity.status
+        task.urgency = taskEntity.urgency
+        task.priority = taskEntity.priority
+        task.tags = taskEntity.tags
+        // TODO: Реализовать NSDateFormatter
+//        task.dueDate = 
+        return task
+    }
 }
 
 // MARK: ManagedObjectType
