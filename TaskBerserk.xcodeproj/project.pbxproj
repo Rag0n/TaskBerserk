@@ -67,6 +67,7 @@
 		1FED43A91C4115DD0085A5A2 /* ManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED43A81C4115DD0085A5A2 /* ManagedObject.swift */; };
 		1FED43AB1C4119690085A5A2 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED43AA1C4119690085A5A2 /* CoreDataStack.swift */; };
 		1FED43AD1C4119FD0085A5A2 /* NSURL+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED43AC1C4119FD0085A5A2 /* NSURL+extensions.swift */; };
+		1FED43B01C41200F0085A5A2 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED43AF1C41200F0085A5A2 /* ManagedObjectContextSettable.swift */; };
 		1FFDFE241C3E687C00DA25DD /* TasksTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE231C3E687C00DA25DD /* TasksTableViewControllerSpec.swift */; };
 		1FFDFE501C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE4F1C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift */; };
 		1FFDFE521C3ED8DD00DA25DD /* ProjectsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE511C3ED8DD00DA25DD /* ProjectsTableViewModel.swift */; };
@@ -194,6 +195,7 @@
 		1FED43A81C4115DD0085A5A2 /* ManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObject.swift; sourceTree = "<group>"; };
 		1FED43AA1C4119690085A5A2 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1FED43AC1C4119FD0085A5A2 /* NSURL+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+extensions.swift"; sourceTree = "<group>"; };
+		1FED43AF1C41200F0085A5A2 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
 		1FFDFE231C3E687C00DA25DD /* TasksTableViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewControllerSpec.swift; sourceTree = "<group>"; };
 		1FFDFE4F1C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewModeling.swift; sourceTree = "<group>"; };
 		1FFDFE511C3ED8DD00DA25DD /* ProjectsTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewModel.swift; sourceTree = "<group>"; };
@@ -428,8 +430,17 @@
 				1FED43A61C41159D0085A5A2 /* Task.swift */,
 				1FED43A81C4115DD0085A5A2 /* ManagedObject.swift */,
 				1FED43AA1C4119690085A5A2 /* CoreDataStack.swift */,
+				1FED43AE1C411FF10085A5A2 /* Protocols */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		1FED43AE1C411FF10085A5A2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1FED43AF1C41200F0085A5A2 /* ManagedObjectContextSettable.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		1FFDFE221C3E686300DA25DD /* Views */ = {
@@ -655,6 +666,7 @@
 				1FFDFE501C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift in Sources */,
 				1F8726B81C3BB87C00EEA569 /* TaskGrab.swift in Sources */,
 				1F8726BA1C3BBCB700EEA569 /* ResponseEntity.swift in Sources */,
+				1FED43B01C41200F0085A5A2 /* ManagedObjectContextSettable.swift in Sources */,
 				1FED43A71C41159D0085A5A2 /* Task.swift in Sources */,
 				1F8697B21C3ACCA000CB3FFE /* ProjectEntity.swift in Sources */,
 				1F8726CB1C3C2E0C00EEA569 /* TasksTableViewModeling.swift in Sources */,

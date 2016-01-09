@@ -14,7 +14,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let managedObjectContext = createMainContext()
+//    let managedObjectContext = createMainContext()
     let container = Container() { container in
         // Models
         container.register(Networking.self) { _ in Network() }
@@ -24,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // ViewModels
         container.register(ProjectsTableViewModeling.self) { r in
-            ProjectsTableViewModel(taskGrab: r.resolve(TaskGrabbing.self)!)
+            let viewModel = ProjectsTableViewModel(taskGrab: r.resolve(TaskGrabbing.self)!)
+            viewModel.managedObjectContext = createMainContext()
+            return viewModel
         }
         
         // Views
@@ -34,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
     }
+    
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
