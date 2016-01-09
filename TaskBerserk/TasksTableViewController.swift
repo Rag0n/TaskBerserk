@@ -13,7 +13,6 @@ import RxSwift
 class TasksTableViewController: UITableViewController {
     private let disposeBag = DisposeBag()
     
-    
     private struct Constants {
         static let taskCellIdentifier = "TaskTableViewCell"
     }
@@ -57,9 +56,7 @@ class TasksTableViewController: UITableViewController {
         let addTaskAction = UIAlertAction(title: "Add task", style: .Default) { _ in
             let textField = ac.textFields![0]
             let newTask = TaskEntity(description: textField.text!, id: NSUUID().UUIDString, projectName: "Default", urgency: 0, status: "pending")
-            self.viewModel.managedObjectContext.performChanges {
-                Task.insertIntoContext(self.viewModel.managedObjectContext, taskEntity: newTask)
-            }
+            self.viewModel.addNewTask(newTask)
         }
         
         ac.addAction(addTaskAction)
