@@ -18,4 +18,21 @@ extension NSManagedObjectContext {
         
         return object
     }
+    
+    func saveOrRollBack() -> Bool {
+        do {
+            try save()
+            return true
+        } catch {
+            rollback()
+            return false
+        }
+    }
+    
+    func performChanges(block: () -> ()) {
+        performBlock {
+            block()
+            self.saveOrRollBack()
+        }
+    }
 }
