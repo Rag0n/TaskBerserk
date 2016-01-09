@@ -31,6 +31,12 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
         return TaskTableViewCellModel(task: object)
     }
     
+    func addNewTask(task: TaskEntity) {
+        managedObjectContext.performChanges {
+            Task.insertIntoContext(self.managedObjectContext, taskEntity: task)
+        }
+    }
+    
     init(project: ProjectEntity?, managedObject: NSManagedObjectContext?) {
 //        self.project = project
         self.managedObjectContext = managedObject!
