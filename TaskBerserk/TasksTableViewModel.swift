@@ -12,14 +12,13 @@ import CoreData
 
 import UIKit
 
-class TasksTableViewModel: TasksTableViewModeling {
+class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
     
     typealias Object = Task
 
     var managedObjectContext: NSManagedObjectContext!
-    
-    var cellModels: Observable<[TaskTableViewCellModeling]> {
-        return _cellModels.asObservable()
+    var updates: Observable<[DataProviderUpdate<TaskTableViewCellModeling>]> {
+        return _updates.asObservable()
     }
     
     
@@ -27,22 +26,13 @@ class TasksTableViewModel: TasksTableViewModeling {
         return dataProvider.numberOfItemsInSection(section)
     }
 
-    
-    var updates: Observable<[DataProviderUpdate<TaskTableViewCellModeling>]> {
-        return _updates.asObservable()
-    }
-    private let _updates = BehaviorSubject<[DataProviderUpdate<TaskTableViewCellModeling>]>(value: [])
-//    func objectAtIndexPath(indexPath: NSIndexPath) -> Task {
-//        return dataProvider.objectAtIndexPath(indexPath)
-//    }
-//    
     func viewModelForIndexPath(indexPath: NSIndexPath) -> TaskTableViewCellModeling {
         let object = dataProvider.objectAtIndexPath(indexPath)
         return TaskTableViewCellModel(task: object)
     }
     
     init(project: ProjectEntity?, managedObject: NSManagedObjectContext?) {
-        self.project = project
+//        self.project = project
         self.managedObjectContext = managedObject!
 //        updateCellModels()
         setupDataProvider()
@@ -96,26 +86,10 @@ class TasksTableViewModel: TasksTableViewModeling {
     // MARK: Private
     private var dataProvider: FetchedResultsDataProvider<TasksTableViewModel>!
     private let disposeBag = DisposeBag()
-    private var project: ProjectEntity?
-    private let _cellModels = BehaviorSubject<[TaskTableViewCellModeling]>(value: [])
+    private let _updates = BehaviorSubject<[DataProviderUpdate<TaskTableViewCellModeling>]>(value: [])
     
-//    private func updateCellModels() {
-//        let updatedCellModels = project?.tasks.map { task in
-//            TaskTableViewCellModel(task: task) as TaskTableViewCellModeling
-//        }
-//        
-//        if let updatedCellModels = updatedCellModels {
-//            _cellModels.onNext(updatedCellModels)    
-//        }
-//    }
 }
 
-extension TasksTableViewModel: DataProviderDelegate {
-    func dataProviderDidUpdate(updates: [DataProviderUpdate<Task>]?) {
-//        dataSource.processUpdates(updates)
-        print("data provider did update")
-    }
-}
 
 extension TasksTableViewModel: DataSourceDelegate {
     func cellIdentifierForObject(object: Task) -> String {

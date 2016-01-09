@@ -16,7 +16,6 @@ protocol DataProvider: class {
 
 protocol DataProviderDelegate: class {
     typealias Object
-    func dataProviderDidUpdate(updates: [DataProviderUpdate<Object>]?)
 }
 
 enum DataProviderUpdate<Object> {

@@ -10,9 +10,8 @@ import RxSwift
 import Foundation
 
 protocol TasksTableViewModeling: ManagedObjectContextSettable {
-    var cellModels: Observable<[TaskTableViewCellModeling]> { get }
+    var updates: Observable<[DataProviderUpdate<TaskTableViewCellModeling>]> { get }
     
     func numberOfItemsInSection(section: Int) -> Int
     func viewModelForIndexPath(indexPath: NSIndexPath) -> TaskTableViewCellModeling
-    var updates: Observable<[DataProviderUpdate<TaskTableViewCellModeling>]> { get }
 }

@@ -14,6 +14,7 @@ import RxSwift
 class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFetchedResultsControllerDelegate, DataProvider {
     
     typealias Object = Delegate.Object
+    var updatesSignal = BehaviorSubject<[DataProviderUpdate<Object>]>(value: [])
     
     init(fetchedResultsController: NSFetchedResultsController, delegate: Delegate) {
         self.fetchedResultsController = fetchedResultsController
@@ -75,8 +76,6 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFe
         updatesSignal.onNext(updates)
 //        delegate.dataProviderDidUpdate(updates)
     }
-    
-    var updatesSignal = BehaviorSubject<[DataProviderUpdate<Object>]>(value: [])
     
     // MARK: Private
     private let fetchedResultsController: NSFetchedResultsController
