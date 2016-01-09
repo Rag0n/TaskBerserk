@@ -7,6 +7,7 @@
 //
 import Foundation
 import RxSwift
+import CoreData
 
 class ProjectsTableViewModel: ProjectsTableViewModeling {
     private let taskGrab: TaskGrabbing
@@ -16,6 +17,8 @@ class ProjectsTableViewModel: ProjectsTableViewModeling {
     var cellModels: Observable<[ProjectTableViewCellModeling]> {
         return _cellModels.asObservable()
     }
+    
+    var managedObjectContext: NSManagedObjectContext!
     
     init(taskGrab: TaskGrabbing) {
         self.taskGrab = taskGrab

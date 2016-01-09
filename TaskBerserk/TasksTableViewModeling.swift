@@ -8,6 +8,6 @@
 
 import RxSwift
 
-protocol TasksTableViewModeling {
+protocol TasksTableViewModeling: ManagedObjectContextSettable {
     var cellModels: Observable<[TaskTableViewCellModeling]> { get }
 }

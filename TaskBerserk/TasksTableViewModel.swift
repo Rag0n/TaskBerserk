@@ -8,8 +8,11 @@
 
 import Foundation
 import RxSwift
+import CoreData
 
 class TasksTableViewModel: TasksTableViewModeling {
+
+    var managedObjectContext: NSManagedObjectContext!
     
     var cellModels: Observable<[TaskTableViewCellModeling]> {
         return _cellModels.asObservable()

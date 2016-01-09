@@ -9,7 +9,7 @@
 import RxSwift
 import Foundation
 
-protocol ProjectsTableViewModeling {
+protocol ProjectsTableViewModeling: ManagedObjectContextSettable {
     var cellModels: Observable<[ProjectTableViewCellModeling]> { get }
     func updateTasks()
     func viewModelForIndexPath(indexPath: NSIndexPath) -> TasksTableViewModeling
