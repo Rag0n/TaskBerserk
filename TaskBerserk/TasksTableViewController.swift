@@ -47,6 +47,13 @@ class TasksTableViewController: UITableViewController {
         }
         tableView.endUpdates()
     }
+    
+    @IBAction func addNewTask(sender: UIBarButtonItem) {
+        let newTask = TaskEntity(description: "new task2", id: "1", projectName: "project name", urgency: 3.31, status: "waiting")
+        viewModel.managedObjectContext.performChanges {
+            Task.insertIntoContext(self.viewModel.managedObjectContext, taskEntity: newTask)
+        }
+    }
 }
 
 // MARK: UITableViewDataSource

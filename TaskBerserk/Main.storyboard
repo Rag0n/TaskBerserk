@@ -240,7 +240,13 @@
                             <outlet property="delegate" destination="Ssd-Ik-bAN" id="uxg-Mi-B34"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tasks" id="rik-jO-nAb"/>
+                    <navigationItem key="navigationItem" title="Tasks" id="rik-jO-nAb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cxj-nk-OPa">
+                            <connections>
+                                <action selector="addNewTask:" destination="Ssd-Ik-bAN" id="gKC-7z-bXg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGi-32-cHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
