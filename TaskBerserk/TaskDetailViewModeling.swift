@@ -15,4 +15,6 @@ protocol TaskDetailViewModeling {
     var tagsText: Observable<String> { get }
     var urgency: Observable<String> { get }
     var priority: Observable<String> { get }
+    
+    func deleteTask()
 }

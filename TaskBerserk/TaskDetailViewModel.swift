@@ -42,6 +42,10 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         _priority.onNext(task.priority ?? "No priority")
     }
     
+    func deleteTask() {
+        print("delete")
+    }
+    
     // MARK: Private
     
     private let _desc = BehaviorSubject<String>(value: "")
