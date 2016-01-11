@@ -32,8 +32,8 @@ extension ManagedObjectType {
 
 extension ManagedObjectType where Self: ManagedObject {
     
+    /// returns existing object(object can be in context or in db) or creates and configures a new on
     static func findOrCreateInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate, configure: Self -> ()) -> Self {
-        // returns existing object(object can be in context or in db)
         guard let obj = findOrFetchInContext(moc, matchingPredicate: predicate) else {
             // if doesnt exitst, then create and configure
             let newObject: Self = moc.insertObject()
