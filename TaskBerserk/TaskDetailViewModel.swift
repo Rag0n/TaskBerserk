@@ -53,6 +53,11 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         task.managedObjectContext?.performChanges {
             self.task.managedObjectContext?.deleteObject(self.task)
         }
+        // TODO: Implement notification if deletion came in via network
+        /*
+            We can implement it with managed object observer
+            or fetched result controller
+        */
         _popViewController.onNext(true)
     }
     

@@ -254,7 +254,7 @@
             </objects>
             <point key="canvasLocation" x="-85" y="-1099"/>
         </scene>
-        <!--Task Detail View Controller-->
+        <!--Detail-->
         <scene sceneID="BOk-p5-wom">
             <objects>
                 <viewController storyboardIdentifier="TaskDetailViewController" id="57V-Yk-Ntu" customClass="TaskDetailViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
@@ -277,7 +277,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="we6-P0-AYZ">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="we6-P0-AYZ">
                                 <rect key="frame" x="20" y="113" width="560" height="181"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n8-nT-rlN">
@@ -342,7 +342,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nj-YL-Wfp">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nj-YL-Wfp">
                                         <rect key="frame" x="0.0" y="151" width="45" height="30"/>
                                         <state key="normal" title="Delete">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -361,6 +361,7 @@
                             <constraint firstItem="we6-P0-AYZ" firstAttribute="top" secondItem="vN5-qi-591" secondAttribute="bottom" constant="16" id="lJw-rD-NfN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail" id="grw-af-XKM"/>
                     <connections>
                         <outlet property="addTagButton" destination="Uq3-9x-LGh" id="fVD-OJ-SmB"/>
                         <outlet property="deleteButton" destination="9Nj-YL-Wfp" id="Mig-6F-3L7"/>
