@@ -57,7 +57,7 @@ extension ManagedObjectType where Self: ManagedObject {
         return obj
     }
     
-    /// executes a fetch request
+    /// executes a fetch request with configuration block
     static func fetchInContext(context: NSManagedObjectContext, @noescape configurationBlock: NSFetchRequest -> () = { _ in }) -> [Self] {
         let request = NSFetchRequest(entityName: Self.entityName)
         configurationBlock(request)
@@ -65,6 +65,15 @@ extension ManagedObjectType where Self: ManagedObject {
             fatalError("Fetched objects have wrong type")
         }
         return result
+    }
+    
+    /// iterates over objects in context(memory) until finds required one
+    static func materializedObjectInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate) -> Self? {
+        for obj in moc.registeredObjects where !obj.fault {
+            guard let res = obj as? Self where predicate.evaluateWithObject(res) else { continue }
+            return res
+        }
+        return nil
     }
     
     static func countInContext(context: NSManagedObjectContext, @noescape configurationBlock: NSFetchRequest -> () = { _ in }) -> Int {
@@ -77,14 +86,4 @@ extension ManagedObjectType where Self: ManagedObject {
         }
         return result
     }
-    
-    /// searches object in context(memory)
-    static func materializedObjectInContext(moc: NSManagedObjectContext, matchingPredicate predicate: NSPredicate) -> Self? {
-        for obj in moc.registeredObjects where !obj.fault {
-            guard let res = obj as? Self where predicate.evaluateWithObject(res) else { continue }
-            return res
-        }
-        return nil
-    }
-    
 }
