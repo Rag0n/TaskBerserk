@@ -277,8 +277,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="we6-P0-AYZ">
-                                <rect key="frame" x="20" y="113" width="560" height="141"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="we6-P0-AYZ">
+                                <rect key="frame" x="20" y="113" width="560" height="181"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n8-nT-rlN">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="21"/>
@@ -309,9 +309,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwU-QA-fHo">
                                                 <rect key="frame" x="64" y="0.0" width="32" height="30"/>
                                                 <state key="normal" title="High"/>
-                                                <connections>
-                                                    <action selector="priorityButtonTapped:" destination="57V-Yk-Ntu" eventType="touchUpInside" id="vrM-yg-2q0"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -327,9 +324,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-LF-oHz">
                                                 <rect key="frame" x="59" y="0.0" width="56" height="30"/>
                                                 <state key="normal" title="Pending"/>
-                                                <connections>
-                                                    <action selector="statusButtonTapped:" destination="57V-Yk-Ntu" eventType="touchUpInside" id="mfN-5W-YOv"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -345,12 +339,15 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uq3-9x-LGh">
                                                 <rect key="frame" x="130" y="0.0" width="54" height="30"/>
                                                 <state key="normal" title="Add tag"/>
-                                                <connections>
-                                                    <action selector="addTagButtonTapped:" destination="57V-Yk-Ntu" eventType="touchUpInside" id="Le5-ei-ztz"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nj-YL-Wfp">
+                                        <rect key="frame" x="0.0" y="151" width="45" height="30"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -365,6 +362,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addTagButton" destination="Uq3-9x-LGh" id="fVD-OJ-SmB"/>
+                        <outlet property="deleteButton" destination="9Nj-YL-Wfp" id="Mig-6F-3L7"/>
                         <outlet property="descriptionLabel" destination="gpa-Sd-Org" id="3kY-6U-0mY"/>
                         <outlet property="priorityButton" destination="fwU-QA-fHo" id="b6e-66-QQj"/>
                         <outlet property="statusButton" destination="ElY-LF-oHz" id="nbb-Q5-xmB"/>

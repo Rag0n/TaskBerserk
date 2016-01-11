@@ -333,6 +333,15 @@
 			name = Common;
 			sourceTree = "<group>";
 		};
+		1F70EE981C43F3F1008AC4F2 /* TaskDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				1F70EE8F1C43B34A008AC4F2 /* TaskDetailViewModeling.swift */,
+				1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */,
+			);
+			name = TaskDetailView;
+			sourceTree = "<group>";
+		};
 		1F74C6FC1C41933C001F812B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,8 +424,7 @@
 			children = (
 				1FFDFE4E1C3ED61100DA25DD /* ProjectsTableView */,
 				1FFDFE4D1C3ED60300DA25DD /* TasksTableView */,
-				1F70EE8F1C43B34A008AC4F2 /* TaskDetailViewModeling.swift */,
-				1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */,
+				1F70EE981C43F3F1008AC4F2 /* TaskDetailView */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
