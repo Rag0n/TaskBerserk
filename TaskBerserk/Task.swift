@@ -27,8 +27,8 @@ final class Task: ManagedObject {
         task.status = taskEntity.status
         task.urgency = taskEntity.urgency
         task.priority = taskEntity.priority
+        task.project = Project.findOrCreateProject(taskEntity.projectName ?? "default", inContext: moc)
         // TODO: Реализовать NSDateFormatter
-        // TODO: Реализовать конвертирование проекта из taskEntity в Project
         // TODO: Реализовать конвертирование тэгов из taskEntity в Tags
         // TODO: Реализовать конвертирование dueDate из taskEntity
         return task
