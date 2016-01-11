@@ -31,10 +31,17 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     }
     
     var priority: Observable<String> {
-        return _priority
+        return _priority.asObservable()
+    }
+    
+    // send after task deleting
+    var popViewController: Observable<Bool> {
+        return _popViewController.asObservable()
     }
     
     init(task: Task) {
+        self.task = task
+        
         _desc.onNext(task.desc)
         _status.onNext(task.status)
         _tagsText.onNext(task.tags?.joinWithSeparator(", ") ?? "")
@@ -43,14 +50,20 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     }
     
     func deleteTask() {
-        print("delete")
+        task.managedObjectContext?.performChanges {
+            self.task.managedObjectContext?.deleteObject(self.task)
+        }
+        _popViewController.onNext(true)
     }
     
     // MARK: Private
+    
+    private let task: Task
     
     private let _desc = BehaviorSubject<String>(value: "")
     private let _status = BehaviorSubject<String>(value: "")
     private let _tagsText = BehaviorSubject<String>(value: "")
     private let _urgency = BehaviorSubject<String>(value: "")
     private let _priority = BehaviorSubject<String>(value: "")
+    private let _popViewController = BehaviorSubject<Bool>(value: false)
 }
