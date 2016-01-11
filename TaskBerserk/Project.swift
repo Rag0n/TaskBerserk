@@ -22,6 +22,10 @@ final class Project: ManagedObject {
         }
         return project
     }
+    
+    override var description: String {
+        return "\(name)"
+    }
 }
 
 // MARK: ManagedObjectType

@@ -32,6 +32,10 @@ final class Tag: ManagedObject {
         }
         return tag
     }
+    
+    override var description: String {
+        return "\(name)"
+    }
 }
 
 // MARK: ManagedObjectType
