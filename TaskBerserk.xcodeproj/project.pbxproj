@@ -14,6 +14,7 @@
 		1F70EE921C43B36C008AC4F2 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */; };
 		1F70EE961C43B6AC008AC4F2 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */; };
 		1F70EE9C1C440D41008AC4F2 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE9B1C440D41008AC4F2 /* Project.swift */; };
+		1F70EE9E1C441779008AC4F2 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE9D1C441779008AC4F2 /* Tag.swift */; };
 		1F74C6FE1C419357001F812B /* NSManagedObjectContext+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74C6FD1C419357001F812B /* NSManagedObjectContext+extensions.swift */; };
 		1F78AC721C402D88006F17D2 /* ProjectTableViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78AC711C402D88006F17D2 /* ProjectTableViewCellSpec.swift */; };
 		1F79B7B01C3FFF2600976A35 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F79B7AF1C3FFF2600976A35 /* UIViewController+extensions.swift */; };
@@ -146,6 +147,7 @@
 		1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F70EE9B1C440D41008AC4F2 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		1F70EE9D1C441779008AC4F2 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		1F74C6FD1C419357001F812B /* NSManagedObjectContext+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+extensions.swift"; sourceTree = "<group>"; };
 		1F78AC711C402D88006F17D2 /* ProjectTableViewCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCellSpec.swift; sourceTree = "<group>"; };
 		1F79B7AF1C3FFF2600976A35 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 				1FED43A31C4112270085A5A2 /* TaskBerserk.xcdatamodeld */,
 				1FED43A61C41159D0085A5A2 /* Task.swift */,
 				1F70EE9B1C440D41008AC4F2 /* Project.swift */,
+				1F70EE9D1C441779008AC4F2 /* Tag.swift */,
 				1FED43AA1C4119690085A5A2 /* CoreDataStack.swift */,
 				1FED43A81C4115DD0085A5A2 /* ManagedObject.swift */,
 				1F74C6FC1C41933C001F812B /* Extensions */,
@@ -722,6 +725,7 @@
 				1F8726D11C3C2EDB00EEA569 /* TaskTableViewCellModel.swift in Sources */,
 				1FED43B81C414E880085A5A2 /* DataSource.swift in Sources */,
 				1F8697C51C3B080D00CB3FFE /* NetworkError.swift in Sources */,
+				1F70EE9E1C441779008AC4F2 /* Tag.swift in Sources */,
 				1FFDFE541C3ED92900DA25DD /* ProjectTableViewCellModeling.swift in Sources */,
 				1F8697C11C3B070500CB3FFE /* Networking.swift in Sources */,
 				1F8726CF1C3C2ED100EEA569 /* TaskTableViewCellModeling.swift in Sources */,

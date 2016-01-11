@@ -3,6 +3,12 @@
     <entity name="Project" representedClassName=".Project" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" attributeType="Date" syncable="YES"/>
+        <relationship name="tasks" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="project" inverseEntity="Task" syncable="YES"/>
+    </entity>
+    <entity name="Tag" representedClassName=".Tag" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" attributeType="Date" syncable="YES"/>
+        <relationship name="tasks" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="tags" inverseEntity="Task" syncable="YES"/>
     </entity>
     <entity name="Task" representedClassName=".Task" syncable="YES">
         <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
@@ -10,11 +16,13 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="priority" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" attributeType="String" syncable="YES"/>
-        <attribute name="tags" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="urgency" attributeType="Double" defaultValueString="0.0" indexed="YES" syncable="YES"/>
+        <relationship name="project" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="tasks" inverseEntity="Project" syncable="YES"/>
+        <relationship name="tags" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tag" inverseName="tasks" inverseEntity="Tag" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Task" positionX="-63" positionY="-18" width="128" height="150"/>
-        <element name="Project" positionX="-63" positionY="36" width="128" height="75"/>
+        <element name="Task" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Project" positionX="-63" positionY="36" width="128" height="90"/>
+        <element name="Tag" positionX="-54" positionY="45" width="128" height="90"/>
     </elements>
 </model>
