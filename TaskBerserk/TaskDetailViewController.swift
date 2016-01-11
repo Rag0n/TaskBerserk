@@ -61,5 +61,12 @@ class TaskDetailViewController: UIViewController {
                 self.priorityButton.setTitle(title, forState: .Normal)
             }
             .addDisposableTo(disposeBag)
+        
+        viewModel.popViewController
+            .filter { $0 == true }
+            .subscribeNext {_ in
+                self.navigationController?.popViewControllerAnimated(true)
+            }
+            .addDisposableTo(disposeBag)
     }
 }

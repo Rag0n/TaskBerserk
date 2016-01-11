@@ -284,7 +284,7 @@
 				1F8697AC1C3AB67000CB3FFE /* Model */,
 				1F8697AB1C3AB66900CB3FFE /* ViewModel */,
 				1F8697AA1C3AB66400CB3FFE /* View */,
-				1F70EE941C43B39F008AC4F2 /* Common */,
+				1F70EE941C43B39F008AC4F2 /* Shared */,
 				1FED43A21C41120F0085A5A2 /* CoreData */,
 				1F79B7AE1C3FFF0D00976A35 /* Extensions */,
 				1F8697A91C3AB65300CB3FFE /* Supporting files */,
@@ -322,7 +322,7 @@
 			name = Layout;
 			sourceTree = "<group>";
 		};
-		1F70EE941C43B39F008AC4F2 /* Common */ = {
+		1F70EE941C43B39F008AC4F2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				1FED43B51C414E390085A5A2 /* TableViewDataSource.swift */,
@@ -330,7 +330,7 @@
 				1FED43B11C4142B40085A5A2 /* FetchedResultsDataProvider.swift */,
 				1FED43B31C4143620085A5A2 /* DataProvider.swift */,
 			);
-			name = Common;
+			name = Shared;
 			sourceTree = "<group>";
 		};
 		1F70EE981C43F3F1008AC4F2 /* TaskDetailView */ = {
