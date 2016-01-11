@@ -47,6 +47,18 @@ class TasksTableViewController: UITableViewController {
         tableView.endUpdates()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowTaskDetail" {
+            guard let vc = segue.destinationViewController.contentViewController as? TaskDetailViewController else {
+                fatalError("Wrong view controller")
+            }
+            guard let indexPath = tableView.indexPathForSelectedRow else {
+                fatalError("Impossible to show detail without selected object")
+            }
+            vc.viewModel = viewModel.detailViewModelForIndexPath(indexPath)
+        }
+    }
+    
     @IBAction func addNewTask(sender: UIBarButtonItem) {
         let ac = UIAlertController(title: "New task", message: nil, preferredStyle: .Alert)
         
