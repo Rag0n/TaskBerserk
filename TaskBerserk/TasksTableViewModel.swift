@@ -21,7 +21,6 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
         return _updates.asObservable()
     }
     
-    
     func numberOfItemsInSection(section: Int) -> Int {
         return dataProvider.numberOfItemsInSection(section)
     }
@@ -29,6 +28,11 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
     func viewModelForIndexPath(indexPath: NSIndexPath) -> TaskTableViewCellModeling {
         let object = dataProvider.objectAtIndexPath(indexPath)
         return TaskTableViewCellModel(task: object)
+    }
+    
+    func detailViewModelForIndexPath(indexPath: NSIndexPath) -> TaskDetailViewModeling {
+        let object = dataProvider.objectAtIndexPath(indexPath)
+        return TaskDetailViewModel(task: object)
     }
     
     func addNewTask(task: TaskEntity) {
