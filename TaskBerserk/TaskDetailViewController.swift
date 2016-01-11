@@ -7,29 +7,52 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class TaskDetailViewController: UIViewController {
     
     var viewModel: TaskDetailViewModeling? {
         didSet {
+            viewModel?.desc.bindTo(descriptionLabel.rx_text)
+                .addDisposableTo(disposeBag)
             
+            viewModel?.status.subscribeNext { title in
+                self.statusButton.setTitle(title, forState: .Normal)
+            }.addDisposableTo(disposeBag)
+            
+            viewModel?.tagsText.bindTo(tagsLabel.rx_text)
+                .addDisposableTo(disposeBag)
+            
+            viewModel?.urgency.bindTo(urgencyLabel.rx_text)
+                .addDisposableTo(disposeBag)
+            
+            viewModel?.status.subscribeNext { title in
+                self.priorityButton.setTitle(title, forState: .Normal)
+            }.addDisposableTo(disposeBag)
         }
     }
     
+    
+    // MARK: IBOutlets
+    
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var urgencyLabel: UILabel!
-    @IBOutlet weak var priorityLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var tagsLabel: UILabel!
+    @IBOutlet weak var priorityButton: UIButton!
+    @IBOutlet weak var statusButton: UIButton!
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK: IBActions
+    
+    @IBAction func priorityButtonTapped(sender: UIButton) {
     }
-    */
-
+    @IBAction func statusButtonTapped(sender: UIButton) {
+    }
+    @IBAction func addTagButtonTapped(sender: UIButton) {
+    }
+    
+    // MARK: Private
+    
+    private let disposeBag = DisposeBag()
 }
