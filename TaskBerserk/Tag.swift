@@ -14,14 +14,14 @@ final class Tag: ManagedObject {
     @NSManaged private(set) var updatedAt: NSDate
     @NSManaged private(set) var tasks: Set<Task>
     
-    static func findOrCreateTags(tagNames: [String], inContext moc: NSManagedObjectContext) -> [Tag] {
+    static func findOrCreateTags(tagNames: [String], inContext moc: NSManagedObjectContext) -> Set<Tag> {
         var tags = [Tag]()
         
         for tagName in tagNames {
             tags.append(Tag.findOrCreateTag(tagName, inContext: moc))
         }
         
-        return tags
+        return Set(tags)
     }
     
     static func findOrCreateTag(tagName: String, inContext moc: NSManagedObjectContext) -> Tag {
