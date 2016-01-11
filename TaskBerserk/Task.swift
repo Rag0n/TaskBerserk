@@ -15,8 +15,10 @@ final class Task: ManagedObject {
     @NSManaged private(set) var status: String
     @NSManaged private(set) var urgency: Double
     @NSManaged private(set) var priority: String?
-    @NSManaged private(set) var tags: [String]?
     @NSManaged private(set) var dueDate: NSDate?
+    
+    @NSManaged private(set) var tags: Set<Tag>?
+    @NSManaged private(set) var project: Project
     
     static func insertIntoContext(moc: NSManagedObjectContext, taskEntity: TaskEntity) -> Task {
         let task: Task = moc.insertObject()

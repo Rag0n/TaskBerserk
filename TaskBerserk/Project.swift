@@ -12,6 +12,7 @@ import CoreData
 final class Project: ManagedObject {
     @NSManaged private(set) var name: String
     @NSManaged private(set) var updatedAt: NSDate
+    @NSManaged private(set) var tasks: Set<Task>
 }
 
 // MARK: ManagedObjectType
