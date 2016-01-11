@@ -233,6 +233,7 @@
                                     <outlet property="descriptionLabel" destination="gEb-1q-jVR" id="g9g-8E-Gx5"/>
                                     <outlet property="statusLabel" destination="NoN-WU-9b8" id="vML-uG-3ES"/>
                                     <outlet property="tagsLabel" destination="zaJ-MT-qB0" id="hwg-z3-q0j"/>
+                                    <segue destination="57V-Yk-Ntu" kind="show" identifier="ShowTaskDetail" id="nea-hr-Q5y"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -266,7 +267,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vN5-qi-591">
-                                <rect key="frame" x="20" y="20" width="560" height="33"/>
+                                <rect key="frame" x="20" y="64" width="560" height="33"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gpa-Sd-Org">
                                         <rect key="frame" x="185" y="0.0" width="190" height="33"/>
@@ -277,7 +278,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="we6-P0-AYZ">
-                                <rect key="frame" x="20" y="69" width="560" height="141"/>
+                                <rect key="frame" x="20" y="113" width="560" height="141"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n8-nT-rlN">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="21"/>
@@ -332,7 +333,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="flS-FU-AOa">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="flS-FU-AOa">
                                         <rect key="frame" x="0.0" y="111" width="184" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tag1, tag2, tag3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dry-XN-nBg">
@@ -341,7 +342,7 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uq3-9x-LGh">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uq3-9x-LGh">
                                                 <rect key="frame" x="130" y="0.0" width="54" height="30"/>
                                                 <state key="normal" title="Add tag"/>
                                                 <connections>
@@ -373,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTt-Uz-il7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="588" y="-1119"/>
+            <point key="canvasLocation" x="641" y="-1099"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lOA-2N-uYC">
