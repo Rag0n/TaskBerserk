@@ -16,6 +16,13 @@ class TaskTableViewCellModel: TaskTableViewCellModeling {
     init(task: Task) {
         self.description = task.name
         self.status = task.status
-        self.tagsText = task.tags?.joinWithSeparator(", ") ?? ""
+
+        var tagsText = ""
+        if let tags = task.tags {
+            for tag in tags {
+                tagsText += "\(tag)"
+            }
+        }
+        self.tagsText = tagsText
     }
 }

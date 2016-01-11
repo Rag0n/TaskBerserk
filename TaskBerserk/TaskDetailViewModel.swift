@@ -44,9 +44,16 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         
         _desc.onNext(task.name)
         _status.onNext(task.status)
-        _tagsText.onNext(task.tags?.joinWithSeparator(", ") ?? "")
         _urgency.onNext("\(task.urgency)")
         _priority.onNext(task.priority ?? "No priority")
+        
+        var tagsText = ""
+        if let tags = task.tags {
+            for tag in tags {
+                tagsText += "\(tag)"
+            }
+        }
+        _tagsText.onNext(tagsText)
     }
     
     func deleteTask() {
