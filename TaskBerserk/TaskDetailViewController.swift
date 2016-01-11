@@ -12,27 +12,28 @@ import RxCocoa
 
 class TaskDetailViewController: UIViewController {
     
-    var viewModel: TaskDetailViewModeling? {
-        didSet {
-            viewModel?.desc.bindTo(descriptionLabel.rx_text)
-                .addDisposableTo(disposeBag)
-            
-            viewModel?.status.subscribeNext { title in
-                self.statusButton.setTitle(title, forState: .Normal)
-            }.addDisposableTo(disposeBag)
-            
-            viewModel?.tagsText.bindTo(tagsLabel.rx_text)
-                .addDisposableTo(disposeBag)
-            
-            viewModel?.urgency.bindTo(urgencyLabel.rx_text)
-                .addDisposableTo(disposeBag)
-            
-            viewModel?.status.subscribeNext { title in
-                self.priorityButton.setTitle(title, forState: .Normal)
-            }.addDisposableTo(disposeBag)
-        }
-    }
+    var viewModel: TaskDetailViewModeling?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel?.desc.bindTo(descriptionLabel.rx_text)
+            .addDisposableTo(disposeBag)
+        
+        viewModel?.status.subscribeNext { title in
+            self.statusButton.setTitle(title, forState: .Normal)
+            }.addDisposableTo(disposeBag)
+        
+        viewModel?.tagsText.bindTo(tagsLabel.rx_text)
+            .addDisposableTo(disposeBag)
+        
+        viewModel?.urgency.bindTo(urgencyLabel.rx_text)
+            .addDisposableTo(disposeBag)
+        
+        viewModel?.status.subscribeNext { title in
+            self.priorityButton.setTitle(title, forState: .Normal)
+        }.addDisposableTo(disposeBag)
+    }
     
     // MARK: IBOutlets
     
