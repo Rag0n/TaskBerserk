@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol TaskDetailViewModeling {
-    var desc: Observable<String> { get }
+    var name: Observable<String> { get }
     var status: Observable<String> { get }
     var tagsText: Observable<String> { get }
     var urgency: Observable<String> { get }

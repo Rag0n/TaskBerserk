@@ -14,7 +14,7 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     
     // TaskDetailViewModel
     
-    var desc: Observable<String> {
+    var name: Observable<String> {
         return _desc.asObservable()
     }
     
@@ -42,7 +42,7 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     init(task: Task) {
         self.task = task
         
-        _desc.onNext(task.desc)
+        _desc.onNext(task.name)
         _status.onNext(task.status)
         _tagsText.onNext(task.tags?.joinWithSeparator(", ") ?? "")
         _urgency.onNext("\(task.urgency)")

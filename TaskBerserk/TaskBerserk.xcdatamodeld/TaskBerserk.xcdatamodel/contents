@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
+    <entity name="Project" representedClassName=".Project" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" attributeType="Date" syncable="YES"/>
+    </entity>
     <entity name="Task" representedClassName=".Task" syncable="YES">
-        <attribute name="desc" attributeType="String" syncable="YES"/>
         <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="priority" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" attributeType="String" syncable="YES"/>
         <attribute name="tags" optional="YES" attributeType="Transformable" syncable="YES"/>
@@ -11,5 +15,6 @@
     </entity>
     <elements>
         <element name="Task" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Project" positionX="-63" positionY="36" width="128" height="75"/>
     </elements>
 </model>

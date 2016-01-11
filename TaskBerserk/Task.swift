@@ -11,7 +11,7 @@ import CoreData
 
 final class Task: ManagedObject {
     @NSManaged private(set) var id: String
-    @NSManaged private(set) var desc: String
+    @NSManaged private(set) var name: String
     @NSManaged private(set) var status: String
     @NSManaged private(set) var urgency: Double
     @NSManaged private(set) var priority: String?
@@ -21,7 +21,7 @@ final class Task: ManagedObject {
     static func insertIntoContext(moc: NSManagedObjectContext, taskEntity: TaskEntity) -> Task {
         let task: Task = moc.insertObject()
         task.id = taskEntity.id
-        task.desc = taskEntity.description
+        task.name = taskEntity.description
         task.status = taskEntity.status
         task.urgency = taskEntity.urgency
         task.priority = taskEntity.priority

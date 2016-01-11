@@ -38,7 +38,7 @@ class TaskDetailViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     private func bindToViewModel() {
-        viewModel.desc
+        viewModel.name
             .bindTo(descriptionLabel.rx_text)
             .addDisposableTo(disposeBag)
         
