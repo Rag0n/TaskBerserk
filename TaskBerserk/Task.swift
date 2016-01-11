@@ -27,10 +27,31 @@ final class Task: ManagedObject {
         task.status = taskEntity.status
         task.urgency = taskEntity.urgency
         task.priority = taskEntity.priority
-        task.tags = taskEntity.tags
         // TODO: Реализовать NSDateFormatter
-//        task.dueDate = 
+        // TODO: Реализовать конвертирование проекта из taskEntity в Project
+        // TODO: Реализовать конвертирование тэгов из taskEntity в Tags
+        // TODO: Реализовать конвертирование dueDate из taskEntity
         return task
+    }
+    
+    static func insertIntoContext(moc: NSManagedObjectContext,
+        name: String, project: String? = nil, id: String? = nil,
+        status: String? = nil, priority: String? = nil,
+        dueDate: String? = nil, urgency: Double? = nil, tags: [String]? = nil) {
+
+            let task: Task = moc.insertObject()
+            task.name = name
+            task.id = id ?? NSUUID().UUIDString
+            // TODO: implement
+            task.status = status ?? "pending"
+            task.priority = priority ?? "No priority"
+            task.dueDate = nil
+            
+            task.urgency = urgency ?? Task.calculateUrgency()
+            task.project = Project.findOrCreateProject(project ?? "default", inContext: moc)
+            if let tags = tags {
+                task.tags = Tag.findOrCreateTags(tags, inContext: moc)
+            }
     }
 }
 
@@ -43,5 +64,13 @@ extension Task: ManagedObjectType {
     // default sort by urgency
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: "urgency", ascending: false)]
+    }
+}
+
+// MARK: Private 
+extension Task {
+    // TODO: implement
+    private static func calculateUrgency() -> Double {
+        return Double(arc4random_uniform(5))
     }
 }
