@@ -9,5 +9,6 @@
 import Foundation
 
 protocol MetaTableViewCellModeling {
-
+    var name: String { get }
+    var count: String { get }
 }

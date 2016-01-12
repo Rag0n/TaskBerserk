@@ -9,8 +9,11 @@
 import Foundation
 
 class MetaTableViewCellModel: MetaTableViewCellModeling {
-
+    let name: String
+    let count: String
+    
     init(object: NameWithCountRepresentable) {
-        
+        name = object.nameString
+        count = object.countString
     }
 }
