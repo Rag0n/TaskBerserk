@@ -16,6 +16,7 @@ protocol DataProvider: class {
 
 protocol DataProviderDelegate: class {
     typealias Object
+    typealias ViewModel
 }
 
 enum DataProviderUpdate<Object> {
