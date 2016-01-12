@@ -32,6 +32,7 @@ class TaskDetailViewController: UITableViewController {
     @IBOutlet weak var priorityLowButton: UIButton!
     @IBOutlet weak var priorityMediumButton: UIButton!
     @IBOutlet weak var priorityHighButton: UIButton!
+    @IBOutlet weak var addTagButton: UIButton!
     
     @IBOutlet weak var urgencyLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
@@ -46,35 +47,24 @@ class TaskDetailViewController: UITableViewController {
     private let disposeBag = DisposeBag()
     
     private func bindToViewModel() {
-//        viewModel.name
-//            .bindTo(descriptionLabel.rx_text)
-//            .addDisposableTo(disposeBag)
-//        
-//        viewModel.tagsText
-//            .bindTo(tagsLabel.rx_text)
-//            .addDisposableTo(disposeBag)
-//        
-//        viewModel.urgency
-//            .bindTo(urgencyLabel.rx_text)
-//            .addDisposableTo(disposeBag)
-//    
-//        viewModel.status
-//            .subscribeNext { title in
-//                self.statusButton.setTitle(title, forState: .Normal)
-//            }
-//            .addDisposableTo(disposeBag)
-//        
-//        viewModel.status
-//            .subscribeNext { title in
-//                self.priorityButton.setTitle(title, forState: .Normal)
-//            }
-//            .addDisposableTo(disposeBag)
-//        
-//        viewModel.popViewController
-//            .filter { $0 == true }
-//            .subscribeNext {_ in
-//                self.navigationController?.popViewControllerAnimated(true)
-//            }
-//            .addDisposableTo(disposeBag)
+        viewModel.name
+            .bindTo(nameTextField.rx_text)
+            .addDisposableTo(disposeBag)
+        
+        viewModel.priority
+            .bindTo(projectTextField.rx_text)
+            .addDisposableTo(disposeBag)
+        
+        viewModel.urgency
+            .bindTo(urgencyLabel.rx_text)
+            .addDisposableTo(disposeBag)
+                
+        viewModel.status
+            .bindTo(statusLabel.rx_text)
+            .addDisposableTo(disposeBag)
+                
+        viewModel.tagsText
+            .bindTo(tagsLabel.rx_text)
+            .addDisposableTo(disposeBag)
     }
 }
