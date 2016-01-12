@@ -48,3 +48,14 @@ extension Tag: ManagedObjectType {
         return [NSSortDescriptor(key: "updatedAt", ascending: false)]
     }
 }
+
+// MARK: NameWithCountRepresentable
+extension Tag: NameWithCountRepresentable {
+    var nameString: String {
+        return name
+    }
+    
+    var countString: String {
+        return "\(tasks.count)"
+    }
+}
