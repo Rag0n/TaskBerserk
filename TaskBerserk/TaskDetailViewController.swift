@@ -21,6 +21,10 @@ class TaskDetailViewController: UITableViewController {
         deleteButton.rx_tap
             .subscribeNext(viewModel.deleteTask)
             .addDisposableTo(disposeBag)
+        
+        cancelButton.rx_tap
+            .subscribeNext { self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil) }
+            .addDisposableTo(disposeBag)
     }
     
     // MARK: IBOutlets
