@@ -64,6 +64,21 @@ final class Task: ManagedObject {
         
         tags = Set(existingTags + newTags)
     }
+    
+    override func prepareForDeletion() {
+        // deletes project if it doesnt have remaining tasks
+        if project.tasks.filter({ !$0.deleted }).isEmpty {
+            managedObjectContext?.deleteObject(project)
+        }
+        
+        // deletes tags if they dont have remaining tasks
+        guard let t = tags else { return }
+        for tag in t {
+            if tag.tasks.filter({ !$0.deleted }).isEmpty {
+                managedObjectContext?.deleteObject(tag)
+            }
+        }
+    }
 }
 
 // MARK: ManagedObjectType
