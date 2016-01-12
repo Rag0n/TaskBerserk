@@ -10,15 +10,14 @@ import Foundation
 import RxSwift
 import CoreData
 
-import UIKit
-
 class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
     
     typealias Object = Task
+    typealias ViewModel = TaskTableViewCellModeling
 
     var managedObjectContext: NSManagedObjectContext!
     var updates: Observable<[DataProviderUpdate<TaskTableViewCellModeling>]> {
-        return _updates.asObservable()
+        return dataProvider.updatesSignal
     }
     
     func numberOfItemsInSection(section: Int) -> Int {
@@ -42,14 +41,9 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
     }
     
     init(project: ProjectEntity?, managedObject: NSManagedObjectContext) {
-//        self.project = project
         self.managedObjectContext = managedObject
-//        updateCellModels()
         setupDataProvider()
     }
-    
-    private typealias Data = FetchedResultsDataProvider<TasksTableViewModel>
-//    private var dataSource: TableViewDataSource<TasksTableViewModel, Data, TaskTableViewCellModel>!
     
     
     private func setupDataProvider() {
@@ -59,44 +53,16 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
         let frc = NSFetchedResultsController(fetchRequest: request,
             managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         
-        dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self)
+        let transformerFunc: (Object) -> ViewModel = { object in
+            TaskTableViewCellModel(task: object)
+        }
         
-        dataProvider.updatesSignal
-            .map { updates in
-                var transformedUpdate: [DataProviderUpdate<TaskTableViewCellModeling>]
-                
-                transformedUpdate = updates.map { update in
-                    switch update {
-                    case .Insert(let indexPath):
-                        return (.Insert(indexPath))
-                    case .Update(let indexPath, let object):
-                        let cellViewModel = TaskTableViewCellModel(task: object) as TaskTableViewCellModeling
-                        return (.Update(indexPath, cellViewModel))
-                    case .Move(let indexPath, let newIndexPath):
-                        return (.Move(indexPath, newIndexPath))
-                    case .Delete(let indexPath):
-                        return (.Delete(indexPath))
-                    }
-                }
-                
-                return transformedUpdate
-            }
-            .subscribeNext { updates in
-                self._updates.onNext(updates)
-            }
-            .addDisposableTo(disposeBag)
-        
-        // TODO: Fix
-//        let dataSource = TableViewDataSource(tableView: UITableView(), dataProvider: dataProvider, delegate: self)
+        dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self, transformerFunc: transformerFunc)
     }
-    
-    
-    
     
     // MARK: Private
     private var dataProvider: FetchedResultsDataProvider<TasksTableViewModel>!
     private let disposeBag = DisposeBag()
-    private let _updates = BehaviorSubject<[DataProviderUpdate<TaskTableViewCellModeling>]>(value: [])
     
 }
 
