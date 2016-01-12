@@ -53,6 +53,17 @@ final class Task: ManagedObject {
                 task.tags = Tag.findOrCreateTags(tags, inContext: moc)
             }
     }
+    
+    func addTags(tagNames: [String]) {
+        var existingTags = Array<Tag>()
+        if let tags = tags {
+            existingTags = Array(tags)
+        }
+        
+        let newTags = Array(Tag.findOrCreateTags(tagNames, inContext: self.managedObjectContext!))
+        
+        tags = Set(existingTags + newTags)
+    }
 }
 
 // MARK: ManagedObjectType
