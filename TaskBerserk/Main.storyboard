@@ -279,6 +279,9 @@
                             </segments>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="filterSegmentedControl" destination="uyD-j2-xvk" id="DwI-r3-BTj"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1HS-wq-hok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

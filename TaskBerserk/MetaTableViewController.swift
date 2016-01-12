@@ -10,5 +10,6 @@ import UIKit
 import RxSwift
 
 class MetaTableViewController: UITableViewController {
+    @IBOutlet weak var filterSegmentedControl: UISegmentedControl!
     
 }

@@ -11,6 +11,11 @@
 		1F12FACA1C3AABB9000AC1A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F12FAC91C3AABB9000AC1A3 /* Assets.xcassets */; };
 		1F12FACD1C3AABB9000AC1A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F12FACB1C3AABB9000AC1A3 /* LaunchScreen.storyboard */; };
 		1F1E04EE1C45329C005006FC /* MetaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E04ED1C45329C005006FC /* MetaTableViewController.swift */; };
+		1F1E04F11C4535F9005006FC /* MetaTableViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E04F01C4535F9005006FC /* MetaTableViewModeling.swift */; };
+		1F1E04F31C453605005006FC /* MetaTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E04F21C453605005006FC /* MetaTableViewModel.swift */; };
+		1F1E04F51C453618005006FC /* MetaTableViewCellModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E04F41C453618005006FC /* MetaTableViewCellModeling.swift */; };
+		1F1E04F71C453638005006FC /* MetaTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E04F61C453638005006FC /* MetaTableViewCellModel.swift */; };
+		1F1E04F91C4536BB005006FC /* MetaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E04F81C4536BB005006FC /* MetaTableViewCell.swift */; };
 		1F70EE901C43B34A008AC4F2 /* TaskDetailViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE8F1C43B34A008AC4F2 /* TaskDetailViewModeling.swift */; };
 		1F70EE921C43B36C008AC4F2 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */; };
 		1F70EE961C43B6AC008AC4F2 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */; };
@@ -145,6 +150,11 @@
 		1F12FADE1C3AABB9000AC1A3 /* TaskBerserkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskBerserkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F12FAE41C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1E04ED1C45329C005006FC /* MetaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewController.swift; sourceTree = "<group>"; };
+		1F1E04F01C4535F9005006FC /* MetaTableViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewModeling.swift; sourceTree = "<group>"; };
+		1F1E04F21C453605005006FC /* MetaTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewModel.swift; sourceTree = "<group>"; };
+		1F1E04F41C453618005006FC /* MetaTableViewCellModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewCellModeling.swift; sourceTree = "<group>"; };
+		1F1E04F61C453638005006FC /* MetaTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewCellModel.swift; sourceTree = "<group>"; };
+		1F1E04F81C4536BB005006FC /* MetaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewCell.swift; sourceTree = "<group>"; };
 		1F70EE8F1C43B34A008AC4F2 /* TaskDetailViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewModeling.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -322,6 +332,10 @@
 		1F1E04EF1C4532B3005006FC /* MetaTableView */ = {
 			isa = PBXGroup;
 			children = (
+				1F1E04F01C4535F9005006FC /* MetaTableViewModeling.swift */,
+				1F1E04F21C453605005006FC /* MetaTableViewModel.swift */,
+				1F1E04F41C453618005006FC /* MetaTableViewCellModeling.swift */,
+				1F1E04F61C453638005006FC /* MetaTableViewCellModel.swift */,
 			);
 			name = MetaTableView;
 			sourceTree = "<group>";
@@ -427,6 +441,7 @@
 				1F8726C81C3C2D3200EEA569 /* TaskTableViewCell.swift */,
 				1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */,
 				1F1E04ED1C45329C005006FC /* MetaTableViewController.swift */,
+				1F1E04F81C4536BB005006FC /* MetaTableViewCell.swift */,
 				1F8726C01C3C265000EEA569 /* ProjectsTableViewController.swift */,
 				1F8726C21C3C273100EEA569 /* ProjectTableViewCell.swift */,
 			);
@@ -726,6 +741,8 @@
 			files = (
 				1FED43B41C4143620085A5A2 /* DataProvider.swift in Sources */,
 				1FED43A91C4115DD0085A5A2 /* ManagedObject.swift in Sources */,
+				1F1E04F71C453638005006FC /* MetaTableViewCellModel.swift in Sources */,
+				1F1E04F11C4535F9005006FC /* MetaTableViewModeling.swift in Sources */,
 				1FED43B61C414E390085A5A2 /* TableViewDataSource.swift in Sources */,
 				1F8726C91C3C2D3200EEA569 /* TaskTableViewCell.swift in Sources */,
 				1FFDFE561C3ED93600DA25DD /* ProjectTableViewCellModel.swift in Sources */,
@@ -741,14 +758,17 @@
 				1F8697C11C3B070500CB3FFE /* Networking.swift in Sources */,
 				1F8726CF1C3C2ED100EEA569 /* TaskTableViewCellModeling.swift in Sources */,
 				1F8697C31C3B072500CB3FFE /* Network.swift in Sources */,
+				1F1E04F31C453605005006FC /* MetaTableViewModel.swift in Sources */,
 				1FED43AB1C4119690085A5A2 /* CoreDataStack.swift in Sources */,
 				1FFDFE501C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift in Sources */,
 				1F8726B81C3BB87C00EEA569 /* TaskGrab.swift in Sources */,
 				1F70EE901C43B34A008AC4F2 /* TaskDetailViewModeling.swift in Sources */,
 				1F8726BA1C3BBCB700EEA569 /* ResponseEntity.swift in Sources */,
 				1F1E04EE1C45329C005006FC /* MetaTableViewController.swift in Sources */,
+				1F1E04F91C4536BB005006FC /* MetaTableViewCell.swift in Sources */,
 				1FED43B01C41200F0085A5A2 /* ManagedObjectContextSettable.swift in Sources */,
 				1F74C6FE1C419357001F812B /* NSManagedObjectContext+extensions.swift in Sources */,
+				1F1E04F51C453618005006FC /* MetaTableViewCellModeling.swift in Sources */,
 				1FED43A71C41159D0085A5A2 /* Task.swift in Sources */,
 				1F8697B21C3ACCA000CB3FFE /* ProjectEntity.swift in Sources */,
 				1F70EE9C1C440D41008AC4F2 /* Project.swift in Sources */,
