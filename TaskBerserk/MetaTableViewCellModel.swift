@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class MetaTableViewCellModel: MetaTableViewCellModeling {
+
+    init(object: NameWithCountRepresentable) {
+        
+    }
+}
