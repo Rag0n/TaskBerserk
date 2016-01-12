@@ -7,7 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol MetaTableViewModeling {
+    var updates: Observable<[DataProviderUpdate<MetaTableViewCellModeling>]> { get }
     
+    func numberOfItemsInSection(section: Int) -> Int
+    func viewModelForIndexPath(indexPath: NSIndexPath) -> MetaTableViewCellModeling
 }

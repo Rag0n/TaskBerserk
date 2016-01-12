@@ -28,6 +28,11 @@ class MetaTableViewModel: MetaTableViewModeling, DataProviderDelegate {
         return dataProvider.numberOfItemsInSection(section)
     }
     
+    func viewModelForIndexPath(indexPath: NSIndexPath) -> MetaTableViewCellModeling {
+        let object = dataProvider.objectAtIndexPath(indexPath)
+        return MetaTableViewCellModel(object: object)
+    }
+    
     private func setupDataProvider() {
         let request = Project.sortedFetchRequest
         request.returnsObjectsAsFaults = false
