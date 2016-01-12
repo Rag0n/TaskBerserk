@@ -24,26 +24,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // ViewModels
-        container.register(ProjectsTableViewModeling.self) { r in
-            let viewModel = ProjectsTableViewModel(taskGrab: r.resolve(TaskGrabbing.self)!)
-            viewModel.managedObjectContext = createMainContext()
-            return viewModel
-        }
+//        container.register(ProjectsTableViewModeling.self) { r in
+//            let viewModel = ProjectsTableViewModel(taskGrab: r.resolve(TaskGrabbing.self)!)
+//            viewModel.managedObjectContext = createMainContext()
+//            return viewModel
+//        }
         
-        // temporary
         container.register(TasksTableViewModeling.self) { r in
             let viewModel = TasksTableViewModel(project: nil, managedObject: managedObjectContext)
             return viewModel
         }
         
-        // Views
-        container.registerForStoryboard(ProjectsTableViewController.self) { r, c in
-            c.viewModel = r.resolve(ProjectsTableViewModeling.self)!
+        container.register(MetaTableViewModeling.self) { r in
+            let viewModel = MetaTableViewModel(managedObject: managedObjectContext)
+            return viewModel
         }
         
-        // temporary
+        // Views
+//        container.registerForStoryboard(ProjectsTableViewController.self) { r, c in
+//            c.viewModel = r.resolve(ProjectsTableViewModeling.self)!
+//        }
+        
         container.registerForStoryboard(TasksTableViewController.self) { r, c in
             c.viewModel = r.resolve(TasksTableViewModeling.self)!
+        }
+        
+        container.registerForStoryboard(MetaTableViewController.self) { r, c in
+            c.viewModel = r.resolve(MetaTableViewModeling.self)!
         }
         
         
