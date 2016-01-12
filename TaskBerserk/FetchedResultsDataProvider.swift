@@ -14,11 +14,13 @@ import RxSwift
 class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFetchedResultsControllerDelegate, DataProvider {
     
     typealias Object = Delegate.Object
-    var updatesSignal = BehaviorSubject<[DataProviderUpdate<Object>]>(value: [])
+    typealias ViewModel = Delegate.ViewModel
+    var updatesSignal = BehaviorSubject<[DataProviderUpdate<ViewModel>]>(value: [])
     
-    init(fetchedResultsController: NSFetchedResultsController, delegate: Delegate) {
+    init(fetchedResultsController: NSFetchedResultsController, delegate: Delegate, transformerFunc: (Object) -> ViewModel) {
         self.fetchedResultsController = fetchedResultsController
         self.delegate = delegate
+        self.transformerFunc = transformerFunc
         super.init()
         fetchedResultsController.delegate = self
         try! fetchedResultsController.performFetch()
@@ -62,7 +64,8 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFe
                 fatalError("Index path should be not nil")
             }
             let object = objectAtIndexPath(indexPath)
-            updates.append(.Update(indexPath, object))
+            let viewModel = transformerFunc(object)
+            updates.append(.Update(indexPath, viewModel))
         case .Delete:
             guard let indexPath = indexPath else {
                 fatalError("Index path should be not nil")
@@ -74,12 +77,12 @@ class FetchedResultsDataProvider<Delegate: DataProviderDelegate>: NSObject, NSFe
     
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         updatesSignal.onNext(updates)
-//        delegate.dataProviderDidUpdate(updates)
     }
     
     // MARK: Private
     private let fetchedResultsController: NSFetchedResultsController
     private weak var delegate: Delegate!
-    private var updates: [DataProviderUpdate<Object>] = []
+    private var updates: [DataProviderUpdate<ViewModel>] = []
+    private var transformerFunc: (Object) -> ViewModel
     
 }
