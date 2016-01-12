@@ -87,7 +87,7 @@
         <scene sceneID="suq-ZO-jgc">
             <objects>
                 <tableViewController id="o6B-uz-6cU" customClass="TaskDetailViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wod-eZ-WIC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wod-eZ-WIC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -288,21 +288,33 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tag1, tag2, tag 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-7Q-5Wh">
-                                                    <rect key="frame" x="468" y="14" width="124" height="21"/>
+                                                    <rect key="frame" x="438" y="14" width="124" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZX-IU-epr">
+                                                    <rect key="frame" x="570" y="8" width="22" height="27"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="zIh-H0-HLt" firstAttribute="top" secondItem="qDd-xK-TSF" secondAttribute="topMargin" id="03u-Iz-rwm"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zIh-H0-HLt" secondAttribute="bottom" id="Bji-b7-scd"/>
+                                                <constraint firstItem="vZX-IU-epr" firstAttribute="leading" secondItem="4a2-7Q-5Wh" secondAttribute="trailing" constant="8" id="FBT-sC-k9T"/>
                                                 <constraint firstItem="4a2-7Q-5Wh" firstAttribute="top" secondItem="qDd-xK-TSF" secondAttribute="topMargin" constant="6" id="HzM-nd-Mqf"/>
                                                 <constraint firstItem="4a2-7Q-5Wh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zIh-H0-HLt" secondAttribute="trailing" constant="8" id="Ze7-PY-SnB"/>
                                                 <constraint firstItem="4a2-7Q-5Wh" firstAttribute="trailing" secondItem="qDd-xK-TSF" secondAttribute="trailingMargin" id="dhU-Nl-okH"/>
                                                 <constraint firstItem="zIh-H0-HLt" firstAttribute="leading" secondItem="qDd-xK-TSF" secondAttribute="leadingMargin" id="h8f-fF-dXA"/>
+                                                <constraint firstItem="vZX-IU-epr" firstAttribute="top" secondItem="qDd-xK-TSF" secondAttribute="topMargin" id="lFH-vP-z4K"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="vZX-IU-epr" secondAttribute="bottom" id="lbl-Xu-E82"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="vZX-IU-epr" secondAttribute="trailing" id="vYV-9k-KW0"/>
                                                 <constraint firstItem="4a2-7Q-5Wh" firstAttribute="bottom" secondItem="qDd-xK-TSF" secondAttribute="bottomMargin" id="zde-Va-jmM"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="dhU-Nl-okH"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FNw-Yx-NRr">
@@ -338,6 +350,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="kSK-s4-MNG"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="addTagButton" destination="vZX-IU-epr" id="R1a-o9-Ujt"/>
                         <outlet property="cancelButton" destination="AiC-CI-4eE" id="db0-fW-Ddc"/>
                         <outlet property="deleteButton" destination="WGt-re-adu" id="doQ-rN-ocx"/>
                         <outlet property="nameTextField" destination="gFR-9l-cxe" id="vih-gf-3sg"/>
