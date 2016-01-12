@@ -6,4 +6,8 @@
 //  Copyright © 2016 Alexander Guschin. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class MetaTableViewCell: UITableViewCell {
+    
+}
