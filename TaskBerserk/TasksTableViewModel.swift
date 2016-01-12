@@ -41,9 +41,9 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
         }
     }
     
-    init(project: ProjectEntity?, managedObject: NSManagedObjectContext?) {
+    init(project: ProjectEntity?, managedObject: NSManagedObjectContext) {
 //        self.project = project
-        self.managedObjectContext = managedObject!
+        self.managedObjectContext = managedObject
 //        updateCellModels()
         setupDataProvider()
     }
