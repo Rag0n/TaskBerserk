@@ -252,13 +252,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MetaTableViewCell" id="Msr-x4-dVe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MetaTableViewCell" id="Msr-x4-dVe" customClass="MetaTableViewCell" customModule="TaskBerserk" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Msr-x4-dVe" id="Yl3-Ff-mUA">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meta name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lj-Gm-4Hg">
+                                            <rect key="frame" x="8" y="8" width="86" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meta count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb4-qb-IKW">
+                                            <rect key="frame" x="505" y="8" width="87" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2lj-Gm-4Hg" firstAttribute="top" secondItem="Yl3-Ff-mUA" secondAttribute="topMargin" id="2jD-2B-fON"/>
+                                        <constraint firstItem="Wb4-qb-IKW" firstAttribute="trailing" secondItem="Yl3-Ff-mUA" secondAttribute="trailingMargin" id="MuQ-E2-N9j"/>
+                                        <constraint firstItem="2lj-Gm-4Hg" firstAttribute="leading" secondItem="Yl3-Ff-mUA" secondAttribute="leadingMargin" id="bVX-JV-lV4"/>
+                                        <constraint firstItem="Wb4-qb-IKW" firstAttribute="top" secondItem="Yl3-Ff-mUA" secondAttribute="topMargin" id="hLY-dn-19t"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="countLabel" destination="Wb4-qb-IKW" id="Exk-Z9-xKt"/>
+                                    <outlet property="nameLabel" destination="2lj-Gm-4Hg" id="FRh-Zv-kpy"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
