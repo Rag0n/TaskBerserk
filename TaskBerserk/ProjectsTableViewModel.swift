@@ -62,6 +62,6 @@ class ProjectsTableViewModel: ProjectsTableViewModeling {
     
     func viewModelForIndexPath(indexPath: NSIndexPath) -> TasksTableViewModeling {
         let project = ProjectEntity.projectsArray[indexPath.row]
-        return TasksTableViewModel(project: project, managedObject: nil)
+        return TasksTableViewModel(project: project, managedObject: managedObjectContext)
     }
 }
