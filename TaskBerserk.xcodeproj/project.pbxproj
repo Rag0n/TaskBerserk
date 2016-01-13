@@ -83,8 +83,6 @@
 		1FED43B01C41200F0085A5A2 /* ManagedObjectContextSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED43AF1C41200F0085A5A2 /* ManagedObjectContextSettable.swift */; };
 		1FED43B21C4142B40085A5A2 /* FetchedResultsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED43B11C4142B40085A5A2 /* FetchedResultsDataProvider.swift */; };
 		1FED43B41C4143620085A5A2 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED43B31C4143620085A5A2 /* DataProvider.swift */; };
-		1FED43B61C414E390085A5A2 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED43B51C414E390085A5A2 /* TableViewDataSource.swift */; };
-		1FED43B81C414E880085A5A2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FED43B71C414E880085A5A2 /* DataSource.swift */; };
 		1FFDFE241C3E687C00DA25DD /* TasksTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE231C3E687C00DA25DD /* TasksTableViewControllerSpec.swift */; };
 		1FFDFE501C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE4F1C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift */; };
 		1FFDFE521C3ED8DD00DA25DD /* ProjectsTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFDFE511C3ED8DD00DA25DD /* ProjectsTableViewModel.swift */; };
@@ -228,8 +226,6 @@
 		1FED43AF1C41200F0085A5A2 /* ManagedObjectContextSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectContextSettable.swift; sourceTree = "<group>"; };
 		1FED43B11C4142B40085A5A2 /* FetchedResultsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsDataProvider.swift; sourceTree = "<group>"; };
 		1FED43B31C4143620085A5A2 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
-		1FED43B51C414E390085A5A2 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
-		1FED43B71C414E880085A5A2 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		1FFDFE231C3E687C00DA25DD /* TasksTableViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewControllerSpec.swift; sourceTree = "<group>"; };
 		1FFDFE4F1C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewModeling.swift; sourceTree = "<group>"; };
 		1FFDFE511C3ED8DD00DA25DD /* ProjectsTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsTableViewModel.swift; sourceTree = "<group>"; };
@@ -354,8 +350,6 @@
 		1F70EE941C43B39F008AC4F2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				1FED43B51C414E390085A5A2 /* TableViewDataSource.swift */,
-				1FED43B71C414E880085A5A2 /* DataSource.swift */,
 				1FED43B11C4142B40085A5A2 /* FetchedResultsDataProvider.swift */,
 				1FED43B31C4143620085A5A2 /* DataProvider.swift */,
 			);
@@ -746,7 +740,6 @@
 				1FED43A91C4115DD0085A5A2 /* ManagedObject.swift in Sources */,
 				1F1E04F71C453638005006FC /* MetaTableViewCellModel.swift in Sources */,
 				1F1E04F11C4535F9005006FC /* MetaTableViewModeling.swift in Sources */,
-				1FED43B61C414E390085A5A2 /* TableViewDataSource.swift in Sources */,
 				1F8726C91C3C2D3200EEA569 /* TaskTableViewCell.swift in Sources */,
 				1FFDFE561C3ED93600DA25DD /* ProjectTableViewCellModel.swift in Sources */,
 				1F70EE961C43B6AC008AC4F2 /* TaskDetailViewController.swift in Sources */,
@@ -754,7 +747,6 @@
 				1FED43B21C4142B40085A5A2 /* FetchedResultsDataProvider.swift in Sources */,
 				1FED43AD1C4119FD0085A5A2 /* NSURL+extensions.swift in Sources */,
 				1F8726D11C3C2EDB00EEA569 /* TaskTableViewCellModel.swift in Sources */,
-				1FED43B81C414E880085A5A2 /* DataSource.swift in Sources */,
 				1F8697C51C3B080D00CB3FFE /* NetworkError.swift in Sources */,
 				1F70EE9E1C441779008AC4F2 /* Tag.swift in Sources */,
 				1FFDFE541C3ED92900DA25DD /* ProjectTableViewCellModeling.swift in Sources */,
