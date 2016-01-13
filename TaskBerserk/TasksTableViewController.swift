@@ -11,52 +11,19 @@ import RxCocoa
 import RxSwift
 
 class TasksTableViewController: UITableViewController {
-    private let disposeBag = DisposeBag()
-    
-    private struct Constants {
-        static let taskCellIdentifier = "TaskTableViewCell"
-    }
     
     var viewModel: TasksTableViewModeling! {
         didSet {
             viewModel.updates
-                .subscribeNext { update in
-                    self.processUpdates(update)
-                }.addDisposableTo(disposeBag)
+                .subscribeNext { self.processUpdates($0) }
+                .addDisposableTo(disposeBag)
         }
     }
     
-    func processUpdates(updates: [DataProviderUpdate<TaskTableViewCellModeling>]?) {
-        guard let updates = updates else { return }
-//        guard let updates = updates else { return tableView.reloadData() }
-        tableView.beginUpdates()
-        for update in updates {
-            switch update {
-            case .Insert(let indexPath):
-                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            case .Update(let indexPath, let cellViewModel):
-                guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? TaskTableViewCell else { break }
-                cell.viewModel = cellViewModel
-            case .Move(let indexPath, let newIndexPath):
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
-            case .Delete(let indexPath):
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            }
-        }
-        tableView.endUpdates()
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowTaskDetail" {
-            guard let vc = segue.destinationViewController.contentViewController as? TaskDetailViewController else {
-                fatalError("Wrong view controller")
-            }
-            guard let indexPath = tableView.indexPathForSelectedRow else {
-                fatalError("Impossible to show detail without selected object")
-            }
-            vc.viewModel = viewModel.detailViewModelForIndexPath(indexPath)
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        tableView.estimatedRowHeight = tableView.rowHeight
+//        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     @IBAction func addNewTask(sender: UIBarButtonItem) {
@@ -76,10 +43,54 @@ class TasksTableViewController: UITableViewController {
         
         presentViewController(ac, animated: true, completion: nil)
     }
+    
+    // MARK: Private
+    private let disposeBag = DisposeBag()
+    
+    private struct Constants {
+        static let taskCellIdentifier = "TaskTableViewCell"
+        static let taskDetailSegueIdentifier = "ShowTaskDetail"
+    }
+}
+
+// MARK: Navigation
+extension TasksTableViewController {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == Constants.taskDetailSegueIdentifier {
+            guard let vc = segue.destinationViewController.contentViewController as? TaskDetailViewController else {
+                fatalError("Wrong view controller")
+            }
+            guard let indexPath = tableView.indexPathForSelectedRow else {
+                fatalError("Impossible to show detail without selected object")
+            }
+            vc.viewModel = viewModel.detailViewModelForIndexPath(indexPath)
+        }
+    }
 }
 
 // MARK: UITableViewDataSource
 extension TasksTableViewController {
+    
+    func processUpdates(updates: [DataProviderUpdate<TaskTableViewCellModeling>]?) {
+        guard let updates = updates else { return }
+        tableView.beginUpdates()
+        for update in updates {
+            switch update {
+            case .Insert(let indexPath):
+                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            case .Update(let indexPath, let cellViewModel):
+                guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? TaskTableViewCell else { break }
+                cell.viewModel = cellViewModel
+            case .Move(let indexPath, let newIndexPath):
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+            case .Delete(let indexPath):
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
+        }
+        tableView.endUpdates()
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfItemsInSection(section)
     }
