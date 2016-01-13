@@ -31,7 +31,9 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
     
     func detailViewModelForIndexPath(indexPath: NSIndexPath) -> TaskDetailViewModeling {
         let object = dataProvider.objectAtIndexPath(indexPath)
-        return TaskDetailViewModel(task: object)
+        let detailViewModel = TaskDetailViewModel(task: object)
+        detailViewModel.managedObjectContext = managedObjectContext
+        return detailViewModel
     }
     
     func addNewTask(task: TaskEntity) {
