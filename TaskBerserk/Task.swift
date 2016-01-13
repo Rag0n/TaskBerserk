@@ -65,6 +65,10 @@ final class Task: ManagedObject {
         tags = Set(existingTags + newTags)
     }
     
+    func changeName(newName: String) {
+        name = newName
+    }
+    
     override func prepareForDeletion() {
         // deletes project if it doesnt have remaining tasks
         if project.tasks.filter({ !$0.deleted }).isEmpty {
