@@ -13,11 +13,11 @@ final class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var tagsLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     
-    var viewModel: TaskTableViewCellModeling? {
+    var viewModel: TaskTableViewCellModeling! {
         didSet {
-            descriptionLabel.text = viewModel?.description
-            tagsLabel.text = viewModel?.tagsText
-            statusLabel.text = viewModel?.status
+            descriptionLabel.text = viewModel.description
+            tagsLabel.text = viewModel.tagsText
+            statusLabel.text = viewModel.status
         }
     }
 }
