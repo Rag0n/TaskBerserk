@@ -30,6 +30,14 @@ class AppDelegateSpec: QuickSpec {
                 expect(container.resolve(MetaTableViewModeling.self)).notTo(beNil())
             }
             
+            it("injects managedObjectContext to viewModels") {
+                let tasksViewModel = container.resolve(TasksTableViewModeling)
+                let metaViewModel = container.resolve(MetaTableViewModeling)
+                
+                expect(tasksViewModel?.managedObjectContext).notTo(beNil())
+                expect(metaViewModel?.managedObjectContext).notTo(beNil())
+            }
+            
             it("injects view models to views") {
                 let bundle = NSBundle.mainBundle()
                 let storyboard = SwinjectStoryboard.create(name: "Main",
