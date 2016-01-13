@@ -145,7 +145,7 @@
 		1F12FACC1C3AABB9000AC1A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F12FACE1C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F12FAD31C3AABB9000AC1A3 /* TaskBerserkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskBerserkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F12FAD91C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = TaskBerserkTests/Info.plist; sourceTree = "<group>"; };
+		1F12FAD91C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F12FADE1C3AABB9000AC1A3 /* TaskBerserkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskBerserkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F12FAE41C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1E04ED1C45329C005006FC /* MetaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewController.swift; sourceTree = "<group>"; };
@@ -273,7 +273,6 @@
 			children = (
 				1F12FAC11C3AABB9000AC1A3 /* TaskBerserk */,
 				1F12FAD61C3AABB9000AC1A3 /* TaskBerserkTests */,
-				1F12FAD91C3AABB9000AC1A3 /* Info.plist */,
 				1F12FAE11C3AABB9000AC1A3 /* TaskBerserkUITests */,
 				1F12FAC01C3AABB9000AC1A3 /* Products */,
 				1F8697A81C3AB53D00CB3FFE /* Frameworks */,
@@ -295,12 +294,11 @@
 			children = (
 				1F8726BD1C3BBF7000EEA569 /* Application */,
 				1F70EE931C43B376008AC4F2 /* Layout */,
-				1F8697AC1C3AB67000CB3FFE /* Model */,
+				1FED43A21C41120F0085A5A2 /* CoreData */,
+				1F8697AC1C3AB67000CB3FFE /* OldModel */,
 				1F8697AB1C3AB66900CB3FFE /* ViewModel */,
 				1F8697AA1C3AB66400CB3FFE /* View */,
-				1FED43A21C41120F0085A5A2 /* CoreData */,
 				1F70EE941C43B39F008AC4F2 /* Shared */,
-				1F79B7AE1C3FFF0D00976A35 /* Extensions */,
 				1F8697A91C3AB65300CB3FFE /* Supporting files */,
 			);
 			path = TaskBerserk;
@@ -313,6 +311,7 @@
 				1F8697AD1C3AB6D300CB3FFE /* Model */,
 				1F8697AE1C3AB6D800CB3FFE /* ViewModel */,
 				1FFDFE221C3E686300DA25DD /* Views */,
+				1F12FAD91C3AABB9000AC1A3 /* Info.plist */,
 			);
 			path = TaskBerserkTests;
 			sourceTree = "<group>";
@@ -352,6 +351,7 @@
 			children = (
 				1FED43B11C4142B40085A5A2 /* FetchedResultsDataProvider.swift */,
 				1FED43B31C4143620085A5A2 /* DataProvider.swift */,
+				1F79B7AE1C3FFF0D00976A35 /* Extensions */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -455,7 +455,7 @@
 			name = ViewModel;
 			sourceTree = "<group>";
 		};
-		1F8697AC1C3AB67000CB3FFE /* Model */ = {
+		1F8697AC1C3AB67000CB3FFE /* OldModel */ = {
 			isa = PBXGroup;
 			children = (
 				1F8697AF1C3AB77900CB3FFE /* TaskEntity.swift */,
@@ -468,7 +468,7 @@
 				1F8726B51C3BB7E800EEA569 /* TaskGrabbing.swift */,
 				1F8726B71C3BB87C00EEA569 /* TaskGrab.swift */,
 			);
-			name = Model;
+			name = OldModel;
 			sourceTree = "<group>";
 		};
 		1F8697AD1C3AB6D300CB3FFE /* Model */ = {
