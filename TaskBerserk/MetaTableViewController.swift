@@ -13,38 +13,17 @@ import RxCocoa
 class MetaTableViewController: UITableViewController {
     @IBOutlet weak var filterSegmentedControl: UISegmentedControl!
     
-    
     var viewModel: MetaTableViewModeling! {
         didSet {
             viewModel.updates
                 .subscribeNext { update in
                     self.processUpdates(update)
-                }.addDisposableTo(disposeBag)
+                }
+                .addDisposableTo(disposeBag)
         }
     }
     
-    func processUpdates(updates: [DataProviderUpdate<MetaTableViewCellModeling>]?) {
-        // nil if fetchedResultsDataProvider was reconfigured
-        guard let updates = updates else { return tableView.reloadData() }
-        tableView.beginUpdates()
-        for update in updates {
-            switch update {
-            case .Insert(let indexPath):
-                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            case .Update(let indexPath, let cellViewModel):
-                guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? MetaTableViewCell else { break }
-                cell.viewModel = cellViewModel
-            case .Move(let indexPath, let newIndexPath):
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
-            case .Delete(let indexPath):
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            }
-        }
-        tableView.endUpdates()
-    }
-    
-    
+    // MARK: Private
     private let disposeBag = DisposeBag()
     
     private struct Constants {
@@ -69,6 +48,28 @@ extension UISegmentedControl {
 
 // MARK: UITableViewDataSource
 extension MetaTableViewController {
+    
+    func processUpdates(updates: [DataProviderUpdate<MetaTableViewCellModeling>]?) {
+        // nil if fetchedResultsDataProvider was reconfigured
+        guard let updates = updates else { return tableView.reloadData() }
+        tableView.beginUpdates()
+        for update in updates {
+            switch update {
+            case .Insert(let indexPath):
+                tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            case .Update(let indexPath, let cellViewModel):
+                guard let cell = tableView.cellForRowAtIndexPath(indexPath) as? MetaTableViewCell else { break }
+                cell.viewModel = cellViewModel
+            case .Move(let indexPath, let newIndexPath):
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+            case .Delete(let indexPath):
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
+        }
+        tableView.endUpdates()
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfItemsInSection(section)
     }
