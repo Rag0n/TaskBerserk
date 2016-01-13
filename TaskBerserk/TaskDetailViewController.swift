@@ -17,14 +17,17 @@ class TaskDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bindToViewModel()
+        configureButtonActions()
         
-        deleteButton.rx_tap
-            .subscribeNext(viewModel.deleteTask)
+        viewModel.popViewController
+            .filter { $0 == true }
+            .subscribeNext { _ in
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            }
             .addDisposableTo(disposeBag)
         
-        cancelButton.rx_tap
-            .subscribeNext { self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil) }
-            .addDisposableTo(disposeBag)
+        
+        
     }
     
     // MARK: IBOutlets
@@ -50,12 +53,37 @@ class TaskDetailViewController: UITableViewController {
     
     private let disposeBag = DisposeBag()
     
+    private func configureButtonActions() {
+        deleteButton.rx_tap
+            .subscribeNext(viewModel.deleteTask)
+            .addDisposableTo(disposeBag)
+        
+        // TODO
+        cancelButton.rx_tap
+            .subscribeNext { self.viewModel.cancelChanges() }
+            .addDisposableTo(disposeBag)
+        
+        saveButton.rx_tap
+            .subscribeNext {
+                self.viewModel.saveChanges()
+            }
+            .addDisposableTo(disposeBag)
+        
+//        viewModel.name
+        nameTextField.rx_text
+            .debounce(0.3, scheduler: MainScheduler.instance)
+            .subscribeNext { taskName in
+                self.viewModel.changeTaskName(taskName)
+            }
+            .addDisposableTo(disposeBag)
+    }
+    
     private func bindToViewModel() {
         viewModel.name
             .bindTo(nameTextField.rx_text)
             .addDisposableTo(disposeBag)
         
-        viewModel.priority
+        viewModel.project
             .bindTo(projectTextField.rx_text)
             .addDisposableTo(disposeBag)
         

@@ -455,8 +455,8 @@
 			children = (
 				1FFDFE4D1C3ED60300DA25DD /* TasksTableView */,
 				1F70EE981C43F3F1008AC4F2 /* TaskDetailView */,
-				1FFDFE4E1C3ED61100DA25DD /* ProjectsTableView */,
 				1F1E04EF1C4532B3005006FC /* MetaTableView */,
+				1FFDFE4E1C3ED61100DA25DD /* ProjectsTableView */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
