@@ -86,7 +86,7 @@
         <!--Edit-->
         <scene sceneID="suq-ZO-jgc">
             <objects>
-                <tableViewController id="o6B-uz-6cU" customClass="TaskDetailViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TaskDetailViewController" id="o6B-uz-6cU" customClass="TaskDetailViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wod-eZ-WIC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -392,7 +392,7 @@
         <!--Meta Table View Controller-->
         <scene sceneID="TdH-IW-aps">
             <objects>
-                <tableViewController id="Sah-f1-fgD" customClass="MetaTableViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MetaTableViewController" id="Sah-f1-fgD" customClass="MetaTableViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CNy-V3-d03">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
