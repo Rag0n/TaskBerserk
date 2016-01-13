@@ -67,10 +67,3 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
     private let disposeBag = DisposeBag()
     
 }
-
-
-extension TasksTableViewModel: DataSourceDelegate {
-    func cellIdentifierForObject(object: Task) -> String {
-        return "TaskTableViewCell"
-    }
-}
