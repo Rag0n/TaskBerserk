@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol MetaTableViewModeling {
+protocol MetaTableViewModeling: ManagedObjectContextSettable {
     var updates: Observable<[DataProviderUpdate<MetaTableViewCellModeling>]> { get }
     
     func numberOfItemsInSection(section: Int) -> Int
