@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
         
         container.register(TasksTableViewModeling.self) { r in
-            let viewModel = TasksTableViewModel(project: nil, managedObject: managedObjectContext)
+            let viewModel = TasksTableViewModel(managedObject: managedObjectContext)
             return viewModel
         }
         
