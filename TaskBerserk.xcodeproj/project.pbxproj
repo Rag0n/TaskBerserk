@@ -55,6 +55,8 @@
 		1F8697C31C3B072500CB3FFE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C21C3B072500CB3FFE /* Network.swift */; };
 		1F8697C51C3B080D00CB3FFE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C41C3B080D00CB3FFE /* NetworkError.swift */; };
 		1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */; };
+		1F86CA341C4698B100A48A8F /* ProjectSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86CA331C4698B100A48A8F /* ProjectSpec.swift */; };
+		1F86CA361C46991E00A48A8F /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86CA351C46991E00A48A8F /* CoreDataHelpers.swift */; };
 		1F8726B21C3BB14E00EEA569 /* Intheam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B11C3BB14E00EEA569 /* Intheam.swift */; };
 		1F8726B41C3BB43800EEA569 /* AppKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F8726B31C3BB43800EEA569 /* AppKey.plist */; };
 		1F8726B61C3BB7E800EEA569 /* TaskGrabbing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B51C3BB7E800EEA569 /* TaskGrabbing.swift */; };
@@ -198,6 +200,8 @@
 		1F8697C21C3B072500CB3FFE /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		1F8697C41C3B080D00CB3FFE /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSpec.swift; sourceTree = "<group>"; };
+		1F86CA331C4698B100A48A8F /* ProjectSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectSpec.swift; sourceTree = "<group>"; };
+		1F86CA351C46991E00A48A8F /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		1F8726B11C3BB14E00EEA569 /* Intheam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intheam.swift; sourceTree = "<group>"; };
 		1F8726B31C3BB43800EEA569 /* AppKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppKey.plist; sourceTree = "<group>"; };
 		1F8726B51C3BB7E800EEA569 /* TaskGrabbing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskGrabbing.swift; sourceTree = "<group>"; };
@@ -474,13 +478,10 @@
 		1F8697AD1C3AB6D300CB3FFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */,
-				1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */,
-				1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */,
-				1F8697B61C3AD64E00CB3FFE /* TaskEntitySpec.swift */,
-				1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */,
-				1F8697B41C3AD63800CB3FFE /* Dummy.swift */,
+				1F86CA321C4697CB00A48A8F /* Networking */,
 				1F8697B31C3AD63800CB3FFE /* TaskBerserkTests-Bridging-Header.h */,
+				1F86CA331C4698B100A48A8F /* ProjectSpec.swift */,
+				1F86CA351C46991E00A48A8F /* CoreDataHelpers.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -494,6 +495,19 @@
 				1F78AC711C402D88006F17D2 /* ProjectTableViewCellSpec.swift */,
 			);
 			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		1F86CA321C4697CB00A48A8F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */,
+				1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */,
+				1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */,
+				1F8697B61C3AD64E00CB3FFE /* TaskEntitySpec.swift */,
+				1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */,
+				1F8697B41C3AD63800CB3FFE /* Dummy.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		1F8726BD1C3BBF7000EEA569 /* Application */ = {
@@ -791,11 +805,13 @@
 				1F8726D51C3C54D700EEA569 /* DummyResponse.swift in Sources */,
 				1F78AC721C402D88006F17D2 /* ProjectTableViewCellSpec.swift in Sources */,
 				1F8726D31C3C37DE00EEA569 /* AppDelegateSpec.swift in Sources */,
+				1F86CA361C46991E00A48A8F /* CoreDataHelpers.swift in Sources */,
 				1F8726D71C3C56C900EEA569 /* TasksTableViewModelSpec.swift in Sources */,
 				1F8726BF1C3BD2FB00EEA569 /* TaskGrabSpec.swift in Sources */,
 				1F8726D91C3C5F2100EEA569 /* TaskTableViewCellSpec.swift in Sources */,
 				1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */,
 				1F8697B51C3AD63800CB3FFE /* Dummy.swift in Sources */,
+				1F86CA341C4698B100A48A8F /* ProjectSpec.swift in Sources */,
 				1F8726BC1C3BBE6900EEA569 /* ResponseEntitySpec.swift in Sources */,
 				1FFDFE241C3E687C00DA25DD /* TasksTableViewControllerSpec.swift in Sources */,
 				1F8697BC1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift in Sources */,
