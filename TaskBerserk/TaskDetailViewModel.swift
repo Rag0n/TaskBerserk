@@ -9,13 +9,16 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import CoreData
 
 class TaskDetailViewModel: TaskDetailViewModeling {
+    
+    var managedObjectContext: NSManagedObjectContext!
     
     // TaskDetailViewModel
     
     var name: Observable<String> {
-        return _desc.asObservable()
+        return _name.asObservable()
     }
     
     var status: Observable<String> {
@@ -34,6 +37,10 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         return _priority.asObservable()
     }
     
+    var project: Observable<String> {
+        return _project.asObservable()
+    }
+    
     // send after task deleting
     var popViewController: Observable<Bool> {
         return _popViewController.asObservable()
@@ -42,7 +49,7 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     init(task: Task) {
         self.task = task
         
-        _desc.onNext(task.name)
+        _name.onNext(task.name)
         _status.onNext(task.status)
         _urgency.onNext("\(task.urgency)")
         _priority.onNext(task.priority ?? "No priority")
@@ -54,6 +61,15 @@ class TaskDetailViewModel: TaskDetailViewModeling {
             }
         }
         _tagsText.onNext(tagsText)
+        
+        _project.onNext("\(task.project)")
+        
+    }
+    
+    func changeTaskName(newName: String) {
+        if !newName.isEmpty {
+            _name.onNext(newName)
+        }
     }
     
     func deleteTask() {
@@ -68,14 +84,32 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         _popViewController.onNext(true)
     }
     
+    func cancelChanges() {
+        _popViewController.onNext(true)
+    }
+    
+    func saveChanges() {
+        do {
+            let newName = try _name.value()
+            managedObjectContext.performChanges {
+                self.task.changeName(newName)
+            }
+        } catch {
+            fatalError("Something went wrong while saving task")
+        }
+        
+        _popViewController.onNext(true)
+    }
+    
     // MARK: Private
     
     private let task: Task
     
-    private let _desc = BehaviorSubject<String>(value: "")
+    private let _name = BehaviorSubject<String>(value: "")
     private let _status = BehaviorSubject<String>(value: "")
     private let _tagsText = BehaviorSubject<String>(value: "")
     private let _urgency = BehaviorSubject<String>(value: "")
     private let _priority = BehaviorSubject<String>(value: "")
+    private let _project = BehaviorSubject<String>(value: "")
     private let _popViewController = BehaviorSubject<Bool>(value: false)
 }
