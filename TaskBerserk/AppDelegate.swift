@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let managedObjectContext = createMainContext()
     let container = Container() { container in
         let managedObjectContext = createMainContext()
+        
         // Models
         container.register(Networking.self) { _ in Network() }
         container.register(TaskGrabbing.self) { r in
@@ -24,12 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // ViewModels
-//        container.register(ProjectsTableViewModeling.self) { r in
-//            let viewModel = ProjectsTableViewModel(taskGrab: r.resolve(TaskGrabbing.self)!)
-//            viewModel.managedObjectContext = createMainContext()
-//            return viewModel
-//        }
-        
         container.register(TasksTableViewModeling.self) { r in
             let viewModel = TasksTableViewModel(managedObject: managedObjectContext)
             return viewModel
@@ -41,10 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // Views
-//        container.registerForStoryboard(ProjectsTableViewController.self) { r, c in
-//            c.viewModel = r.resolve(ProjectsTableViewModeling.self)!
-//        }
-        
         container.registerForStoryboard(TasksTableViewController.self) { r, c in
             c.viewModel = r.resolve(TasksTableViewModeling.self)!
         }
