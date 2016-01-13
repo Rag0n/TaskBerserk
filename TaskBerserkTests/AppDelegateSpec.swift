@@ -26,7 +26,8 @@ class AppDelegateSpec: QuickSpec {
                 expect(container.resolve(TaskGrabbing.self)).notTo(beNil())
                 
                 // ViewModels
-                expect(container.resolve(ProjectsTableViewModeling.self)).notTo(beNil())
+                expect(container.resolve(TasksTableViewModeling.self)).notTo(beNil())
+                expect(container.resolve(MetaTableViewModeling.self)).notTo(beNil())
             }
             
             it("injects view models to views") {
@@ -35,9 +36,14 @@ class AppDelegateSpec: QuickSpec {
                     bundle: bundle,
                     container: container)
                 
-                let taskTableViewController = storyboard.instantiateViewControllerWithIdentifier("ProjectsTableViewController") as? ProjectsTableViewController
+                let taskTableViewController = storyboard.instantiateViewControllerWithIdentifier("TasksTableViewController") as? TasksTableViewController
+                let metaTableViewController = storyboard.instantiateViewControllerWithIdentifier("MetaTableViewController") as? MetaTableViewController
                 
                 expect(taskTableViewController).notTo(beNil())
+                expect(taskTableViewController?.viewModel).notTo(beNil())
+                
+                expect(metaTableViewController).notTo(beNil())
+                expect(metaTableViewController?.viewModel).notTo(beNil())
             }
         }
     }
