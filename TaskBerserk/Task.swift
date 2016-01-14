@@ -18,7 +18,7 @@ final class Task: ManagedObject {
     @NSManaged private(set) var dueDate: NSDate?
     
     @NSManaged private(set) var tags: Set<Tag>?
-    @NSManaged private(set) var project: Project
+    @NSManaged private(set) var project: Project?
     
     static func insertIntoContext(moc: NSManagedObjectContext, taskEntity: TaskEntity) -> Task {
         let task: Task = moc.insertObject()
@@ -73,8 +73,12 @@ final class Task: ManagedObject {
     
     override func prepareForDeletion() {
         // deletes project if it doesnt have remaining tasks
-        if project.tasks.filter({ !$0.deleted }).isEmpty {
-            managedObjectContext?.deleteObject(project)
+//        project.de
+        if let project = project {
+            if project.tasks.filter({ !$0.deleted }).isEmpty {
+                print(project)
+                managedObjectContext?.deleteObject(project)
+            }
         }
         
         // deletes tags if they dont have remaining tasks
