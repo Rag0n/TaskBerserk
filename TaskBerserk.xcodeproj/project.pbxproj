@@ -479,9 +479,9 @@
 			isa = PBXGroup;
 			children = (
 				1F86CA321C4697CB00A48A8F /* Networking */,
-				1F8697B31C3AD63800CB3FFE /* TaskBerserkTests-Bridging-Header.h */,
 				1F86CA331C4698B100A48A8F /* ProjectSpec.swift */,
 				1F86CA351C46991E00A48A8F /* CoreDataHelpers.swift */,
+				1F8697B31C3AD63800CB3FFE /* TaskBerserkTests-Bridging-Header.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
