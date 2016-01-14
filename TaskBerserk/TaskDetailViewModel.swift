@@ -67,6 +67,7 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     }
     
     func changeTaskName(newName: String) {
+        // TODO: Иначе послать сигнал onNext содержащий сообщение ошибки, view покажет Alert
         if !newName.isEmpty {
             _name.onNext(newName)
         }
