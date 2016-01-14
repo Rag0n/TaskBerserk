@@ -35,5 +35,22 @@ class TaskSpec: QuickSpec {
             expect(fetchedTask.priority).toEventually(equal("H"))
             expect(fetchedTask.tags?.first?.name).toEventually(equal("@computer"))
         }
+        
+        it("adds already existing tags to task") {
+            Task.insertIntoContext(managedObjectContext, name: "Test Task", project: "Testing", id: "1", status: "pending", priority: "H", tags: ["@computer, @online"])
+            let task = Task.insertIntoContext(managedObjectContext, name: "Test Task 2", project: "Testing", id: "2", status: "pending", priority: "H", tags: nil)
+            
+            task.addTags(["@computer", "@online"])
+            
+            expect(task.tags?.count).toEventually(equal(2))
+        }
+        
+        it("add new tags to task") {
+            let task = Task.insertIntoContext(managedObjectContext, name: "Test Task 2", project: "Testing", id: "2", status: "pending", priority: "H", tags: nil)
+            
+            task.addTags(["@computer", "@online"])
+            
+            expect(task.tags?.count).toEventually(equal(2))
+        }
     }
 }
