@@ -37,7 +37,7 @@ final class Task: ManagedObject {
     static func insertIntoContext(moc: NSManagedObjectContext,
         name: String, project: String? = nil, id: String? = nil,
         status: String? = nil, priority: String? = nil,
-        dueDate: String? = nil, urgency: Double? = nil, tags: [String]? = nil) {
+        dueDate: String? = nil, urgency: Double? = nil, tags: [String]? = nil) -> Task {
 
             let task: Task = moc.insertObject()
             task.name = name
@@ -52,6 +52,8 @@ final class Task: ManagedObject {
             if let tags = tags {
                 task.tags = Tag.findOrCreateTags(tags, inContext: moc)
             }
+            
+            return task
     }
     
     func addTags(tagNames: [String]) {
