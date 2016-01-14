@@ -10,6 +10,7 @@
 		1F12FAC31C3AABB9000AC1A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12FAC21C3AABB9000AC1A3 /* AppDelegate.swift */; };
 		1F12FACA1C3AABB9000AC1A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F12FAC91C3AABB9000AC1A3 /* Assets.xcassets */; };
 		1F12FACD1C3AABB9000AC1A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F12FACB1C3AABB9000AC1A3 /* LaunchScreen.storyboard */; };
+		1F1830ED1C4838A7001B6897 /* TaskSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1830EC1C4838A7001B6897 /* TaskSpec.swift */; };
 		1F1E04EE1C45329C005006FC /* MetaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E04ED1C45329C005006FC /* MetaTableViewController.swift */; };
 		1F1E04F11C4535F9005006FC /* MetaTableViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E04F01C4535F9005006FC /* MetaTableViewModeling.swift */; };
 		1F1E04F31C453605005006FC /* MetaTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E04F21C453605005006FC /* MetaTableViewModel.swift */; };
@@ -151,6 +152,7 @@
 		1F12FAD91C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F12FADE1C3AABB9000AC1A3 /* TaskBerserkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskBerserkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F12FAE41C3AABB9000AC1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F1830EC1C4838A7001B6897 /* TaskSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskSpec.swift; sourceTree = "<group>"; };
 		1F1E04ED1C45329C005006FC /* MetaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewController.swift; sourceTree = "<group>"; };
 		1F1E04F01C4535F9005006FC /* MetaTableViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewModeling.swift; sourceTree = "<group>"; };
 		1F1E04F21C453605005006FC /* MetaTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewModel.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				1F86CA321C4697CB00A48A8F /* Networking */,
+				1F1830EC1C4838A7001B6897 /* TaskSpec.swift */,
 				1F86CA331C4698B100A48A8F /* ProjectSpec.swift */,
 				1F2E2DF71C4806C100EFF59C /* TagSpec.swift */,
 				1F86CA351C46991E00A48A8F /* CoreDataHelpers.swift */,
@@ -811,6 +814,7 @@
 				1F86CA361C46991E00A48A8F /* CoreDataHelpers.swift in Sources */,
 				1F8726D71C3C56C900EEA569 /* TasksTableViewModelSpec.swift in Sources */,
 				1F8726BF1C3BD2FB00EEA569 /* TaskGrabSpec.swift in Sources */,
+				1F1830ED1C4838A7001B6897 /* TaskSpec.swift in Sources */,
 				1F8726D91C3C5F2100EEA569 /* TaskTableViewCellSpec.swift in Sources */,
 				1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */,
 				1F8697B51C3AD63800CB3FFE /* Dummy.swift in Sources */,
