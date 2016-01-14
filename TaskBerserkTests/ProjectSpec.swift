@@ -23,7 +23,6 @@ class ProjectSpec: QuickSpec {
             
             let result = try! managedObjectContext.executeFetchRequest(Project.sortedFetchRequest) as! [Project]
             
-            expect(result).notTo(beNil())
             expect(result.count).toEventually(equal(1))
         }
         
@@ -37,7 +36,7 @@ class ProjectSpec: QuickSpec {
             expect(result[0].tasks.count).toEventually(equal(2))
         }
         
-        it("deletes tasks if project is getting delete") {
+        it("deletes tasks after deleting a project") {
             Task.insertIntoContext(managedObjectContext, name: "task 1", project: "new project", id: "123", status: "pending", urgency: 2.30)
             Task.insertIntoContext(managedObjectContext, name: "task 2", project: "new project", id: "1234", status: "pending", urgency: 2.30)
             let projects = try! managedObjectContext.executeFetchRequest(Project.sortedFetchRequest) as! [Project]
