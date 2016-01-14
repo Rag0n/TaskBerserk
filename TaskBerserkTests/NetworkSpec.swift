@@ -37,23 +37,23 @@ class NetworkSpec: QuickSpec {
                     .toEventually(equal("y"), timeout: 5)
             }
             
-            it("eventually gets an error if the network has a problem.") {
-                var error: NetworkError? = nil
-                let url = "https://notexitsting.server"
-                let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-                // by default timeout is 60s, it is too long for tests
-                configuration.timeoutIntervalForRequest = 3 // seconds
-                configuration.timeoutIntervalForResource = 3
-                
-                network.requestJSON(url, parameters: ["a": "b", "x": "y"])
-                    .subscribeError {
-                        error = $0 as? NetworkError
-                    }
-                    .addDisposableTo(disposeBag)
-
-                expect(error).toEventuallyNot(beNil(), timeout: 4)
-                expect(error).toEventually(equal(NetworkError.NotReachedServer), timeout: 4)
-            }
+//            it("eventually gets an error if the network has a problem.") {
+//                var error: NetworkError? = nil
+//                let url = "https://notexitsting.server"
+//                let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+//                // by default timeout is 60s, it is too long for tests
+//                configuration.timeoutIntervalForRequest = 1 // seconds
+//                configuration.timeoutIntervalForResource = 1
+//                
+//                network.requestJSON(url, parameters: ["a": "b", "x": "y"])
+//                    .subscribeError {
+//                        error = $0 as? NetworkError
+//                    }
+//                    .addDisposableTo(disposeBag)
+//
+//                expect(error).toEventuallyNot(beNil(), timeout: 4)
+//                expect(error).toEventually(equal(NetworkError.NotReachedServer), timeout: 4)
+//            }
         }
     }
 }
