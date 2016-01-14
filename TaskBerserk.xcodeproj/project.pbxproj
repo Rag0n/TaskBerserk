@@ -17,6 +17,7 @@
 		1F1E04F71C453638005006FC /* MetaTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E04F61C453638005006FC /* MetaTableViewCellModel.swift */; };
 		1F1E04F91C4536BB005006FC /* MetaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E04F81C4536BB005006FC /* MetaTableViewCell.swift */; };
 		1F1E05011C4574C5005006FC /* NameWithCountRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E05001C4574C5005006FC /* NameWithCountRepresentable.swift */; };
+		1F2E2DF81C4806C100EFF59C /* TagSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E2DF71C4806C100EFF59C /* TagSpec.swift */; };
 		1F70EE901C43B34A008AC4F2 /* TaskDetailViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE8F1C43B34A008AC4F2 /* TaskDetailViewModeling.swift */; };
 		1F70EE921C43B36C008AC4F2 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */; };
 		1F70EE961C43B6AC008AC4F2 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */; };
@@ -157,6 +158,7 @@
 		1F1E04F61C453638005006FC /* MetaTableViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewCellModel.swift; sourceTree = "<group>"; };
 		1F1E04F81C4536BB005006FC /* MetaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaTableViewCell.swift; sourceTree = "<group>"; };
 		1F1E05001C4574C5005006FC /* NameWithCountRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameWithCountRepresentable.swift; sourceTree = "<group>"; };
+		1F2E2DF71C4806C100EFF59C /* TagSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSpec.swift; sourceTree = "<group>"; };
 		1F70EE8F1C43B34A008AC4F2 /* TaskDetailViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewModeling.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -480,6 +482,7 @@
 			children = (
 				1F86CA321C4697CB00A48A8F /* Networking */,
 				1F86CA331C4698B100A48A8F /* ProjectSpec.swift */,
+				1F2E2DF71C4806C100EFF59C /* TagSpec.swift */,
 				1F86CA351C46991E00A48A8F /* CoreDataHelpers.swift */,
 				1F8697B31C3AD63800CB3FFE /* TaskBerserkTests-Bridging-Header.h */,
 			);
@@ -811,6 +814,7 @@
 				1F8726D91C3C5F2100EEA569 /* TaskTableViewCellSpec.swift in Sources */,
 				1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */,
 				1F8697B51C3AD63800CB3FFE /* Dummy.swift in Sources */,
+				1F2E2DF81C4806C100EFF59C /* TagSpec.swift in Sources */,
 				1F86CA341C4698B100A48A8F /* ProjectSpec.swift in Sources */,
 				1F8726BC1C3BBE6900EEA569 /* ResponseEntitySpec.swift in Sources */,
 				1FFDFE241C3E687C00DA25DD /* TasksTableViewControllerSpec.swift in Sources */,
