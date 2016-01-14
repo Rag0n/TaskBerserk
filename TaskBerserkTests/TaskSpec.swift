@@ -52,5 +52,13 @@ class TaskSpec: QuickSpec {
             
             expect(task.tags?.count).toEventually(equal(2))
         }
+        
+        it("changes task's name") {
+            let task = Task.insertIntoContext(managedObjectContext, name: "Test Task", project: "Testing", id: "1", status: "pending", priority: "H", tags: ["@computer, @online"])
+            
+            task.changeName("New task name")
+            
+            expect(task.name).toEventually(equal("New task name"))
+        }
     }
 }
