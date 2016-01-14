@@ -36,17 +36,6 @@ class ProjectSpec: QuickSpec {
             expect(result[0].tasks.count).toEventually(equal(2))
         }
         
-        it("deletes tasks after deleting a project") {
-            Task.insertIntoContext(managedObjectContext, name: "task 1", project: "new project", id: "123", status: "pending", urgency: 2.30)
-            Task.insertIntoContext(managedObjectContext, name: "task 2", project: "new project", id: "1234", status: "pending", urgency: 2.30)
-            let projects = try! managedObjectContext.executeFetchRequest(Project.sortedFetchRequest) as! [Project]
-            let project = projects[0]
-            
-            managedObjectContext.deleteObject(project)
-            let tasks = try! managedObjectContext.executeFetchRequest(Task.sortedFetchRequest) as! [Task]
-            
-            expect(tasks.count).toEventually(equal(0))
-        }
         
         it("deletes project if project doesnt have tasks") {
             let task = Task.insertIntoContext(managedObjectContext, name: "task 1", project: "new project", id: "123", status: "pending", urgency: 2.30)
@@ -55,6 +44,18 @@ class ProjectSpec: QuickSpec {
             let projects = try! managedObjectContext.executeFetchRequest(Project.sortedFetchRequest) as! [Project]
             
             expect(projects.count).toEventually(equal(0))
+        }
+        
+        it("deletes tasks after deleting a project which contain those tasks") {
+            Task.insertIntoContext(managedObjectContext, name: "task 1", project: "new project", id: "123", status: "pending", urgency: 2.30)
+            Task.insertIntoContext(managedObjectContext, name: "task 2", project: "new project", id: "123", status: "pending", urgency: 2.30)
+            let projects = try! managedObjectContext.executeFetchRequest(Project.sortedFetchRequest) as! [Project]
+            let project = projects[0]
+            
+            managedObjectContext.deleteObject(project)
+            let tasks = try! managedObjectContext.executeFetchRequest(Task.sortedFetchRequest) as! [Task]
+            
+            expect(tasks.count).toEventually(equal(0))
         }
     }
 }
