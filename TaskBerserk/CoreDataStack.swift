@@ -11,7 +11,7 @@ import CoreData
 
 private let storeURL = NSURL.documentsURL.URLByAppendingPathComponent("TaskBerserk.taskberserk")
 
-func createMainContext() -> NSManagedObjectContext {
+func createMainContext(concurrencyType: NSManagedObjectContextConcurrencyType) -> NSManagedObjectContext {
     // get bundle where object model resides
     let bundles = [NSBundle(forClass: Task.self)]
     guard let model = NSManagedObjectModel.mergedModelFromBundles(bundles) else {
@@ -22,7 +22,7 @@ func createMainContext() -> NSManagedObjectContext {
     let psc = NSPersistentStoreCoordinator(managedObjectModel: model)
     try! psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil)
     
-    let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+    let context = NSManagedObjectContext(concurrencyType: concurrencyType)
     context.persistentStoreCoordinator = psc
     
     return context
