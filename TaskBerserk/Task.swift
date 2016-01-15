@@ -21,17 +21,32 @@ final class Task: ManagedObject {
     @NSManaged private(set) var tags: Set<Tag>?
     @NSManaged private(set) var project: Project?
     
-    static func insertIntoContext(moc: NSManagedObjectContext, taskMapper: TaskMapper) -> Task {
-        let task: Task = moc.insertObject()
-        task.id = taskMapper.id
-        task.name = taskMapper.name
-        task.status = taskMapper.status
-        task.urgency = taskMapper.urgency
-        task.priority = taskMapper.priority
-//        task.project = Project.findOrCreateProject(taskMapper.projectName, inContext: moc)
-        // TODO: Реализовать NSDateFormatter
-        // TODO: Реализовать конвертирование тэгов из taskEntity в Tags
-        // TODO: Реализовать конвертирование dueDate из taskEntity
+    static func updateOrCreateTask(
+        inContext moc: NSManagedObjectContext,
+        name: String, project: String? = nil, id: String,
+        status: String, priority: String? = nil,
+        dueDate: String? = nil, urgency: Double? = nil, tags: [String]? = nil) -> Task {
+        
+        let predicate = NSPredicate(format: "id = %@", id)
+        let task = findOrCreateInContext(moc, matchingPredicate: predicate) { task in
+            task.name = name
+            task.status = status
+            task.priority = priority
+            
+            // TODO: Написать DateFormatter
+//            task.dueDate = dueDate
+            
+            if let project = project {
+                task.project = Project.findOrCreateProject(project, inContext: moc)
+            }
+            
+            if let tags = tags {
+                task.tags = Tag.findOrCreateTags(tags, inContext: moc)
+            }
+            
+            task.urgency = self.calculateUrgency()
+        }
+            
         return task
     }
     
@@ -48,11 +63,15 @@ final class Task: ManagedObject {
             task.priority = priority ?? "No priority"
             task.dueDate = nil
             
-            task.urgency = urgency ?? Task.calculateUrgency()
-            task.project = Project.findOrCreateProject(project ?? "default", inContext: moc)
+            if let project = project {
+                task.project = Project.findOrCreateProject(project, inContext: moc)
+            }
+            
             if let tags = tags {
                 task.tags = Tag.findOrCreateTags(tags, inContext: moc)
             }
+            
+            task.urgency = urgency ?? Task.calculateUrgency()
             
             return task
     }
