@@ -25,6 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             IntheamWebService(network: r.resolve(Networking.self)!)
         }
         
+        container.register(Importing.self) { r in
+            // TODO: изменить на Private
+            IntheamImporter(context: managedObjectContext, webService: r.resolve(TaskWebService.self)!)
+        }
+        
+        
         // ViewModels
         container.register(TasksTableViewModeling.self) { r in
             let viewModel = TasksTableViewModel(managedObject: managedObjectContext)
