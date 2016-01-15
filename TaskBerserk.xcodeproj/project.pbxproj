@@ -60,7 +60,7 @@
 		1F86CA361C46991E00A48A8F /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F86CA351C46991E00A48A8F /* CoreDataHelpers.swift */; };
 		1F8726B21C3BB14E00EEA569 /* Intheam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B11C3BB14E00EEA569 /* Intheam.swift */; };
 		1F8726B41C3BB43800EEA569 /* AppKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F8726B31C3BB43800EEA569 /* AppKey.plist */; };
-		1F8726B61C3BB7E800EEA569 /* TaskGrabbing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B51C3BB7E800EEA569 /* TaskGrabbing.swift */; };
+		1F8726B61C3BB7E800EEA569 /* TaskWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B51C3BB7E800EEA569 /* TaskWebService.swift */; };
 		1F8726B81C3BB87C00EEA569 /* TaskGrab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B71C3BB87C00EEA569 /* TaskGrab.swift */; };
 		1F8726BA1C3BBCB700EEA569 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B91C3BBCB700EEA569 /* ResponseEntity.swift */; };
 		1F8726BC1C3BBE6900EEA569 /* ResponseEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */; };
@@ -206,7 +206,7 @@
 		1F86CA351C46991E00A48A8F /* CoreDataHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		1F8726B11C3BB14E00EEA569 /* Intheam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intheam.swift; sourceTree = "<group>"; };
 		1F8726B31C3BB43800EEA569 /* AppKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppKey.plist; sourceTree = "<group>"; };
-		1F8726B51C3BB7E800EEA569 /* TaskGrabbing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskGrabbing.swift; sourceTree = "<group>"; };
+		1F8726B51C3BB7E800EEA569 /* TaskWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskWebService.swift; sourceTree = "<group>"; };
 		1F8726B71C3BB87C00EEA569 /* TaskGrab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskGrab.swift; sourceTree = "<group>"; };
 		1F8726B91C3BBCB700EEA569 /* ResponseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
 		1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntitySpec.swift; sourceTree = "<group>"; };
@@ -479,7 +479,7 @@
 				1F8697C21C3B072500CB3FFE /* Network.swift */,
 				1F8697C41C3B080D00CB3FFE /* NetworkError.swift */,
 				1F8726B11C3BB14E00EEA569 /* Intheam.swift */,
-				1F8726B51C3BB7E800EEA569 /* TaskGrabbing.swift */,
+				1F8726B51C3BB7E800EEA569 /* TaskWebService.swift */,
 				1F8726B71C3BB87C00EEA569 /* TaskGrab.swift */,
 			);
 			name = OldModel;
@@ -798,7 +798,7 @@
 				1FFDFE521C3ED8DD00DA25DD /* ProjectsTableViewModel.swift in Sources */,
 				1F8726C31C3C273100EEA569 /* ProjectTableViewCell.swift in Sources */,
 				1FED43A51C4112270085A5A2 /* TaskBerserk.xcdatamodeld in Sources */,
-				1F8726B61C3BB7E800EEA569 /* TaskGrabbing.swift in Sources */,
+				1F8726B61C3BB7E800EEA569 /* TaskWebService.swift in Sources */,
 				1F8726C11C3C265000EEA569 /* ProjectsTableViewController.swift in Sources */,
 				1F8726B21C3BB14E00EEA569 /* Intheam.swift in Sources */,
 				1F8726CD1C3C2E1C00EEA569 /* TasksTableViewModel.swift in Sources */,

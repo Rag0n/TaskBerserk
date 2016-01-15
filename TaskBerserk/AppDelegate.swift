@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Models
         container.register(Networking.self) { _ in Network() }
-        container.register(TaskGrabbing.self) { r in
+        container.register(TaskWebService.self) { r in
             TaskGrab(network: r.resolve(Networking.self)!)
         }
         

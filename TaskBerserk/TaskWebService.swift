@@ -1,5 +1,5 @@
 //
-//  TaskGrabbing.swift
+//  TaskWebService.swift
 //  TaskBerserk
 //
 //  Created by Александр on 05.01.16.
@@ -8,6 +8,6 @@
 
 import RxSwift
 
-protocol TaskGrabbing {
+protocol TaskWebService {
     func fetchAllTask() -> Observable<ResponseEntity>
 }

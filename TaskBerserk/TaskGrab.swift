@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import Himotoki
 
-class TaskGrab: TaskGrabbing {
+class TaskGrab: TaskWebService {
     private let network: Networking
     
     init(network: Networking) {

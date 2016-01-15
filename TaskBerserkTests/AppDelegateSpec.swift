@@ -23,7 +23,7 @@ class AppDelegateSpec: QuickSpec {
             it("resolves every service type.") {
                 // Models
                 expect(container.resolve(Networking.self)).notTo(beNil())
-                expect(container.resolve(TaskGrabbing.self)).notTo(beNil())
+                expect(container.resolve(TaskWebService.self)).notTo(beNil())
                 
                 // ViewModels
                 expect(container.resolve(TasksTableViewModeling.self)).notTo(beNil())

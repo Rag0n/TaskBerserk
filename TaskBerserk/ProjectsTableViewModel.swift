@@ -10,7 +10,7 @@ import RxSwift
 import CoreData
 
 class ProjectsTableViewModel: ProjectsTableViewModeling {
-    private let taskGrab: TaskGrabbing
+    private let taskGrab: TaskWebService
     private let disposeBag = DisposeBag()
     private let _cellModels = BehaviorSubject<[ProjectTableViewCellModeling]>(value: [])
     
@@ -20,7 +20,7 @@ class ProjectsTableViewModel: ProjectsTableViewModeling {
     
     var managedObjectContext: NSManagedObjectContext!
     
-    init(taskGrab: TaskGrabbing) {
+    init(taskGrab: TaskWebService) {
         self.taskGrab = taskGrab
         bindCellModelsToProjects()
     }

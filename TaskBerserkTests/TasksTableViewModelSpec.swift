@@ -14,7 +14,7 @@ import RxSwift
 
 class TasksTableViewModelSpec: QuickSpec {
     // MARK: Stub
-//    class StubTaskGrab: TaskGrabbing {
+//    class StubTaskGrab: TaskWebService {
 //        func fetchAllTask() -> Observable<ResponseEntity> {
 //            return Observable.create { observer in
 //                observer.onNext(dummyResponse)
