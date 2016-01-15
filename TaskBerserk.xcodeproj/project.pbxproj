@@ -26,7 +26,6 @@
 		1F70EE9C1C440D41008AC4F2 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE9B1C440D41008AC4F2 /* Project.swift */; };
 		1F70EE9E1C441779008AC4F2 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE9D1C441779008AC4F2 /* Tag.swift */; };
 		1F74C6FE1C419357001F812B /* NSManagedObjectContext+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74C6FD1C419357001F812B /* NSManagedObjectContext+extensions.swift */; };
-		1F78AC721C402D88006F17D2 /* ProjectTableViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F78AC711C402D88006F17D2 /* ProjectTableViewCellSpec.swift */; };
 		1F79B7B01C3FFF2600976A35 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F79B7AF1C3FFF2600976A35 /* UIViewController+extensions.swift */; };
 		1F8697711C3AAF4F00CB3FFE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8697671C3AAF4F00CB3FFE /* Alamofire.framework */; };
 		1F8697721C3AAF4F00CB3FFE /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8697681C3AAF4F00CB3FFE /* Cartography.framework */; };
@@ -62,8 +61,8 @@
 		1F8726B61C3BB7E800EEA569 /* TaskWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B51C3BB7E800EEA569 /* TaskWebService.swift */; };
 		1F8726B81C3BB87C00EEA569 /* IntheamWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B71C3BB87C00EEA569 /* IntheamWebService.swift */; };
 		1F8726BA1C3BBCB700EEA569 /* ResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B91C3BBCB700EEA569 /* ResponseMapper.swift */; };
-		1F8726BC1C3BBE6900EEA569 /* ResponseEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */; };
-		1F8726BF1C3BD2FB00EEA569 /* TaskGrabSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */; };
+		1F8726BC1C3BBE6900EEA569 /* ResponseMapperSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726BB1C3BBE6900EEA569 /* ResponseMapperSpec.swift */; };
+		1F8726BF1C3BD2FB00EEA569 /* IntheamWebServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726BE1C3BD2FB00EEA569 /* IntheamWebServiceSpec.swift */; };
 		1F8726C51C3C27E000EEA569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F8726C41C3C27E000EEA569 /* Main.storyboard */; };
 		1F8726C71C3C2D2400EEA569 /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726C61C3C2D2400EEA569 /* TasksTableViewController.swift */; };
 		1F8726C91C3C2D3200EEA569 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726C81C3C2D3200EEA569 /* TaskTableViewCell.swift */; };
@@ -160,7 +159,6 @@
 		1F70EE9B1C440D41008AC4F2 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		1F70EE9D1C441779008AC4F2 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		1F74C6FD1C419357001F812B /* NSManagedObjectContext+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+extensions.swift"; sourceTree = "<group>"; };
-		1F78AC711C402D88006F17D2 /* ProjectTableViewCellSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCellSpec.swift; sourceTree = "<group>"; };
 		1F79B7AF1C3FFF2600976A35 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		1F8697671C3AAF4F00CB3FFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		1F8697681C3AAF4F00CB3FFE /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
@@ -201,8 +199,8 @@
 		1F8726B51C3BB7E800EEA569 /* TaskWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskWebService.swift; sourceTree = "<group>"; };
 		1F8726B71C3BB87C00EEA569 /* IntheamWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntheamWebService.swift; sourceTree = "<group>"; };
 		1F8726B91C3BBCB700EEA569 /* ResponseMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMapper.swift; sourceTree = "<group>"; };
-		1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntitySpec.swift; sourceTree = "<group>"; };
-		1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskGrabSpec.swift; sourceTree = "<group>"; };
+		1F8726BB1C3BBE6900EEA569 /* ResponseMapperSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMapperSpec.swift; sourceTree = "<group>"; };
+		1F8726BE1C3BD2FB00EEA569 /* IntheamWebServiceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntheamWebServiceSpec.swift; sourceTree = "<group>"; };
 		1F8726C41C3C27E000EEA569 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1F8726C61C3C2D2400EEA569 /* TasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
 		1F8726C81C3C2D3200EEA569 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
@@ -493,7 +491,6 @@
 				1F8726D61C3C56C900EEA569 /* TasksTableViewModelSpec.swift */,
 				1F8726D41C3C54D700EEA569 /* DummyResponse.swift */,
 				1F8726D81C3C5F2100EEA569 /* TaskTableViewCellSpec.swift */,
-				1F78AC711C402D88006F17D2 /* ProjectTableViewCellSpec.swift */,
 				1F1830EF1C48402A001B6897 /* TaskDetailViewModelSpec.swift */,
 			);
 			name = ViewModel;
@@ -502,10 +499,10 @@
 		1F86CA321C4697CB00A48A8F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */,
+				1F8726BE1C3BD2FB00EEA569 /* IntheamWebServiceSpec.swift */,
 				1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */,
 				1F8697B61C3AD64E00CB3FFE /* TaskMapperSpec.swift */,
-				1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */,
+				1F8726BB1C3BBE6900EEA569 /* ResponseMapperSpec.swift */,
 				1F8697B41C3AD63800CB3FFE /* Dummy.swift */,
 			);
 			name = Networking;
@@ -786,18 +783,17 @@
 			files = (
 				1F8697B71C3AD64E00CB3FFE /* TaskMapperSpec.swift in Sources */,
 				1F8726D51C3C54D700EEA569 /* DummyResponse.swift in Sources */,
-				1F78AC721C402D88006F17D2 /* ProjectTableViewCellSpec.swift in Sources */,
 				1F8726D31C3C37DE00EEA569 /* AppDelegateSpec.swift in Sources */,
 				1F86CA361C46991E00A48A8F /* CoreDataHelpers.swift in Sources */,
 				1F8726D71C3C56C900EEA569 /* TasksTableViewModelSpec.swift in Sources */,
-				1F8726BF1C3BD2FB00EEA569 /* TaskGrabSpec.swift in Sources */,
+				1F8726BF1C3BD2FB00EEA569 /* IntheamWebServiceSpec.swift in Sources */,
 				1F1830ED1C4838A7001B6897 /* TaskSpec.swift in Sources */,
 				1F1830F01C48402A001B6897 /* TaskDetailViewModelSpec.swift in Sources */,
 				1F8726D91C3C5F2100EEA569 /* TaskTableViewCellSpec.swift in Sources */,
 				1F8697C71C3B0D5900CB3FFE /* NetworkSpec.swift in Sources */,
 				1F8697B51C3AD63800CB3FFE /* Dummy.swift in Sources */,
 				1F2E2DF81C4806C100EFF59C /* TagSpec.swift in Sources */,
-				1F8726BC1C3BBE6900EEA569 /* ResponseEntitySpec.swift in Sources */,
+				1F8726BC1C3BBE6900EEA569 /* ResponseMapperSpec.swift in Sources */,
 				1FFDFE241C3E687C00DA25DD /* TasksTableViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,7 +38,7 @@ class TaskMapperSpec: QuickSpec {
                 expect(task).notTo(beNil())
                 expect(task?.dueDate).to(beNil())
                 expect(task?.tags).to(beNil())
-                expect(task?.project).toEventually(equal("default"))
+                expect(task?.project).to(beNil())
             }
             
             it("throws an error if any of JSON elements except optional is missing.") {

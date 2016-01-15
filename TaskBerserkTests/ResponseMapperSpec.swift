@@ -1,5 +1,5 @@
 //
-//  ResponseEntitySpec.swift
+//  ResponseMapperSpec.swift
 //  TaskBerserk
 //
 //  Created by Александр on 05.01.16.
@@ -11,7 +11,7 @@ import Nimble
 import Himotoki
 @testable import TaskBerserk
 
-class ResponseEntitySpec: QuickSpec {
+class ResponseMapperSpec: QuickSpec {
     override func spec() {
         let json: [String: AnyObject] = [
             "meta": ["total_count": 95],

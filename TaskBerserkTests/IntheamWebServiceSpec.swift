@@ -1,5 +1,5 @@
 //
-//  TaskGrabSpec.swift
+//  IntheamWebServiceSpec.swift
 //  TaskBerserk
 //
 //  Created by Александр on 05.01.16.
@@ -11,7 +11,7 @@ import Nimble
 import RxSwift
 @testable import TaskBerserk
 
-class TaskGrabSpec: QuickSpec {
+class IntheamWebServiceSpec: QuickSpec {
     // MARK: stubs
     // emulating an asynchronous network response
     class GoodStubNetwork: Networking {
@@ -64,7 +64,7 @@ class TaskGrabSpec: QuickSpec {
         
         it("returns task if the network works correctly") {
             var response: ResponseMapper?
-            let grab = TaskIntheamService(network: GoodStubNetwork())
+            let grab = IntheamWebService(network: GoodStubNetwork())
             
             grab.fetchAllTask()
                 .subscribeNext {
@@ -81,7 +81,7 @@ class TaskGrabSpec: QuickSpec {
         
         it("returns an error if the network returns incorrect data") {
             var error: NetworkError?
-            let grab = TaskIntheamService(network: BadStubNetwork())
+            let grab = IntheamWebService(network: BadStubNetwork())
             
             grab.fetchAllTask()
                 .subscribeError {
@@ -95,7 +95,7 @@ class TaskGrabSpec: QuickSpec {
         
         it("passes the error sent by the network") {
             var error: NetworkError?
-            let grab = TaskIntheamService(network: ErrorStubNetwork())
+            let grab = IntheamWebService(network: ErrorStubNetwork())
             
             grab.fetchAllTask()
                 .subscribeError {
