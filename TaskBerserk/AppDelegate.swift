@@ -14,9 +14,9 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let managedObjectContext = createMainContext()
+//    let managedObjectContext = createMainContext()
     let container = Container() { container in
-        let managedObjectContext = createMainContext()
+        let managedObjectContext = createMainContext(.MainQueueConcurrencyType)
         
         // Models
         container.register(Networking.self) { _ in Network() }
