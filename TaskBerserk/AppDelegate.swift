@@ -14,10 +14,10 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-//    let managedObjectContext = createMainContext()
     let container = Container() { container in
-        let managedObjectContext = createMainContext(.MainQueueConcurrencyType)
-        let backgroundManagedObjectContext = createMainContext(.PrivateQueueConcurrencyType)
+        let managedObjectContext = createManagedContext(.MainQueueConcurrencyType)
+        let backgroundManagedObjectContext = createManagedContext(.PrivateQueueConcurrencyType)
+        AppDelegate.registerUpdateNotification(managedObjectContext)
         
         // Models
         container.register(Networking.self) { _ in Network() }
@@ -59,5 +59,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = storyboard.instantiateInitialViewController()
         
         return true
+    }
+    
+    // updates main context after background context finished savings
+    private static func registerUpdateNotification(moc: NSManagedObjectContext) {
+        NSNotificationCenter.defaultCenter()
+            .addObserverForName("NSManagedObjectContextDidSaveNotification", object: nil, queue: nil) { notification in
+                guard let notificationManagedObjectContext = notification.object as? NSManagedObjectContext else {
+                    fatalError("Wrong notification object")
+                }
+                if notificationManagedObjectContext != moc {
+                    moc.performBlock {
+                        moc.mergeChangesFromContextDidSaveNotification(notification)
+                    }
+                }
+            }
     }
 }
