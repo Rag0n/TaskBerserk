@@ -6,9 +6,7 @@
 //  Copyright © 2016 Alexander Guschin. All rights reserved.
 //
 
-import CoreData
-
-protocol Importing {
-    func initWithContext(context: NSManagedObjectContext, webService: TaskWebService)
+protocol Importing: ManagedObjectContextSettable {
+    var webService: TaskWebService { get }
     func importTasks()
 }
