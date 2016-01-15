@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    let managedObjectContext = createMainContext()
     let container = Container() { container in
         let managedObjectContext = createMainContext(.MainQueueConcurrencyType)
+        let backgroundManagedObjectContext = createMainContext(.PrivateQueueConcurrencyType)
         
         // Models
         container.register(Networking.self) { _ in Network() }
