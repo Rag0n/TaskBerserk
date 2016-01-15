@@ -11,7 +11,7 @@ import CoreData
 
 private let storeURL = NSURL.documentsURL.URLByAppendingPathComponent("TaskBerserk.taskberserk")
 
-func createMainContext(concurrencyType: NSManagedObjectContextConcurrencyType) -> NSManagedObjectContext {
+func createManagedContext(concurrencyType: NSManagedObjectContextConcurrencyType) -> NSManagedObjectContext {
     // get bundle where object model resides
     let bundles = [NSBundle(forClass: Task.self)]
     guard let model = NSManagedObjectModel.mergedModelFromBundles(bundles) else {
