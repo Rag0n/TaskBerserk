@@ -17,15 +17,15 @@ class TaskIntheamService: TaskWebService {
         self.network = network
     }
 
-    // receives all pending tasks(encapsulate into ResponseEntity)
-    func fetchAllTask() -> Observable<ResponseEntity> {
+    // receives all pending tasks(encapsulate into ResponseMapper)
+    func fetchAllTask() -> Observable<ResponseMapper> {
         let url = Intheam.apiURL + Intheam.apiURLEnd
         let headers = Intheam.requestHeaders
         
         return network.requestJSON(url, parameters: nil, headers: headers)
-            .flatMap { json -> Observable<ResponseEntity> in
+            .flatMap { json -> Observable<ResponseMapper> in
                 return Observable.create { observer -> Disposable in
-                    if let response = (try? decode(json)) as ResponseEntity? {
+                    if let response = (try? decode(json)) as ResponseMapper? {
                         observer.onNext(response)
                         observer.onCompleted()
                     } else {

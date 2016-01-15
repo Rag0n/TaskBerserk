@@ -9,5 +9,5 @@
 import RxSwift
 
 protocol TaskWebService {
-    func fetchAllTask() -> Observable<ResponseEntity>
+    func fetchAllTask() -> Observable<ResponseMapper>
 }

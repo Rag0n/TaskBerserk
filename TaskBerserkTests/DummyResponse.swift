@@ -9,7 +9,7 @@
 import Foundation
 @testable import TaskBerserk
 
-let dummyResponse: ResponseEntity = {
+let dummyResponse: ResponseMapper = {
     let taskFirst = TaskMapper(
         description: "Task 1 description",
         id: "1",
@@ -46,5 +46,5 @@ let dummyResponse: ResponseEntity = {
 //        uuid: "b8d05cfe-8464-44ef-9d99-eb3e7809d338",
 //        tags: ["@walk", "store"]
 //    )
-    return ResponseEntity(totalCount: 51, tasks: [taskFirst, taskSecond])
+    return ResponseMapper(totalCount: 51, tasks: [taskFirst, taskSecond])
 }()

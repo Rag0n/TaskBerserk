@@ -1,5 +1,5 @@
 //
-//  ResponseEntity.swift
+//  ResponseMapper.swift
 //  TaskBerserk
 //
 //  Created by Александр on 05.01.16.
@@ -8,7 +8,7 @@
 
 import Himotoki
 
-class ResponseEntity {
+class ResponseMapper {
     let totalCount: Int64
     let tasks: [TaskMapper]
     
@@ -19,9 +19,9 @@ class ResponseEntity {
 }
 
 // MARK: Decodable
-extension ResponseEntity: Decodable {
-    static func decode(e: Extractor) throws -> ResponseEntity {
-        return try ResponseEntity(
+extension ResponseMapper: Decodable {
+    static func decode(e: Extractor) throws -> ResponseMapper {
+        return try ResponseMapper(
             totalCount: e <| ["meta", "total_count"],
             tasks: e <|| "objects")
     }

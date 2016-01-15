@@ -63,7 +63,7 @@ class TaskGrabSpec: QuickSpec {
         let disposeBag = DisposeBag()
         
         it("returns task if the network works correctly") {
-            var response: ResponseEntity?
+            var response: ResponseMapper?
             let grab = TaskIntheamService(network: GoodStubNetwork())
             
             grab.fetchAllTask()
