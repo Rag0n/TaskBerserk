@@ -1,5 +1,5 @@
 //
-//  TaskIntheamService.swift
+//  IntheamWebService.swift
 //  TaskBerserk
 //
 //  Created by Александр on 05.01.16.
@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import Himotoki
 
-class TaskIntheamService: TaskWebService {
+class IntheamWebService: TaskWebService {
     private let network: Networking
     
     init(network: Networking) {

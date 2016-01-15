@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Models
         container.register(Networking.self) { _ in Network() }
         container.register(TaskWebService.self) { r in
-            TaskIntheamService(network: r.resolve(Networking.self)!)
+            IntheamWebService(network: r.resolve(Networking.self)!)
         }
         
         // ViewModels

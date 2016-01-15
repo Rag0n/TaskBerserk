@@ -51,7 +51,6 @@
 		1F8697B01C3AB77900CB3FFE /* TaskMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697AF1C3AB77900CB3FFE /* TaskMapper.swift */; };
 		1F8697B51C3AD63800CB3FFE /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697B41C3AD63800CB3FFE /* Dummy.swift */; };
 		1F8697B71C3AD64E00CB3FFE /* TaskMapperSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697B61C3AD64E00CB3FFE /* TaskMapperSpec.swift */; };
-		1F8697BC1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */; };
 		1F8697BE1C3B004600CB3FFE /* UITestSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697BD1C3B004600CB3FFE /* UITestSample.swift */; };
 		1F8697C11C3B070500CB3FFE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C01C3B070500CB3FFE /* Networking.swift */; };
 		1F8697C31C3B072500CB3FFE /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C21C3B072500CB3FFE /* Network.swift */; };
@@ -61,7 +60,7 @@
 		1F8726B21C3BB14E00EEA569 /* Intheam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B11C3BB14E00EEA569 /* Intheam.swift */; };
 		1F8726B41C3BB43800EEA569 /* AppKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F8726B31C3BB43800EEA569 /* AppKey.plist */; };
 		1F8726B61C3BB7E800EEA569 /* TaskWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B51C3BB7E800EEA569 /* TaskWebService.swift */; };
-		1F8726B81C3BB87C00EEA569 /* TaskIntheamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B71C3BB87C00EEA569 /* TaskIntheamService.swift */; };
+		1F8726B81C3BB87C00EEA569 /* IntheamWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B71C3BB87C00EEA569 /* IntheamWebService.swift */; };
 		1F8726BA1C3BBCB700EEA569 /* ResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726B91C3BBCB700EEA569 /* ResponseMapper.swift */; };
 		1F8726BC1C3BBE6900EEA569 /* ResponseEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */; };
 		1F8726BF1C3BD2FB00EEA569 /* TaskGrabSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */; };
@@ -196,7 +195,6 @@
 		1F8697B31C3AD63800CB3FFE /* TaskBerserkTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TaskBerserkTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		1F8697B41C3AD63800CB3FFE /* Dummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		1F8697B61C3AD64E00CB3FFE /* TaskMapperSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskMapperSpec.swift; sourceTree = "<group>"; };
-		1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectEntitySpec.swift; sourceTree = "<group>"; };
 		1F8697BD1C3B004600CB3FFE /* UITestSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestSample.swift; sourceTree = "<group>"; };
 		1F8697BF1C3B00BD00CB3FFE /* TaskBerserkUITests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TaskBerserkUITests-Bridging-Header.h"; sourceTree = "<group>"; };
 		1F8697C01C3B070500CB3FFE /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
@@ -207,7 +205,7 @@
 		1F8726B11C3BB14E00EEA569 /* Intheam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intheam.swift; sourceTree = "<group>"; };
 		1F8726B31C3BB43800EEA569 /* AppKey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppKey.plist; sourceTree = "<group>"; };
 		1F8726B51C3BB7E800EEA569 /* TaskWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskWebService.swift; sourceTree = "<group>"; };
-		1F8726B71C3BB87C00EEA569 /* TaskIntheamService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskIntheamService.swift; sourceTree = "<group>"; };
+		1F8726B71C3BB87C00EEA569 /* IntheamWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntheamWebService.swift; sourceTree = "<group>"; };
 		1F8726B91C3BBCB700EEA569 /* ResponseMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseMapper.swift; sourceTree = "<group>"; };
 		1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseEntitySpec.swift; sourceTree = "<group>"; };
 		1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskGrabSpec.swift; sourceTree = "<group>"; };
@@ -397,6 +395,17 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		1F7EC0F21C49456C00333C92 /* Intheam */ = {
+			isa = PBXGroup;
+			children = (
+				1F8697AF1C3AB77900CB3FFE /* TaskMapper.swift */,
+				1F8726B91C3BBCB700EEA569 /* ResponseMapper.swift */,
+				1F8726B11C3BB14E00EEA569 /* Intheam.swift */,
+				1F8726B71C3BB87C00EEA569 /* IntheamWebService.swift */,
+			);
+			name = Intheam;
+			sourceTree = "<group>";
+		};
 		1F8697A71C3AB52B00CB3FFE /* dSYM */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,14 +482,11 @@
 		1F8697AC1C3AB67000CB3FFE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				1F8697AF1C3AB77900CB3FFE /* TaskMapper.swift */,
-				1F8726B91C3BBCB700EEA569 /* ResponseMapper.swift */,
 				1F8697C01C3B070500CB3FFE /* Networking.swift */,
 				1F8697C21C3B072500CB3FFE /* Network.swift */,
 				1F8697C41C3B080D00CB3FFE /* NetworkError.swift */,
-				1F8726B11C3BB14E00EEA569 /* Intheam.swift */,
 				1F8726B51C3BB7E800EEA569 /* TaskWebService.swift */,
-				1F8726B71C3BB87C00EEA569 /* TaskIntheamService.swift */,
+				1F7EC0F21C49456C00333C92 /* Intheam */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -513,7 +519,6 @@
 			children = (
 				1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */,
 				1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */,
-				1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */,
 				1F8697B61C3AD64E00CB3FFE /* TaskMapperSpec.swift */,
 				1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */,
 				1F8697B41C3AD63800CB3FFE /* Dummy.swift */,
@@ -781,7 +786,7 @@
 				1F1E04F31C453605005006FC /* MetaTableViewModel.swift in Sources */,
 				1FED43AB1C4119690085A5A2 /* CoreDataStack.swift in Sources */,
 				1FFDFE501C3ED8CC00DA25DD /* ProjectsTableViewModeling.swift in Sources */,
-				1F8726B81C3BB87C00EEA569 /* TaskIntheamService.swift in Sources */,
+				1F8726B81C3BB87C00EEA569 /* IntheamWebService.swift in Sources */,
 				1F70EE901C43B34A008AC4F2 /* TaskDetailViewModeling.swift in Sources */,
 				1F8726BA1C3BBCB700EEA569 /* ResponseMapper.swift in Sources */,
 				1F1E04EE1C45329C005006FC /* MetaTableViewController.swift in Sources */,
@@ -826,7 +831,6 @@
 				1F2E2DF81C4806C100EFF59C /* TagSpec.swift in Sources */,
 				1F8726BC1C3BBE6900EEA569 /* ResponseEntitySpec.swift in Sources */,
 				1FFDFE241C3E687C00DA25DD /* TasksTableViewControllerSpec.swift in Sources */,
-				1F8697BC1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
