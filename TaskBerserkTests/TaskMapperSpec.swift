@@ -1,5 +1,5 @@
 //
-//  TaskEntitySpec.swift
+//  TaskMapperSpec.swift
 //  TaskBerserk
 //
 //  Created by Александр on 04.01.16.
@@ -11,15 +11,15 @@ import Nimble
 import Himotoki
 @testable import TaskBerserk
 
-class TaskEntitySpec: QuickSpec {
+class TaskMapperSpec: QuickSpec {
     override func spec() {
         context("parses JSON data") {
             it("to create a new instance") {
-                let task: TaskEntity? = try? decode(taskJSON)
+                let task: TaskMapper? = try? decode(taskJSON)
                 
                 expect(task).notTo(beNil())
-                expect(task?.description) == "first task"
-                expect(task?.project?.name) == "testproject"
+                expect(task?.name) == "first task"
+                expect(task?.project) == "testproject"
                 expect(task?.urgency) == 8.00959
                 expect(task?.status) == "pending"
                 expect(task?.tags) == ["first tag", "second tag"]
@@ -33,12 +33,12 @@ class TaskEntitySpec: QuickSpec {
                 missingJSON["priority"] = nil
                 missingJSON["tags"] = nil
                 missingJSON["project"] = nil
-                let task: TaskEntity? = try? decode(missingJSON)
+                let task: TaskMapper? = try? decode(missingJSON)
                 
                 expect(task).notTo(beNil())
                 expect(task?.dueDate).to(beNil())
                 expect(task?.tags).to(beNil())
-                expect(task?.project?.name).toEventually(equal("default"))
+                expect(task?.project).toEventually(equal("default"))
             }
             
             it("throws an error if any of JSON elements except optional is missing.") {
@@ -50,7 +50,7 @@ class TaskEntitySpec: QuickSpec {
                         
                     var missingJSON = taskJSON
                     missingJSON[key] = nil
-                    let task: TaskEntity? = try? decode(missingJSON)
+                    let task: TaskMapper? = try? decode(missingJSON)
                     
                     expect(task).to(beNil())
                 }
@@ -59,7 +59,7 @@ class TaskEntitySpec: QuickSpec {
             it("ignores an extra element") {
                 var extraJSON = taskJSON
                 extraJSON["extraKey"] = "extra element"
-                let task: TaskEntity? = try? decode(extraJSON)
+                let task: TaskMapper? = try? decode(extraJSON)
                 
                 expect(task).notTo(beNil())
             }
