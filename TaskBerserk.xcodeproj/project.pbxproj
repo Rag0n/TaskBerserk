@@ -28,6 +28,7 @@
 		1F74C6FE1C419357001F812B /* NSManagedObjectContext+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F74C6FD1C419357001F812B /* NSManagedObjectContext+extensions.swift */; };
 		1F79B7B01C3FFF2600976A35 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F79B7AF1C3FFF2600976A35 /* UIViewController+extensions.swift */; };
 		1F7EC0F41C494A5A00333C92 /* Importing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EC0F31C494A5A00333C92 /* Importing.swift */; };
+		1F7EC0F61C49579200333C92 /* IntheamImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7EC0F51C49579200333C92 /* IntheamImporter.swift */; };
 		1F8697711C3AAF4F00CB3FFE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8697671C3AAF4F00CB3FFE /* Alamofire.framework */; };
 		1F8697721C3AAF4F00CB3FFE /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8697681C3AAF4F00CB3FFE /* Cartography.framework */; };
 		1F8697731C3AAF4F00CB3FFE /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8697691C3AAF4F00CB3FFE /* Himotoki.framework */; };
@@ -162,6 +163,7 @@
 		1F74C6FD1C419357001F812B /* NSManagedObjectContext+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+extensions.swift"; sourceTree = "<group>"; };
 		1F79B7AF1C3FFF2600976A35 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		1F7EC0F31C494A5A00333C92 /* Importing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Importing.swift; sourceTree = "<group>"; };
+		1F7EC0F51C49579200333C92 /* IntheamImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntheamImporter.swift; sourceTree = "<group>"; };
 		1F8697671C3AAF4F00CB3FFE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		1F8697681C3AAF4F00CB3FFE /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		1F8697691C3AAF4F00CB3FFE /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				1F8726B91C3BBCB700EEA569 /* ResponseMapper.swift */,
 				1F8726B11C3BB14E00EEA569 /* Intheam.swift */,
 				1F8726B71C3BB87C00EEA569 /* IntheamWebService.swift */,
+				1F7EC0F51C49579200333C92 /* IntheamImporter.swift */,
 			);
 			name = Intheam;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				1F1E04F51C453618005006FC /* MetaTableViewCellModeling.swift in Sources */,
 				1F7EC0F41C494A5A00333C92 /* Importing.swift in Sources */,
 				1FED43A71C41159D0085A5A2 /* Task.swift in Sources */,
+				1F7EC0F61C49579200333C92 /* IntheamImporter.swift in Sources */,
 				1F1E05011C4574C5005006FC /* NameWithCountRepresentable.swift in Sources */,
 				1F70EE9C1C440D41008AC4F2 /* Project.swift in Sources */,
 				1F8726CB1C3C2E0C00EEA569 /* TasksTableViewModeling.swift in Sources */,
