@@ -39,7 +39,7 @@ class ProjectsTableViewModel: ProjectsTableViewModeling {
     }
     
     func updateTasks() {
-        taskGrab.grabTasks()
+        taskGrab.fetchAllTask()
 //            .flatMap { _ in
 //                ProjectEntity.projects
 //            }
@@ -48,7 +48,7 @@ class ProjectsTableViewModel: ProjectsTableViewModeling {
 //                    ProjectTableViewCellModel(project: project) as ProjectTableViewCellModeling
 //                }
 //            }
-            // grabTasks returns response on the background thread
+            // fetchAllTask returns response on the background thread
 //            .observeOn(MainScheduler.instance)
 //            .subscribeNext { cellModels in
 //                self._cellModels.onNext(cellModels)

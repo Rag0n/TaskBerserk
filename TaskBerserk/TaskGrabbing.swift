@@ -9,5 +9,5 @@
 import RxSwift
 
 protocol TaskGrabbing {
-    func grabTasks() -> Observable<ResponseEntity>
+    func fetchAllTask() -> Observable<ResponseEntity>
 }

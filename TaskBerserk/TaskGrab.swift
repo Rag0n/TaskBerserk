@@ -18,7 +18,7 @@ class TaskGrab: TaskGrabbing {
     }
 
     // receives all pending tasks(encapsulate into ResponseEntity)
-    func grabTasks() -> Observable<ResponseEntity> {
+    func fetchAllTask() -> Observable<ResponseEntity> {
         let url = Intheam.apiURL + Intheam.apiURLEnd
         let headers = Intheam.requestHeaders
         

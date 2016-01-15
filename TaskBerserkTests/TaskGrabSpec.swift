@@ -66,7 +66,7 @@ class TaskGrabSpec: QuickSpec {
             var response: ResponseEntity?
             let grab = TaskGrab(network: GoodStubNetwork())
             
-            grab.grabTasks()
+            grab.fetchAllTask()
                 .subscribeNext {
                     response = $0
                 }
@@ -83,7 +83,7 @@ class TaskGrabSpec: QuickSpec {
             var error: NetworkError?
             let grab = TaskGrab(network: BadStubNetwork())
             
-            grab.grabTasks()
+            grab.fetchAllTask()
                 .subscribeError {
                     error = $0 as? NetworkError
                 }
@@ -97,7 +97,7 @@ class TaskGrabSpec: QuickSpec {
             var error: NetworkError?
             let grab = TaskGrab(network: ErrorStubNetwork())
             
-            grab.grabTasks()
+            grab.fetchAllTask()
                 .subscribeError {
                     error = $0 as? NetworkError
                 }
