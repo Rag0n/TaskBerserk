@@ -64,7 +64,7 @@ class TaskGrabSpec: QuickSpec {
         
         it("returns task if the network works correctly") {
             var response: ResponseEntity?
-            let grab = TaskGrab(network: GoodStubNetwork())
+            let grab = TaskIntheamService(network: GoodStubNetwork())
             
             grab.fetchAllTask()
                 .subscribeNext {
@@ -81,7 +81,7 @@ class TaskGrabSpec: QuickSpec {
         
         it("returns an error if the network returns incorrect data") {
             var error: NetworkError?
-            let grab = TaskGrab(network: BadStubNetwork())
+            let grab = TaskIntheamService(network: BadStubNetwork())
             
             grab.fetchAllTask()
                 .subscribeError {
@@ -95,7 +95,7 @@ class TaskGrabSpec: QuickSpec {
         
         it("passes the error sent by the network") {
             var error: NetworkError?
-            let grab = TaskGrab(network: ErrorStubNetwork())
+            let grab = TaskIntheamService(network: ErrorStubNetwork())
             
             grab.fetchAllTask()
                 .subscribeError {
