@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let container = Container() { container in
         let managedObjectContext = createManagedContext(.MainQueueConcurrencyType)
         let backgroundManagedObjectContext = createManagedContext(.PrivateQueueConcurrencyType)
-        AppDelegate.registerUpdateNotification(managedObjectContext)
+//        AppDelegate.registerUpdateNotification(managedObjectContext)
         
         // Models
         container.register(Networking.self) { _ in Network() }
@@ -62,17 +62,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // updates main context after background context finished savings
-    private static func registerUpdateNotification(moc: NSManagedObjectContext) {
-        NSNotificationCenter.defaultCenter()
-            .addObserverForName("NSManagedObjectContextDidSaveNotification", object: nil, queue: nil) { notification in
-                guard let notificationManagedObjectContext = notification.object as? NSManagedObjectContext else {
-                    fatalError("Wrong notification object")
-                }
-                if notificationManagedObjectContext != moc {
-                    moc.performBlock {
-                        moc.mergeChangesFromContextDidSaveNotification(notification)
-                    }
-                }
-            }
-    }
+//    private static func registerUpdateNotification(moc: NSManagedObjectContext) {
+//        NSNotificationCenter.defaultCenter()
+//            .addObserverForName("NSManagedObjectContextDidSaveNotification", object: nil, queue: nil) { notification in
+//                guard let notificationManagedObjectContext = notification.object as? NSManagedObjectContext else {
+//                    fatalError("Wrong notification object")
+//                }
+//                if notificationManagedObjectContext != moc {
+//                    moc.performBlock {
+//                        moc.mergeChangesFromContextDidSaveNotification(notification)
+//                    }
+//                }
+//            }
+//    }
 }
