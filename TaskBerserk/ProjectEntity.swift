@@ -12,7 +12,7 @@ import RxSwift
 class ProjectEntity {
     private let uuid: String
     var name: String
-    var tasks: [TaskEntity] {
+    var tasks: [TaskMapper] {
         didSet {
             // should update all array of projects if some tasks were added
             ProjectEntity._projects.onNext(Array(ProjectEntity.projectsSet))
@@ -41,7 +41,7 @@ class ProjectEntity {
         если существует - добавляем задачу в него
         иначе создаем новый проект
     */
-    class func addTaskToProject(task: TaskEntity, projectName: String) -> ProjectEntity {
+    class func addTaskToProject(task: TaskMapper, projectName: String) -> ProjectEntity {
         for project in projectsSet {
             if project.name == projectName {
                 project.addTask(task)
@@ -59,7 +59,7 @@ class ProjectEntity {
         при создании задач в static методе addTaskToProject.
         Нет смысла создавать пустые проекты.
     */
-    private init(name: String, tasks: [TaskEntity]) {
+    private init(name: String, tasks: [TaskMapper]) {
         self.name = name
         self.tasks = tasks
         self.uuid = NSUUID().UUIDString
@@ -67,7 +67,7 @@ class ProjectEntity {
     
     // TODO: не добавлять задачу, а проверять уникальность id
     // если задача с таким номером в проекте уже есть, то надо обновить ее данные
-    func addTask(task: TaskEntity) {
+    func addTask(task: TaskMapper) {
         tasks.append(task)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 @testable import TaskBerserk
 
 let dummyResponse: ResponseEntity = {
-    let taskFirst = TaskEntity(
+    let taskFirst = TaskMapper(
         description: "Task 1 description",
         id: "1",
         projectName: "default",
@@ -19,7 +19,7 @@ let dummyResponse: ResponseEntity = {
         tags: ["@computer", "online"]
     )
     
-    let taskSecond = TaskEntity(
+    let taskSecond = TaskMapper(
         description: "Task 2 description",
         id: "2",
         projectName: "shopping list",
@@ -27,7 +27,7 @@ let dummyResponse: ResponseEntity = {
         status: "waiting",
         tags: ["@walk", "store"]
     )
-//    TaskEntity(
+//    TaskMapper(
 //        description: "Task 1 description",
 //        id: 1,
 //        projectName: "default",
@@ -37,7 +37,7 @@ let dummyResponse: ResponseEntity = {
 //        tags: ["@computer", "online"]
 //    )
 //    
-//    let taskSecond = TaskEntity(
+//    let taskSecond = TaskMapper(
 //        description: "Task 2 description",
 //        id: 2,
 //        projectName: "shopping list",

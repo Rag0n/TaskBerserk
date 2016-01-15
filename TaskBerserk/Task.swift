@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import Himotoki
 
 final class Task: ManagedObject {
     @NSManaged private(set) var id: String
@@ -20,14 +21,14 @@ final class Task: ManagedObject {
     @NSManaged private(set) var tags: Set<Tag>?
     @NSManaged private(set) var project: Project?
     
-    static func insertIntoContext(moc: NSManagedObjectContext, taskEntity: TaskEntity) -> Task {
+    static func insertIntoContext(moc: NSManagedObjectContext, taskMapper: TaskMapper) -> Task {
         let task: Task = moc.insertObject()
-        task.id = taskEntity.id
-        task.name = taskEntity.description
-        task.status = taskEntity.status
-        task.urgency = taskEntity.urgency
-        task.priority = taskEntity.priority
-        task.project = Project.findOrCreateProject(taskEntity.projectName ?? "default", inContext: moc)
+        task.id = taskMapper.id
+        task.name = taskMapper.name
+        task.status = taskMapper.status
+        task.urgency = taskMapper.urgency
+        task.priority = taskMapper.priority
+//        task.project = Project.findOrCreateProject(taskMapper.projectName, inContext: moc)
         // TODO: Реализовать NSDateFormatter
         // TODO: Реализовать конвертирование тэгов из taskEntity в Tags
         // TODO: Реализовать конвертирование dueDate из taskEntity
@@ -73,7 +74,6 @@ final class Task: ManagedObject {
     
     override func prepareForDeletion() {
         // deletes project if it doesnt have remaining tasks
-//        project.de
         if let project = project {
             if project.tasks.filter({ !$0.deleted }).isEmpty {
                 print(project)
@@ -102,6 +102,9 @@ extension Task: ManagedObjectType {
         return [NSSortDescriptor(key: "urgency", ascending: false)]
     }
 }
+
+// MARK: Decodable
+
 
 // MARK: Private 
 extension Task {

@@ -18,8 +18,8 @@ class ProjectEntitySpec: QuickSpec {
         it("adds task to existing project") {
             var newTaskJSON = taskJSON
             newTaskJSON["project"] = "Existing project"
-            let firstTask: TaskEntity = try! decode(newTaskJSON)
-            let secondTask: TaskEntity = try! decode(newTaskJSON)
+            let firstTask: TaskMapper = try! decode(newTaskJSON)
+            let secondTask: TaskMapper = try! decode(newTaskJSON)
             
             expect(firstTask.project?.name) == "Existing project"
             expect(secondTask.project?.name) == "Existing project"
@@ -27,7 +27,7 @@ class ProjectEntitySpec: QuickSpec {
         }
         
         it("adds task and creates new project") {
-            let newTask: TaskEntity = try! decode(taskJSON)
+            let newTask: TaskMapper = try! decode(taskJSON)
             
             expect(newTask.project?.name) == "testproject"
         }
@@ -38,7 +38,7 @@ class ProjectEntitySpec: QuickSpec {
                 projectsUpdated = true
             }.addDisposableTo(disposeBag)
             
-            let _: TaskEntity = try! decode(taskJSON)
+            let _: TaskMapper = try! decode(taskJSON)
             
             expect(projectsUpdated).toEventually(beTrue())
         }

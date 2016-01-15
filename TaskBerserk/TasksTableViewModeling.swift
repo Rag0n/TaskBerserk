@@ -15,5 +15,5 @@ protocol TasksTableViewModeling: ManagedObjectContextSettable {
     func numberOfItemsInSection(section: Int) -> Int
     func viewModelForIndexPath(indexPath: NSIndexPath) -> TaskTableViewCellModeling
     func detailViewModelForIndexPath(indexPath: NSIndexPath) -> TaskDetailViewModeling
-    func addNewTask(task: TaskEntity)
+    func addNewTask(task: TaskMapper)
 }

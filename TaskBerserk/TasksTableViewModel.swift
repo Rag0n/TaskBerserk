@@ -36,9 +36,9 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
         return detailViewModel
     }
     
-    func addNewTask(task: TaskEntity) {
+    func addNewTask(task: TaskMapper) {
         managedObjectContext.performChanges {
-            Task.insertIntoContext(self.managedObjectContext, taskEntity: task)
+            Task.insertIntoContext(self.managedObjectContext, TaskMapper: task)
         }
     }
     

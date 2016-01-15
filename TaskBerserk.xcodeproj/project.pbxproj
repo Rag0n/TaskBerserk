@@ -48,10 +48,10 @@
 		1F8697A41C3AB4F400CB3FFE /* Nimble.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F8697A11C3AB4F400CB3FFE /* Nimble.framework.dSYM */; };
 		1F8697A51C3AB4F400CB3FFE /* Quick.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F8697A21C3AB4F400CB3FFE /* Quick.framework.dSYM */; };
 		1F8697A61C3AB4F400CB3FFE /* RxTests.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F8697A31C3AB4F400CB3FFE /* RxTests.framework.dSYM */; };
-		1F8697B01C3AB77900CB3FFE /* TaskEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697AF1C3AB77900CB3FFE /* TaskEntity.swift */; };
+		1F8697B01C3AB77900CB3FFE /* TaskMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697AF1C3AB77900CB3FFE /* TaskMapper.swift */; };
 		1F8697B21C3ACCA000CB3FFE /* ProjectEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697B11C3ACCA000CB3FFE /* ProjectEntity.swift */; };
 		1F8697B51C3AD63800CB3FFE /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697B41C3AD63800CB3FFE /* Dummy.swift */; };
-		1F8697B71C3AD64E00CB3FFE /* TaskEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697B61C3AD64E00CB3FFE /* TaskEntitySpec.swift */; };
+		1F8697B71C3AD64E00CB3FFE /* TaskMapperSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697B61C3AD64E00CB3FFE /* TaskMapperSpec.swift */; };
 		1F8697BC1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */; };
 		1F8697BE1C3B004600CB3FFE /* UITestSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697BD1C3B004600CB3FFE /* UITestSample.swift */; };
 		1F8697C11C3B070500CB3FFE /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8697C01C3B070500CB3FFE /* Networking.swift */; };
@@ -194,11 +194,11 @@
 		1F8697A11C3AB4F400CB3FFE /* Nimble.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Nimble.framework.dSYM; path = Carthage/Build/iOS/Nimble.framework.dSYM; sourceTree = "<group>"; };
 		1F8697A21C3AB4F400CB3FFE /* Quick.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Quick.framework.dSYM; path = Carthage/Build/iOS/Quick.framework.dSYM; sourceTree = "<group>"; };
 		1F8697A31C3AB4F400CB3FFE /* RxTests.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxTests.framework.dSYM; path = Carthage/Build/iOS/RxTests.framework.dSYM; sourceTree = "<group>"; };
-		1F8697AF1C3AB77900CB3FFE /* TaskEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEntity.swift; sourceTree = "<group>"; };
+		1F8697AF1C3AB77900CB3FFE /* TaskMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskMapper.swift; sourceTree = "<group>"; };
 		1F8697B11C3ACCA000CB3FFE /* ProjectEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectEntity.swift; sourceTree = "<group>"; };
 		1F8697B31C3AD63800CB3FFE /* TaskBerserkTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TaskBerserkTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		1F8697B41C3AD63800CB3FFE /* Dummy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
-		1F8697B61C3AD64E00CB3FFE /* TaskEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskEntitySpec.swift; sourceTree = "<group>"; };
+		1F8697B61C3AD64E00CB3FFE /* TaskMapperSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskMapperSpec.swift; sourceTree = "<group>"; };
 		1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectEntitySpec.swift; sourceTree = "<group>"; };
 		1F8697BD1C3B004600CB3FFE /* UITestSample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITestSample.swift; sourceTree = "<group>"; };
 		1F8697BF1C3B00BD00CB3FFE /* TaskBerserkUITests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TaskBerserkUITests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -477,7 +477,7 @@
 		1F8697AC1C3AB67000CB3FFE /* OldModel */ = {
 			isa = PBXGroup;
 			children = (
-				1F8697AF1C3AB77900CB3FFE /* TaskEntity.swift */,
+				1F8697AF1C3AB77900CB3FFE /* TaskMapper.swift */,
 				1F8697B11C3ACCA000CB3FFE /* ProjectEntity.swift */,
 				1F8726B91C3BBCB700EEA569 /* ResponseEntity.swift */,
 				1F8697C01C3B070500CB3FFE /* Networking.swift */,
@@ -520,7 +520,7 @@
 				1F8726BE1C3BD2FB00EEA569 /* TaskGrabSpec.swift */,
 				1F8697C61C3B0D5900CB3FFE /* NetworkSpec.swift */,
 				1F8697BB1C3AFD2B00CB3FFE /* ProjectEntitySpec.swift */,
-				1F8697B61C3AD64E00CB3FFE /* TaskEntitySpec.swift */,
+				1F8697B61C3AD64E00CB3FFE /* TaskMapperSpec.swift */,
 				1F8726BB1C3BBE6900EEA569 /* ResponseEntitySpec.swift */,
 				1F8697B41C3AD63800CB3FFE /* Dummy.swift */,
 			);
@@ -774,7 +774,7 @@
 				1F8726C91C3C2D3200EEA569 /* TaskTableViewCell.swift in Sources */,
 				1FFDFE561C3ED93600DA25DD /* ProjectTableViewCellModel.swift in Sources */,
 				1F70EE961C43B6AC008AC4F2 /* TaskDetailViewController.swift in Sources */,
-				1F8697B01C3AB77900CB3FFE /* TaskEntity.swift in Sources */,
+				1F8697B01C3AB77900CB3FFE /* TaskMapper.swift in Sources */,
 				1FED43B21C4142B40085A5A2 /* FetchedResultsDataProvider.swift in Sources */,
 				1FED43AD1C4119FD0085A5A2 /* NSURL+extensions.swift in Sources */,
 				1F8726D11C3C2EDB00EEA569 /* TaskTableViewCellModel.swift in Sources */,
@@ -818,7 +818,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F8697B71C3AD64E00CB3FFE /* TaskEntitySpec.swift in Sources */,
+				1F8697B71C3AD64E00CB3FFE /* TaskMapperSpec.swift in Sources */,
 				1F8726D51C3C54D700EEA569 /* DummyResponse.swift in Sources */,
 				1F78AC721C402D88006F17D2 /* ProjectTableViewCellSpec.swift in Sources */,
 				1F8726D31C3C37DE00EEA569 /* AppDelegateSpec.swift in Sources */,

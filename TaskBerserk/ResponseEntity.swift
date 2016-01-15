@@ -10,9 +10,9 @@ import Himotoki
 
 class ResponseEntity {
     let totalCount: Int64
-    let tasks: [TaskEntity]
+    let tasks: [TaskMapper]
     
-    init(totalCount: Int64, tasks: [TaskEntity]) {
+    init(totalCount: Int64, tasks: [TaskMapper]) {
         self.totalCount = totalCount
         self.tasks = tasks
     }
