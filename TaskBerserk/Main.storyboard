@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Tasks-->
@@ -72,12 +73,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Tasks" id="rik-jO-nAb">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cxj-nk-OPa">
-                            <connections>
-                                <action selector="addNewTask:" destination="Ssd-Ik-bAN" id="gKC-7z-bXg"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="cxj-nk-OPa">
+                                <connections>
+                                    <action selector="addNewTask:" destination="Ssd-Ik-bAN" id="gKC-7z-bXg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Fetch" id="zXS-7N-x8d"/>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="cxj-nk-OPa" id="sHp-Cd-o1a"/>
+                        <outlet property="fetchButton" destination="zXS-7N-x8d" id="xv1-Sm-hG1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGi-32-cHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
