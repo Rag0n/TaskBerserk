@@ -289,40 +289,30 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIh-H0-HLt">
-                                                    <rect key="frame" x="8" y="8" width="37" height="27"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tag1, tag2, tag 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-7Q-5Wh">
-                                                    <rect key="frame" x="438" y="14" width="124" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZX-IU-epr">
-                                                    <rect key="frame" x="570" y="8" width="22" height="27"/>
-                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZLg-QP-iUo">
+                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIh-H0-HLt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="37" height="27"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="tag1, tag2, tag 3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4a2-7Q-5Wh">
+                                                            <rect key="frame" x="52" y="0.0" width="532" height="27"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="zIh-H0-HLt" firstAttribute="top" secondItem="qDd-xK-TSF" secondAttribute="topMargin" id="03u-Iz-rwm"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="zIh-H0-HLt" secondAttribute="bottom" id="Bji-b7-scd"/>
-                                                <constraint firstItem="vZX-IU-epr" firstAttribute="leading" secondItem="4a2-7Q-5Wh" secondAttribute="trailing" constant="8" id="FBT-sC-k9T"/>
-                                                <constraint firstItem="4a2-7Q-5Wh" firstAttribute="top" secondItem="qDd-xK-TSF" secondAttribute="topMargin" constant="6" id="HzM-nd-Mqf"/>
-                                                <constraint firstItem="4a2-7Q-5Wh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zIh-H0-HLt" secondAttribute="trailing" constant="8" id="Ze7-PY-SnB"/>
-                                                <constraint firstItem="4a2-7Q-5Wh" firstAttribute="trailing" secondItem="qDd-xK-TSF" secondAttribute="trailingMargin" id="dhU-Nl-okH"/>
-                                                <constraint firstItem="zIh-H0-HLt" firstAttribute="leading" secondItem="qDd-xK-TSF" secondAttribute="leadingMargin" id="h8f-fF-dXA"/>
-                                                <constraint firstItem="vZX-IU-epr" firstAttribute="top" secondItem="qDd-xK-TSF" secondAttribute="topMargin" id="lFH-vP-z4K"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="vZX-IU-epr" secondAttribute="bottom" id="lbl-Xu-E82"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="vZX-IU-epr" secondAttribute="trailing" id="vYV-9k-KW0"/>
-                                                <constraint firstItem="4a2-7Q-5Wh" firstAttribute="bottom" secondItem="qDd-xK-TSF" secondAttribute="bottomMargin" id="zde-Va-jmM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZLg-QP-iUo" secondAttribute="trailing" id="1UK-zo-Sts"/>
+                                                <constraint firstItem="ZLg-QP-iUo" firstAttribute="leading" secondItem="qDd-xK-TSF" secondAttribute="leadingMargin" id="YMJ-OK-lAN"/>
+                                                <constraint firstItem="ZLg-QP-iUo" firstAttribute="top" secondItem="qDd-xK-TSF" secondAttribute="topMargin" id="mqe-1K-3db"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZLg-QP-iUo" secondAttribute="bottom" id="v5Q-35-Iv6"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="dhU-Nl-okH"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="isM-qp-fqf" kind="presentation" identifier="ChangeTags" id="eQG-2C-uKT"/>
@@ -362,7 +352,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Save" id="kSK-s4-MNG"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="addTagButton" destination="vZX-IU-epr" id="R1a-o9-Ujt"/>
                         <outlet property="cancelButton" destination="AiC-CI-4eE" id="db0-fW-Ddc"/>
                         <outlet property="deleteButton" destination="WGt-re-adu" id="doQ-rN-ocx"/>
                         <outlet property="nameTextField" destination="gFR-9l-cxe" id="vih-gf-3sg"/>

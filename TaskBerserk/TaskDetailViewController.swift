@@ -39,7 +39,6 @@ class TaskDetailViewController: UITableViewController {
     @IBOutlet weak var priorityLowButton: UIButton!
     @IBOutlet weak var priorityMediumButton: UIButton!
     @IBOutlet weak var priorityHighButton: UIButton!
-    @IBOutlet weak var addTagButton: UIButton!
     
     @IBOutlet weak var urgencyLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
