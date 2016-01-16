@@ -27,6 +27,7 @@
 		1F44893C1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44893B1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift */; };
 		1F44893E1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44893D1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift */; };
 		1F4489401C4A3B4700179450 /* TaskChangeMetaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44893F1C4A3B4700179450 /* TaskChangeMetaTableViewController.swift */; };
+		1F4489421C4A3C2B00179450 /* TaskChangeMetaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4489411C4A3C2B00179450 /* TaskChangeMetaTableViewCell.swift */; };
 		1F70EE901C43B34A008AC4F2 /* TaskDetailViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE8F1C43B34A008AC4F2 /* TaskDetailViewModeling.swift */; };
 		1F70EE921C43B36C008AC4F2 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */; };
 		1F70EE961C43B6AC008AC4F2 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */; };
@@ -169,6 +170,7 @@
 		1F44893B1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaViewCellModeling.swift; sourceTree = "<group>"; };
 		1F44893D1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaViewCellModel.swift; sourceTree = "<group>"; };
 		1F44893F1C4A3B4700179450 /* TaskChangeMetaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaTableViewController.swift; sourceTree = "<group>"; };
+		1F4489411C4A3C2B00179450 /* TaskChangeMetaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaTableViewCell.swift; sourceTree = "<group>"; };
 		1F70EE8F1C43B34A008AC4F2 /* TaskDetailViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewModeling.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -365,6 +367,27 @@
 			name = TaskChangeMetaView;
 			sourceTree = "<group>";
 		};
+		1F4489431C4A3C3B00179450 /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				1F8726C61C3C2D2400EEA569 /* TasksTableViewController.swift */,
+				1F8726C81C3C2D3200EEA569 /* TaskTableViewCell.swift */,
+				1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */,
+				1F44893F1C4A3B4700179450 /* TaskChangeMetaTableViewController.swift */,
+				1F4489411C4A3C2B00179450 /* TaskChangeMetaTableViewCell.swift */,
+			);
+			name = Tasks;
+			sourceTree = "<group>";
+		};
+		1F4489441C4A3C4800179450 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				1F1E04ED1C45329C005006FC /* MetaTableViewController.swift */,
+				1F1E04F81C4536BB005006FC /* MetaTableViewCell.swift */,
+			);
+			name = Meta;
+			sourceTree = "<group>";
+		};
 		1F70EE931C43B376008AC4F2 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,12 +498,8 @@
 		1F8697AA1C3AB66400CB3FFE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1F8726C61C3C2D2400EEA569 /* TasksTableViewController.swift */,
-				1F8726C81C3C2D3200EEA569 /* TaskTableViewCell.swift */,
-				1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */,
-				1F44893F1C4A3B4700179450 /* TaskChangeMetaTableViewController.swift */,
-				1F1E04ED1C45329C005006FC /* MetaTableViewController.swift */,
-				1F1E04F81C4536BB005006FC /* MetaTableViewCell.swift */,
+				1F4489431C4A3C3B00179450 /* Tasks */,
+				1F4489441C4A3C4800179450 /* Meta */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -814,6 +833,7 @@
 				1FED43A51C4112270085A5A2 /* TaskBerserk.xcdatamodeld in Sources */,
 				1F8726B61C3BB7E800EEA569 /* TaskWebService.swift in Sources */,
 				1F8726B21C3BB14E00EEA569 /* Intheam.swift in Sources */,
+				1F4489421C4A3C2B00179450 /* TaskChangeMetaTableViewCell.swift in Sources */,
 				1F8726CD1C3C2E1C00EEA569 /* TasksTableViewModel.swift in Sources */,
 				1F12FAC31C3AABB9000AC1A3 /* AppDelegate.swift in Sources */,
 				1F79B7B01C3FFF2600976A35 /* UIViewController+extensions.swift in Sources */,
