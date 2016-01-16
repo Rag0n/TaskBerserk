@@ -74,11 +74,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Tasks" id="rik-jO-nAb">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="cxj-nk-OPa">
-                                <connections>
-                                    <action selector="addNewTask:" destination="Ssd-Ik-bAN" id="gKC-7z-bXg"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="cxj-nk-OPa"/>
                             <barButtonItem title="Fetch" id="zXS-7N-x8d"/>
                         </rightBarButtonItems>
                     </navigationItem>
