@@ -16,6 +16,8 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
     typealias ViewModel = TaskTableViewCellModeling
 
     var managedObjectContext: NSManagedObjectContext!
+    private var taskImporter: Importing
+    
     var updates: Observable<[DataProviderUpdate<TaskTableViewCellModeling>]> {
         return dataProvider.updatesSignal
     }
@@ -38,6 +40,7 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
     
     func addNewTask(taskName: String?) {
         print("Implement me pls")
+        taskImporter.importTasks()
     }
     
 //    func addNewTask(task: TaskMapper) {
@@ -46,8 +49,9 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
 //        }
 //    }
     
-    init(managedObject: NSManagedObjectContext) {
+    init(managedObject: NSManagedObjectContext, taskImporter: Importing) {
         self.managedObjectContext = managedObject
+        self.taskImporter = taskImporter
         setupDataProvider()
     }
     
