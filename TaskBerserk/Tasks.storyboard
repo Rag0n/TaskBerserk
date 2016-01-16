@@ -390,7 +390,29 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pLV-gQ-1Kd" id="KCE-iK-V2k">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YP0-eR-NeM">
+                                            <rect key="frame" x="8" y="8" width="574" height="27"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meta name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1i0-3v-kBX">
+                                                    <rect key="frame" x="0.0" y="0.0" width="574" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YP0-eR-NeM" firstAttribute="leading" secondItem="KCE-iK-V2k" secondAttribute="leadingMargin" id="EXf-WG-MK4"/>
+                                        <constraint firstItem="YP0-eR-NeM" firstAttribute="top" secondItem="KCE-iK-V2k" secondAttribute="topMargin" id="NnB-7J-w1K"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="YP0-eR-NeM" secondAttribute="bottom" id="Pse-pT-G3h"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="YP0-eR-NeM" secondAttribute="trailing" constant="10" id="cYd-OQ-rvb"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="1i0-3v-kBX" id="DiO-sS-93W"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -399,6 +421,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="cm5-Sf-MjE"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="1i0-3v-kBX" id="NTU-QG-evU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccz-3I-8bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
