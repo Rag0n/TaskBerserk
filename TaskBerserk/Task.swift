@@ -23,7 +23,7 @@ final class Task: ManagedObject {
     
     
     static func updateOrCreateTask(moc: NSManagedObjectContext,
-        name: String, status: String, project: String? = nil, id: String? = nil, priority: String? = nil,
+        name: String, status: String = "Pending", project: String? = nil, id: String? = nil, priority: String? = nil,
         dueDate: String? = nil, urgency: Double? = nil, tags: [String]? = nil) -> Task {
 
             var task: Task
