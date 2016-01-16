@@ -157,6 +157,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="sER-9f-Mnf" secondAttribute="bottom" id="wS1-dr-plO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="isM-qp-fqf" kind="presentation" identifier="ChangeProject" id="GIU-yV-bcl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -321,6 +324,9 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="isM-qp-fqf" kind="presentation" identifier="ChangeTags" id="72f-Sh-mCz"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FNw-Yx-NRr">
                                         <rect key="frame" x="0.0" y="338" width="600" height="44"/>
@@ -483,4 +489,7 @@
             <point key="canvasLocation" x="2883" y="-1409"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="72f-Sh-mCz"/>
+    </inferredMetricsTieBreakers>
 </document>
