@@ -108,9 +108,13 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     func viewModelForIdentifier(identifier: String) -> TaskChangeMetaViewModeling {
         switch identifier {
         case changeProjectIdentifier:
-            return TaskChangeMetaViewModel(metaObject: MetaObject.ProjectType(task.project))
+            return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.ProjectType(task.project))
         case changeTagsIdentifier:
-            return TaskChangeMetaViewModel(metaObject: MetaObject.TagType(task.tags))
+            if let tags = task.tags {
+                return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(Array(tags)))
+            } else {
+                return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(nil))
+            }
         default:
             fatalError("Wrong segue identifier")
         }
