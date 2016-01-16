@@ -43,9 +43,7 @@ final class Task: ManagedObject {
             // TODO: implement
             task.dueDate = nil
             
-            if let project = project {
-                task.project = Project.findOrCreateProject(project, inContext: moc)
-            }
+            task.project = Project.findOrCreateProject(project, inContext: moc)
             
             if let tags = tags {
                 task.tags = Tag.findOrCreateTags(tags, inContext: moc)
