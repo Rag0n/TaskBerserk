@@ -9,5 +9,12 @@
 import UIKit
 
 final class TaskChangeMetaTableViewCell: UITableViewCell {
+    @IBOutlet weak var nameLabel: UILabel!
     
+    var viewModel: TaskChangeMetaViewCellModeling! {
+        didSet {
+            nameLabel.text = viewModel.name
+            self.accessoryType = viewModel.accessoryType ? .Checkmark : .None
+        }
+    }
 }

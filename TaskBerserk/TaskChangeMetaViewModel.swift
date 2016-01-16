@@ -29,12 +29,15 @@ class TaskChangeMetaViewModel: TaskChangeMetaViewModeling {
     
     private func setupDataProvider() {
         let request: NSFetchRequest
+        let currentMetaObject: NameWithCountRepresentable
         
         switch metaObject {
-        case .ProjectType(_):
+        case .ProjectType(let project):
             request = Project.sortedFetchRequest
-        case .TagType(_):
+            currentMetaObject = project
+        case .TagType(let tag):
             request = Tag.sortedFetchRequest
+            currentMetaObject = tag
         }
         
         request.returnsObjectsAsFaults = false
@@ -43,7 +46,7 @@ class TaskChangeMetaViewModel: TaskChangeMetaViewModeling {
             managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         
         let transformerFunc: (Object) -> ViewModel = { object in
-            TaskChangeMetaViewCellModel(metaObject: object)
+            TaskChangeMetaViewCellModel(metaObject: object, currentMeta: currentMetaObject)
         }
         
         dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self, transformerFunc: transformerFunc)
