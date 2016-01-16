@@ -40,6 +40,10 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
     
     func addNewTask(taskName: String?) {
         print("Implement me pls")
+//        taskImporter.importTasks()
+    }
+    
+    func fetchTasks() {
         taskImporter.importTasks()
     }
     
