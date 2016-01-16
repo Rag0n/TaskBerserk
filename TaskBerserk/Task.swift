@@ -18,8 +18,8 @@ final class Task: ManagedObject {
     @NSManaged private(set) var priority: String?
     @NSManaged private(set) var dueDate: NSDate?
     
-    @NSManaged private(set) var tags: Set<Tag>?
-    @NSManaged private(set) var project: Project?
+    @NSManaged private(set) var tags: Set<Tag>
+    @NSManaged private(set) var project: Project
     
     
     static func updateOrCreateTask(moc: NSManagedObjectContext,
@@ -44,10 +44,7 @@ final class Task: ManagedObject {
             task.dueDate = nil
             
             task.project = Project.findOrCreateProject(project, inContext: moc)
-            
-            if let tags = tags {
-                task.tags = Tag.findOrCreateTags(tags, inContext: moc)
-            }
+            task.tags = Tag.findOrCreateTags(tags, inContext: moc)
             
             task.urgency = Task.calculateUrgency()
             
