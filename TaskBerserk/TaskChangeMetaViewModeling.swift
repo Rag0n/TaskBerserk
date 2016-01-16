@@ -9,6 +9,11 @@
 import Foundation
 import RxSwift
 
-protocol TaskChangeMetaViewModeling {
-    
+protocol TaskChangeMetaViewModeling: ManagedObjectContextSettable, DataProviderDelegate {
+    var metaObject: MetaObject { get }
+}
+
+enum MetaObject {
+    case ProjectType(Project)
+    case TagType(Tag)
 }
