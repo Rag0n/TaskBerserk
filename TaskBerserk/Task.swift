@@ -21,46 +21,26 @@ final class Task: ManagedObject {
     @NSManaged private(set) var tags: Set<Tag>?
     @NSManaged private(set) var project: Project?
     
-    static func updateOrCreateTask(
-        inContext moc: NSManagedObjectContext,
-        name: String, project: String? = nil, id: String,
-        status: String, priority: String? = nil,
+    
+    static func updateOrCreateTask(moc: NSManagedObjectContext,
+        name: String, status: String, project: String? = nil, id: String? = nil, priority: String? = nil,
         dueDate: String? = nil, urgency: Double? = nil, tags: [String]? = nil) -> Task {
-        
-        let predicate = NSPredicate(format: "id = %@", id)
-        let task = findOrCreateInContext(moc, matchingPredicate: predicate) { task in
+
+            var task: Task
+            if let id = id {
+                let predicate = NSPredicate(format: "id = %@", id)
+                task = findOrCreateInContext(moc, matchingPredicate: predicate) { _ in }
+            } else {
+                task = moc.insertObject()
+            }
+
+            task.id = id ?? NSUUID().UUIDString
+            
             task.name = name
             task.status = status
             task.priority = priority
             
-            // TODO: Написать DateFormatter
-//            task.dueDate = dueDate
-            
-            if let project = project {
-                task.project = Project.findOrCreateProject(project, inContext: moc)
-            }
-            
-            if let tags = tags {
-                task.tags = Tag.findOrCreateTags(tags, inContext: moc)
-            }
-            
-            task.urgency = self.calculateUrgency()
-        }
-            
-        return task
-    }
-    
-    static func insertIntoContext(moc: NSManagedObjectContext,
-        name: String, project: String? = nil, id: String? = nil,
-        status: String? = nil, priority: String? = nil,
-        dueDate: String? = nil, urgency: Double? = nil, tags: [String]? = nil) -> Task {
-
-            let task: Task = moc.insertObject()
-            task.name = name
-            task.id = id ?? NSUUID().UUIDString
             // TODO: implement
-            task.status = status ?? "pending"
-            task.priority = priority ?? "No priority"
             task.dueDate = nil
             
             if let project = project {
@@ -71,7 +51,7 @@ final class Task: ManagedObject {
                 task.tags = Tag.findOrCreateTags(tags, inContext: moc)
             }
             
-            task.urgency = urgency ?? Task.calculateUrgency()
+            task.urgency = Task.calculateUrgency()
             
             return task
     }
@@ -95,7 +75,6 @@ final class Task: ManagedObject {
         // deletes project if it doesnt have remaining tasks
         if let project = project {
             if project.tasks.filter({ !$0.deleted }).isEmpty {
-                print(project)
                 managedObjectContext?.deleteObject(project)
             }
         }
