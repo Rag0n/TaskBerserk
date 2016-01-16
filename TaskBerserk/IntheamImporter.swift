@@ -24,17 +24,8 @@ class IntheamImporter: Importing {
             .subscribeNext { response in
                 for task in response.tasks {
                     self.managedObjectContext.performChanges {
-                        Task.updateOrCreateTask(
-                            inContext: self.managedObjectContext,
-                            name: task.name,
-                            project: task.project,
-                            id: task.id,
-                            status: task.status,
-                            priority: task.priority,
-                            dueDate: task.dueDate,
-                            urgency: task.urgency,
-                            tags: task.tags)
-                    }
+                        Task.updateOrCreateTask(self.managedObjectContext, name: task.name, status: task.status, project: task.project, id: task.id, priority: task.priority, dueDate: task.dueDate, urgency: task.urgency, tags: task.tags)
+                        }
                 }
                 
             }
