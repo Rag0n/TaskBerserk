@@ -12,7 +12,7 @@
     </entity>
     <entity name="Task" representedClassName=".Task" syncable="YES">
         <attribute name="dueDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="priority" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" attributeType="String" syncable="YES"/>
