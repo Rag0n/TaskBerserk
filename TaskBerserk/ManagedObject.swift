@@ -52,13 +52,15 @@ extension ManagedObjectType where Self: ManagedObject {
                 request.predicate = predicate
                 request.returnsObjectsAsFaults = false
                 request.fetchLimit = 1
-                }.first
+            }.first
         }
         return obj
     }
     
     /// executes a fetch request with configuration block
-    static func fetchInContext(context: NSManagedObjectContext, @noescape configurationBlock: NSFetchRequest -> () = { _ in }) -> [Self] {
+    static func fetchInContext(context: NSManagedObjectContext,
+        @noescape configurationBlock: NSFetchRequest -> () = { _ in }) -> [Self] {
+            
         let request = NSFetchRequest(entityName: Self.entityName)
         configurationBlock(request)
         guard let result = try! context.executeFetchRequest(request) as? [Self] else {
