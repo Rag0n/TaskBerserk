@@ -39,19 +39,17 @@ class TasksTableViewModel: TasksTableViewModeling, DataProviderDelegate {
     }
     
     func addNewTask(taskName: String?) {
-        print("Implement me pls")
-//        taskImporter.importTasks()
+        if let taskName = taskName {
+            managedObjectContext.performChanges {
+                Task.updateOrCreateTask(self.managedObjectContext, name: taskName)
+            }
+        }
     }
     
     func fetchTasks() {
         taskImporter.importTasks()
     }
     
-//    func addNewTask(task: TaskMapper) {
-//        managedObjectContext.performChanges {
-//            Task.insertIntoContext(self.managedObjectContext, TaskMapper: task)
-//        }
-//    }
     
     init(managedObject: NSManagedObjectContext, taskImporter: Importing) {
         self.managedObjectContext = managedObject
