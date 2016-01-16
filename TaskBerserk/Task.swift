@@ -69,6 +69,18 @@ final class Task: ManagedObject {
         name = newName
     }
     
+    func changeProject(newProject: String, moc: NSManagedObjectContext) {
+        project = Project.findOrCreateProject(newProject, inContext: moc)
+    }
+    
+    func changeProject(newProject: Project) {
+        project = newProject
+    }
+    
+    func changeTags(newTags: [String], moc: NSManagedObjectContext) {
+        tags = Tag.findOrCreateTags(newTags, inContext: moc)
+    }
+    
     override func prepareForDeletion() {
         // deletes project if it doesnt have remaining tasks
 
