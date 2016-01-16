@@ -14,9 +14,8 @@ final class Tag: ManagedObject {
     @NSManaged private(set) var updatedAt: NSDate
     @NSManaged private(set) var tasks: Set<Task>
     
-    static func findOrCreateTags(tagNames: [String]?, inContext moc: NSManagedObjectContext) -> Set<Tag> {
+    static func findOrCreateTags(tagNames: [String], inContext moc: NSManagedObjectContext) -> Set<Tag> {
         var tags = [Tag]()
-        let tagNames = tagNames ?? ["None"]
         
         for tagName in tagNames {
             tags.append(Tag.findOrCreateTag(tagName, inContext: moc))

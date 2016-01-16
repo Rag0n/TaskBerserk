@@ -18,7 +18,7 @@ final class Task: ManagedObject {
     @NSManaged private(set) var priority: String?
     @NSManaged private(set) var dueDate: NSDate?
     
-    @NSManaged private(set) var tags: Set<Tag>
+    @NSManaged private(set) var tags: Set<Tag>?
     @NSManaged private(set) var project: Project
     
     
@@ -44,7 +44,10 @@ final class Task: ManagedObject {
             task.dueDate = nil
             
             task.project = Project.findOrCreateProject(project, inContext: moc)
-            task.tags = Tag.findOrCreateTags(tags, inContext: moc)
+            
+            if let tags = tags {
+                task.tags = Tag.findOrCreateTags(tags, inContext: moc)
+            }
             
             task.urgency = Task.calculateUrgency()
             
@@ -68,10 +71,9 @@ final class Task: ManagedObject {
     
     override func prepareForDeletion() {
         // deletes project if it doesnt have remaining tasks
-        if let project = project {
-            if project.tasks.filter({ !$0.deleted }).isEmpty {
-                managedObjectContext?.deleteObject(project)
-            }
+
+        if project.tasks.filter({ !$0.deleted }).isEmpty {
+            managedObjectContext?.deleteObject(project)
         }
         
         // deletes tags if they dont have remaining tasks
