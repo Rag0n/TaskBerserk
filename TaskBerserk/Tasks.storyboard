@@ -411,7 +411,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="nameLabel" destination="1i0-3v-kBX" id="DiO-sS-93W"/>
+                                    <outlet property="nameLabel" destination="1i0-3v-kBX" id="PTi-rK-uXg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -421,9 +421,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="cm5-Sf-MjE"/>
-                    <connections>
-                        <outlet property="nameLabel" destination="1i0-3v-kBX" id="NTU-QG-evU"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccz-3I-8bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
