@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="G2l-0d-Qlt">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Meta Table View Controller-->
+        <scene sceneID="TdH-IW-aps">
+            <objects>
+                <tableViewController storyboardIdentifier="MetaTableViewController" id="Sah-f1-fgD" customClass="MetaTableViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CNy-V3-d03">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MetaTableViewCell" id="Msr-x4-dVe" customClass="MetaTableViewCell" customModule="TaskBerserk" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Msr-x4-dVe" id="Yl3-Ff-mUA">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meta name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lj-Gm-4Hg">
+                                            <rect key="frame" x="8" y="8" width="86" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meta count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb4-qb-IKW">
+                                            <rect key="frame" x="505" y="8" width="87" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="2lj-Gm-4Hg" firstAttribute="top" secondItem="Yl3-Ff-mUA" secondAttribute="topMargin" id="2jD-2B-fON"/>
+                                        <constraint firstItem="Wb4-qb-IKW" firstAttribute="trailing" secondItem="Yl3-Ff-mUA" secondAttribute="trailingMargin" id="MuQ-E2-N9j"/>
+                                        <constraint firstItem="2lj-Gm-4Hg" firstAttribute="leading" secondItem="Yl3-Ff-mUA" secondAttribute="leadingMargin" id="bVX-JV-lV4"/>
+                                        <constraint firstItem="Wb4-qb-IKW" firstAttribute="top" secondItem="Yl3-Ff-mUA" secondAttribute="topMargin" id="hLY-dn-19t"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="countLabel" destination="Wb4-qb-IKW" id="Exk-Z9-xKt"/>
+                                    <outlet property="nameLabel" destination="2lj-Gm-4Hg" id="FRh-Zv-kpy"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Sah-f1-fgD" id="I9A-Su-t3Q"/>
+                            <outlet property="delegate" destination="Sah-f1-fgD" id="3dz-KU-8Yz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="V1P-d4-GRx">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="uyD-j2-xvk">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Projects"/>
+                                <segment title="Tags"/>
+                                <segment title="Contexts"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="filterSegmentedControl" destination="uyD-j2-xvk" id="DwI-r3-BTj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1HS-wq-hok" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1319" y="-1284"/>
+        </scene>
+        <!--Meta-->
+        <scene sceneID="1VB-gy-gCd">
+            <objects>
+                <navigationController storyboardIdentifier="MetaNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="G2l-0d-Qlt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Meta" id="8cC-xx-ZXo"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9rd-kA-Dam">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Sah-f1-fgD" kind="relationship" relationship="rootViewController" id="4tf-uo-hjs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bBh-m6-lDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567" y="-1284"/>
+        </scene>
+    </scenes>
+</document>
