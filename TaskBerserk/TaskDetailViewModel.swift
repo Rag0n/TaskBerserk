@@ -105,6 +105,20 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         _popViewController.onNext(true)
     }
     
+    func saveMetaChanges(metaObject: MetaObject) {
+        managedObjectContext.performChanges {
+            switch metaObject {
+            case .ProjectType(let newProject):
+                self.task.changeProject(newProject)
+            case .TagType(let newTags):
+                if let newTags = newTags {
+                    
+                }
+//                Task.updateOrCreateTask(self.managedObjectContext, name: task.name, status: task.status, project: newProject.name, id: task.id, priority: task.priority, dueDate: task.dueDate, urgency: nil, tags: task.tags)
+            }
+        }
+    }
+    
     func viewModelForIdentifier(identifier: String) -> TaskChangeMetaViewModeling {
         switch identifier {
         case changeProjectIdentifier:
@@ -122,7 +136,7 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     
     // MARK: Private
     
-    private let task: Task
+    private var task: Task
     
     private let _name = BehaviorSubject<String>(value: "")
     private let _status = BehaviorSubject<String>(value: "")
