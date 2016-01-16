@@ -25,7 +25,7 @@ final class Tag: ManagedObject {
     }
     
     static func findOrCreateTag(tagName: String, inContext moc: NSManagedObjectContext) -> Tag {
-        let predicate = NSPredicate(format: "name == %@", tagName)
+        let predicate = NSPredicate(format: "name = %@", tagName)
         let tag = findOrCreateInContext(moc, matchingPredicate: predicate) { tag in
             tag.name = tagName
             tag.updatedAt = NSDate()
