@@ -24,6 +24,7 @@ class TasksTableViewController: UITableViewController {
         super.viewDidLoad()
 //        tableView.estimatedRowHeight = tableView.rowHeight
 //        tableView.rowHeight = UITableViewAutomaticDimension
+        configureButtonActions()
     }
     
     @IBAction func addNewTask(sender: UIBarButtonItem) {
@@ -43,12 +44,24 @@ class TasksTableViewController: UITableViewController {
         presentViewController(ac, animated: true, completion: nil)
     }
     
+    // MARK: IB
+    @IBOutlet weak var fetchButton: UIBarButtonItem!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
     // MARK: Private
     private let disposeBag = DisposeBag()
     
     private struct Constants {
         static let taskCellIdentifier = "TaskTableViewCell"
         static let taskDetailSegueIdentifier = "ShowTaskDetail"
+    }
+    
+    private func configureButtonActions() {
+        fetchButton.rx_tap
+            .subscribeNext {
+                self.viewModel.fetchTasks()
+            }
+            .addDisposableTo(disposeBag)
     }
 }
 
