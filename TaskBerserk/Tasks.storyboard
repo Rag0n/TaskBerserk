@@ -92,7 +92,7 @@
         <scene sceneID="suq-ZO-jgc">
             <objects>
                 <tableViewController storyboardIdentifier="TaskDetailViewController" id="o6B-uz-6cU" customClass="TaskDetailViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wod-eZ-WIC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wod-eZ-WIC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -158,7 +158,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="isM-qp-fqf" kind="presentation" identifier="ChangeProject" id="GIU-yV-bcl"/>
+                                            <segue destination="isM-qp-fqf" kind="presentation" identifier="ChangeProject" id="hHW-Mh-L3S"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -325,7 +325,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="isM-qp-fqf" kind="presentation" identifier="ChangeTags" id="72f-Sh-mCz"/>
+                                            <segue destination="isM-qp-fqf" kind="presentation" identifier="ChangeTags" id="eQG-2C-uKT"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FNw-Yx-NRr">
@@ -490,6 +490,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="72f-Sh-mCz"/>
+        <segue reference="eQG-2C-uKT"/>
     </inferredMetricsTieBreakers>
 </document>
