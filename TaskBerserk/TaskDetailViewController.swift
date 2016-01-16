@@ -100,3 +100,34 @@ class TaskDetailViewController: UITableViewController {
             .addDisposableTo(disposeBag)
     }
 }
+
+// MARK: Navigation
+extension TaskDetailViewController {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let identifier = segue.identifier else {
+            fatalError("Segue without identifier")
+        }
+        
+        switch identifier {
+        case viewModel.changeProjectIdentifier:
+            guard let vc = segue.destinationViewController as? TaskChangeMetaTableViewController else {
+                fatalError("Wrong view controller")
+            }
+            vc.viewModel = viewModel.viewModelForIdentifier(viewModel.changeProjectIdentifier)
+        case viewModel.changeTagsIdentifier:
+            guard let vc = segue.destinationViewController as? TaskChangeMetaTableViewController else {
+                fatalError("Wrong view controller")
+            }
+            vc.viewModel = viewModel.viewModelForIdentifier(viewModel.changeTagsIdentifier)
+        default:
+            fatalError("Wrong segue identifier")
+        }
+    }
+}
+
+//// MARK: TableViewDelegate
+//extension TaskDetailViewController {
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//    }
+//}
