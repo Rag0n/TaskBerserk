@@ -33,7 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // ViewModels
         container.register(TasksTableViewModeling.self) { r in
-            let viewModel = TasksTableViewModel(managedObject: managedObjectContext)
+            let viewModel = TasksTableViewModel(managedObject: managedObjectContext,
+                taskImporter: r.resolve(Importing.self)!)
             return viewModel
         }
         
