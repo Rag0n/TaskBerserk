@@ -24,10 +24,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ocj-Nm-Kep">
-                                            <rect key="frame" x="4" y="0.0" width="592" height="64"/>
+                                            <rect key="frame" x="10" y="0.0" width="580" height="64"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="s3d-Wa-gcc">
-                                                    <rect key="frame" x="0.0" y="9" width="536" height="47"/>
+                                                    <rect key="frame" x="0.0" y="9" width="524" height="47"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEb-1q-jVR">
                                                             <rect key="frame" x="0.0" y="0.0" width="88" height="21"/>
@@ -44,7 +44,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoN-WU-9b8">
-                                                    <rect key="frame" x="542" y="22" width="50" height="21"/>
+                                                    <rect key="frame" x="530" y="22" width="50" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -54,9 +54,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="ocj-Nm-Kep" secondAttribute="bottom" id="SoE-r9-9Jz"/>
-                                        <constraint firstAttribute="trailing" secondItem="ocj-Nm-Kep" secondAttribute="trailing" constant="4" id="Wlp-CT-wre"/>
+                                        <constraint firstAttribute="trailing" secondItem="ocj-Nm-Kep" secondAttribute="trailing" constant="10" id="Wlp-CT-wre"/>
                                         <constraint firstItem="ocj-Nm-Kep" firstAttribute="top" secondItem="n5W-P7-22l" secondAttribute="top" id="nWe-46-x2l"/>
-                                        <constraint firstItem="ocj-Nm-Kep" firstAttribute="leading" secondItem="n5W-P7-22l" secondAttribute="leading" constant="4" id="xI8-zW-8SL"/>
+                                        <constraint firstItem="ocj-Nm-Kep" firstAttribute="leading" secondItem="n5W-P7-22l" secondAttribute="leading" constant="10" id="xI8-zW-8SL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

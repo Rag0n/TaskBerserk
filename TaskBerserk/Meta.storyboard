@@ -22,24 +22,29 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meta name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lj-Gm-4Hg">
-                                            <rect key="frame" x="8" y="8" width="86" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meta count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb4-qb-IKW">
-                                            <rect key="frame" x="505" y="8" width="87" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eB5-R7-6lF">
+                                            <rect key="frame" x="18" y="8" width="564" height="27"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Meta name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lj-Gm-4Hg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="477" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meta count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wb4-qb-IKW">
+                                                    <rect key="frame" x="477" y="0.0" width="87" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="2lj-Gm-4Hg" firstAttribute="top" secondItem="Yl3-Ff-mUA" secondAttribute="topMargin" id="2jD-2B-fON"/>
-                                        <constraint firstItem="Wb4-qb-IKW" firstAttribute="trailing" secondItem="Yl3-Ff-mUA" secondAttribute="trailingMargin" id="MuQ-E2-N9j"/>
-                                        <constraint firstItem="2lj-Gm-4Hg" firstAttribute="leading" secondItem="Yl3-Ff-mUA" secondAttribute="leadingMargin" id="bVX-JV-lV4"/>
-                                        <constraint firstItem="Wb4-qb-IKW" firstAttribute="top" secondItem="Yl3-Ff-mUA" secondAttribute="topMargin" id="hLY-dn-19t"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="eB5-R7-6lF" secondAttribute="trailing" constant="10" id="A7K-G4-0pW"/>
+                                        <constraint firstItem="eB5-R7-6lF" firstAttribute="top" secondItem="Yl3-Ff-mUA" secondAttribute="topMargin" id="BUC-pD-grV"/>
+                                        <constraint firstItem="eB5-R7-6lF" firstAttribute="leading" secondItem="Yl3-Ff-mUA" secondAttribute="leadingMargin" constant="10" id="ENX-Ds-lWB"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="eB5-R7-6lF" secondAttribute="bottom" id="okn-3t-acK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
