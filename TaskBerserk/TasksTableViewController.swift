@@ -27,22 +27,6 @@ class TasksTableViewController: UITableViewController {
         configureButtonActions()
     }
     
-    @IBAction func addNewTask(sender: UIBarButtonItem) {
-        let ac = UIAlertController(title: "New task", message: nil, preferredStyle: .Alert)
-        
-        ac.addTextFieldWithConfigurationHandler { textField in
-            textField.placeholder = "Enter task name here"
-        }
-        let addTaskAction = UIAlertAction(title: "Add task", style: .Default) { _ in
-            let textField = ac.textFields![0]
-            self.viewModel.addNewTask(textField.text)
-        }
-        
-        ac.addAction(addTaskAction)
-        ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        
-        presentViewController(ac, animated: true, completion: nil)
-    }
     
     // MARK: IB
     @IBOutlet weak var fetchButton: UIBarButtonItem!
@@ -60,6 +44,25 @@ class TasksTableViewController: UITableViewController {
         fetchButton.rx_tap
             .subscribeNext {
                 self.viewModel.fetchTasks()
+            }
+            .addDisposableTo(disposeBag)
+        
+        addButton.rx_tap
+            .subscribeNext { [weak self] in
+                let ac = UIAlertController(title: "New task", message: nil, preferredStyle: .Alert)
+                
+                ac.addTextFieldWithConfigurationHandler { textField in
+                    textField.placeholder = "Enter task name here"
+                }
+                let addTaskAction = UIAlertAction(title: "Add task", style: .Default) { _ in
+                    let textField = ac.textFields![0]
+                    self?.viewModel.addNewTask(textField.text)
+                }
+                
+                ac.addAction(addTaskAction)
+                ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+                
+                self?.presentViewController(ac, animated: true, completion: nil)
             }
             .addDisposableTo(disposeBag)
     }
