@@ -11,5 +11,6 @@ import RxCocoa
 import RxSwift
 
 class TaskChangeMetaTableViewController: UITableViewController {
+    var viewModel: TaskChangeMetaViewModeling!
     
 }
