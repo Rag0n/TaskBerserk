@@ -9,5 +9,16 @@
 import Foundation
 
 class TaskChangeMetaViewCellModel: TaskChangeMetaViewCellModeling {
+    var name: String
+    var accessoryType: Bool
     
+    init(metaObject: NameWithCountRepresentable, currentMeta: NameWithCountRepresentable) {
+        name = metaObject.nameString
+        
+        if metaObject.nameString != currentMeta.nameString {
+            accessoryType = false
+        } else {
+            accessoryType = true
+        }
+    }
 }

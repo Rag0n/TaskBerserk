@@ -9,5 +9,6 @@
 import Foundation
 
 protocol TaskChangeMetaViewCellModeling {
-    
+    var name: String { get }
+    var accessoryType: Bool { get }
 }
