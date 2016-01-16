@@ -15,6 +15,9 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     
     var managedObjectContext: NSManagedObjectContext!
     
+    let changeProjectIdentifier = "ChangeProject"
+    let changeTagsIdentifier = "ChangeTags"
+    
     // TaskDetailViewModel
     
     var name: Observable<String> {
@@ -100,6 +103,17 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         }
         
         _popViewController.onNext(true)
+    }
+    
+    func viewModelForIdentifier(identifier: String) -> TaskChangeMetaViewModeling {
+        switch identifier {
+        case changeProjectIdentifier:
+            return TaskChangeMetaViewModel(metaObject: MetaObject.ProjectType(task.project))
+        case changeTagsIdentifier:
+            return TaskChangeMetaViewModel(metaObject: MetaObject.TagType(task.tags))
+        default:
+            fatalError("Wrong segue identifier")
+        }
     }
     
     // MARK: Private
