@@ -14,6 +14,7 @@ import CoreData
 class TaskChangeMetaViewModel: TaskChangeMetaViewModeling, DataProviderDelegate {
     var metaObject: MetaObject
     var managedObjectContext: NSManagedObjectContext!
+    let cellIdentifier = "TaskChangeMeta"
     
     typealias ViewModel = TaskChangeMetaViewCellModeling
     typealias Object = NameWithCountRepresentable
@@ -24,13 +25,22 @@ class TaskChangeMetaViewModel: TaskChangeMetaViewModeling, DataProviderDelegate 
         setupDataProvider()
     }
     
+    func numberOfItemsInSection(section: Int) -> Int {
+        return dataProvider.numberOfItemsInSection(section)
+    }
+    
+    func viewModelForIndexPath(indexPath: NSIndexPath) -> TaskChangeMetaViewCellModeling {
+        let object = dataProvider.objectAtIndexPath(indexPath)
+        return TaskChangeMetaViewCellModel(metaObject: object, currentMetaObjects: currentMetaObjects)
+    }
+    
     // MARK: Private
     private var dataProvider: FetchedResultsDataProvider<TaskChangeMetaViewModel>!
     private let disposeBag = DisposeBag()
+    private var currentMetaObjects: [NameWithCountRepresentable]?
     
     private func setupDataProvider() {
         let request: NSFetchRequest
-        let currentMetaObjects: [NameWithCountRepresentable]?
         
         switch metaObject {
         case .ProjectType(let project):
@@ -46,8 +56,8 @@ class TaskChangeMetaViewModel: TaskChangeMetaViewModeling, DataProviderDelegate 
         let frc = NSFetchedResultsController(fetchRequest: request,
             managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         
-        let transformerFunc: (Object) -> ViewModel = { object in
-            TaskChangeMetaViewCellModel(metaObject: object, currentMetaObjects: currentMetaObjects)
+        let transformerFunc: (Object) -> ViewModel = { [weak self] object in
+            TaskChangeMetaViewCellModel(metaObject: object, currentMetaObjects: self?.currentMetaObjects)
         }
         
         dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self, transformerFunc: transformerFunc)

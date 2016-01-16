@@ -11,6 +11,10 @@ import RxSwift
 
 protocol TaskChangeMetaViewModeling: ManagedObjectContextSettable {
     var metaObject: MetaObject { get }
+    var cellIdentifier: String { get }
+    
+    func viewModelForIndexPath(indexPath: NSIndexPath) -> TaskChangeMetaViewCellModeling
+    func numberOfItemsInSection(section: Int) -> Int
 }
 
 enum MetaObject {
