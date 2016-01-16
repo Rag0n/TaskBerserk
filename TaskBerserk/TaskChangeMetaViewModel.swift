@@ -11,15 +11,16 @@ import RxSwift
 import RxCocoa
 import CoreData
 
-class TaskChangeMetaViewModel: TaskChangeMetaViewModeling {
+class TaskChangeMetaViewModel: TaskChangeMetaViewModeling, DataProviderDelegate {
     var metaObject: MetaObject
     var managedObjectContext: NSManagedObjectContext!
     
     typealias ViewModel = TaskChangeMetaViewCellModeling
     typealias Object = NameWithCountRepresentable
     
-    init(metaObject: MetaObject) {
+    init(managedObject: NSManagedObjectContext, metaObject: MetaObject) {
         self.metaObject = metaObject
+        self.managedObjectContext = managedObject
         setupDataProvider()
     }
     
@@ -29,15 +30,15 @@ class TaskChangeMetaViewModel: TaskChangeMetaViewModeling {
     
     private func setupDataProvider() {
         let request: NSFetchRequest
-        let currentMetaObject: NameWithCountRepresentable
+        let currentMetaObjects: [NameWithCountRepresentable]?
         
         switch metaObject {
         case .ProjectType(let project):
             request = Project.sortedFetchRequest
-            currentMetaObject = project
-        case .TagType(let tag):
+            currentMetaObjects = [project]
+        case .TagType(let tags):
             request = Tag.sortedFetchRequest
-            currentMetaObject = tag
+            currentMetaObjects = tags
         }
         
         request.returnsObjectsAsFaults = false
@@ -46,7 +47,7 @@ class TaskChangeMetaViewModel: TaskChangeMetaViewModeling {
             managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
         
         let transformerFunc: (Object) -> ViewModel = { object in
-            TaskChangeMetaViewCellModel(metaObject: object, currentMeta: currentMetaObject)
+            TaskChangeMetaViewCellModel(metaObject: object, currentMetaObjects: currentMetaObjects)
         }
         
         dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self, transformerFunc: transformerFunc)
