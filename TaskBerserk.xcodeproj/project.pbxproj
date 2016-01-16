@@ -24,6 +24,8 @@
 		1F4489351C4A1F6000179450 /* Meta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4489341C4A1F6000179450 /* Meta.storyboard */; };
 		1F4489381C4A327D00179450 /* TaskChangeMetaViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4489371C4A327D00179450 /* TaskChangeMetaViewModeling.swift */; };
 		1F44893A1C4A328F00179450 /* TaskChangeMetaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4489391C4A328F00179450 /* TaskChangeMetaViewModel.swift */; };
+		1F44893C1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44893B1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift */; };
+		1F44893E1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44893D1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift */; };
 		1F70EE901C43B34A008AC4F2 /* TaskDetailViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE8F1C43B34A008AC4F2 /* TaskDetailViewModeling.swift */; };
 		1F70EE921C43B36C008AC4F2 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */; };
 		1F70EE961C43B6AC008AC4F2 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */; };
@@ -163,6 +165,8 @@
 		1F4489341C4A1F6000179450 /* Meta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Meta.storyboard; sourceTree = "<group>"; };
 		1F4489371C4A327D00179450 /* TaskChangeMetaViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaViewModeling.swift; sourceTree = "<group>"; };
 		1F4489391C4A328F00179450 /* TaskChangeMetaViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaViewModel.swift; sourceTree = "<group>"; };
+		1F44893B1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaViewCellModeling.swift; sourceTree = "<group>"; };
+		1F44893D1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaViewCellModel.swift; sourceTree = "<group>"; };
 		1F70EE8F1C43B34A008AC4F2 /* TaskDetailViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewModeling.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F70EE911C43B36C008AC4F2 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewModel.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TaskDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -353,6 +357,8 @@
 			children = (
 				1F4489371C4A327D00179450 /* TaskChangeMetaViewModeling.swift */,
 				1F4489391C4A328F00179450 /* TaskChangeMetaViewModel.swift */,
+				1F44893B1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift */,
+				1F44893D1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift */,
 			);
 			name = TaskChangeMetaView;
 			sourceTree = "<group>";
@@ -771,11 +777,13 @@
 				1F1E04F71C453638005006FC /* MetaTableViewCellModel.swift in Sources */,
 				1F1E04F11C4535F9005006FC /* MetaTableViewModeling.swift in Sources */,
 				1F8726C91C3C2D3200EEA569 /* TaskTableViewCell.swift in Sources */,
+				1F44893E1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift in Sources */,
 				1F70EE961C43B6AC008AC4F2 /* TaskDetailViewController.swift in Sources */,
 				1F8697B01C3AB77900CB3FFE /* TaskMapper.swift in Sources */,
 				1FED43B21C4142B40085A5A2 /* FetchedResultsDataProvider.swift in Sources */,
 				1FED43AD1C4119FD0085A5A2 /* NSURL+extensions.swift in Sources */,
 				1F8726D11C3C2EDB00EEA569 /* TaskTableViewCellModel.swift in Sources */,
+				1F44893C1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift in Sources */,
 				1F8697C51C3B080D00CB3FFE /* NetworkError.swift in Sources */,
 				1F70EE9E1C441779008AC4F2 /* Tag.swift in Sources */,
 				1F8697C11C3B070500CB3FFE /* Networking.swift in Sources */,
