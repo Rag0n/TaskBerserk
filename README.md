@@ -1,6 +1,6 @@
 # TaskBerserk
 
-TaskBerserk is a [TaskWarrior](tw) client for iOS. App uses [Inthe.am](intheam) RESTful API for syncing with TaskWarrior.
+TaskBerserk is a [TaskWarrior][tw] client for iOS. App uses [Inthe.am][intheam] RESTful API for syncing with TaskWarrior.
 
 Feel free to create issues, especially enhancement.
 
@@ -16,7 +16,7 @@ Currently app is in early development stage. Current [development][develop-branc
         - [ ] Change task's tags
         - [ ] Change task's priority
 - [ ] Basic gestures
-    - [ ] Done task
+    - [ ] Done taskg
     - [ ] Delete task
 - [x] Fetching task via Intheam
 - [x] Local storage(CoreData)
@@ -38,7 +38,7 @@ Currently app is in early development stage. Current [development][develop-branc
 * v0.7.0 Reports/charts
 
 # Installation
-For now the only way to install app is to download and build it from a [release page][releases]. You should also add an AppKey.plist file to project with your Inthe.am API key:
+For now the only way to install app is to download and build it from a [release page][releases] or clone from current [development branch][develop-branch]. You should also add an AppKey.plist file to project with your Inthe.am API key:
 
 ```xml
 <dict>
@@ -57,7 +57,7 @@ TaskBerserk is released under MIT license. For details, see [LICENSE][license].
 
 [intheam]: https://inthe.am/about
 [tw]: http://taskwarrior.org/
-[releases]: https://github.com/Rag0n/TaskBerserk/
-[license]: LICENSE
+[releases]: https://github.com/Rag0n/TaskBerserk/releases
+[license]: LICENSE.md
 [version-0.0.5]: https://github.com/Rag0n/TaskBerserk/releases/tag/v0.0.5
 [develop-branch]: https://github.com/Rag0n/TaskBerserk/tree/develop
