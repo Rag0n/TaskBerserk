@@ -19,9 +19,10 @@ class TaskChangeMetaViewModel: TaskChangeMetaViewModeling, DataProviderDelegate 
     typealias ViewModel = TaskChangeMetaViewCellModeling
     typealias Object = NameWithCountRepresentable
     
-    init(managedObject: NSManagedObjectContext, metaObject: MetaObject) {
+    init(managedObject: NSManagedObjectContext, metaObject: MetaObject, task: Task) {
         self.metaObject = metaObject
         self.managedObjectContext = managedObject
+        self.task = task
         setupDataProvider()
     }
     
@@ -34,10 +35,89 @@ class TaskChangeMetaViewModel: TaskChangeMetaViewModeling, DataProviderDelegate 
         return TaskChangeMetaViewCellModel(metaObject: object, currentMetaObjects: currentMetaObjects)
     }
     
+    func changeCurrentMetaObject(indexPath: NSIndexPath) {
+        let object = dataProvider.objectAtIndexPath(indexPath)
+        switch metaObject {
+        case .ProjectType(_):
+            let newProject = object as! Project
+            currentMetaObjects = [newProject]
+        case .TagType(let tags):
+            let newTag = object as! Tag
+            guard var newTags = tags else {
+                currentMetaObjects = [newTag]
+                return
+            }
+            
+            if let index = newTags.indexOf(newTag) {
+                newTags.removeAtIndex(index)
+            } else {
+                newTags.append(newTag)
+            }
+
+            currentMetaObjects = newTags
+        }
+    }
+    
+    func addNewMetaObject(name: String?) {
+        guard let name = name else {
+            return
+        }
+        managedObjectContext.performChanges {
+            switch self.metaObject {
+            case .ProjectType(_):
+                self.task.changeProject(name, moc: self.managedObjectContext)
+            case .TagType(_):
+                self.task.addTags([name])
+            }
+        }
+        
+        _popViewController.onNext(true)
+    }
+    
+    func cancelChanges() {
+        _popViewController.onNext(true)
+    }
+    
+    func saveChanges() {
+        guard let currentMetaObjects = currentMetaObjects else {
+            return
+        }
+        let metaNames = currentMetaObjects.map { $0.nameString }
+        
+        managedObjectContext.performChanges {
+            switch self.metaObject {
+            case .ProjectType(_):
+                let newProjectName = metaNames[0]
+                self.task.changeProject(newProjectName, moc: self.managedObjectContext)
+            case .TagType(_):
+                self.task.changeTags(metaNames, moc: self.managedObjectContext)
+            }
+        }
+        
+        _popViewController.onNext(true)
+    }
+    
+    var popViewController: Observable<Bool> {
+        return _popViewController.asObservable()
+    }
+    
+    // use this in Alert Controller
+    var metaObjectDescription: String {
+        switch metaObject {
+        case .ProjectType(_):
+            return "project"
+        case .TagType(_):
+            return "tag"
+        }
+    }
+    
     // MARK: Private
+    private let task: Task
     private var dataProvider: FetchedResultsDataProvider<TaskChangeMetaViewModel>!
     private let disposeBag = DisposeBag()
     private var currentMetaObjects: [NameWithCountRepresentable]?
+    
+    private let _popViewController = BehaviorSubject<Bool>(value: false)
     
     private func setupDataProvider() {
         let request: NSFetchRequest
