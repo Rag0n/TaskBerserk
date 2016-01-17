@@ -73,10 +73,6 @@ final class Task: ManagedObject {
         project = Project.findOrCreateProject(newProject, inContext: moc)
     }
     
-    func changeProject(newProject: Project) {
-        project = newProject
-    }
-    
     func changeTags(newTags: [String], moc: NSManagedObjectContext) {
         tags = Tag.findOrCreateTags(newTags, inContext: moc)
     }
