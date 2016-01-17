@@ -105,29 +105,15 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         _popViewController.onNext(true)
     }
     
-    func saveMetaChanges(metaObject: MetaObject) {
-        managedObjectContext.performChanges {
-            switch metaObject {
-            case .ProjectType(let newProject):
-                self.task.changeProject(newProject)
-            case .TagType(let newTags):
-                if let newTags = newTags {
-                    
-                }
-//                Task.updateOrCreateTask(self.managedObjectContext, name: task.name, status: task.status, project: newProject.name, id: task.id, priority: task.priority, dueDate: task.dueDate, urgency: nil, tags: task.tags)
-            }
-        }
-    }
-    
     func viewModelForIdentifier(identifier: String) -> TaskChangeMetaViewModeling {
         switch identifier {
         case changeProjectIdentifier:
-            return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.ProjectType(task.project))
+            return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.ProjectType(task.project), task: task)
         case changeTagsIdentifier:
             if let tags = task.tags {
-                return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(Array(tags)))
+                return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(Array(tags)), task: task)
             } else {
-                return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(nil))
+                return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(nil), task: task)
             }
         default:
             fatalError("Wrong segue identifier")
@@ -136,7 +122,7 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     
     // MARK: Private
     
-    private var task: Task
+    private let task: Task
     
     private let _name = BehaviorSubject<String>(value: "")
     private let _status = BehaviorSubject<String>(value: "")

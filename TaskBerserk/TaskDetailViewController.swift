@@ -25,6 +25,9 @@ class TaskDetailViewController: UITableViewController {
                 self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
             }
             .addDisposableTo(disposeBag)
+        
+        
+        
     }
     
     // MARK: IBOutlets
@@ -119,18 +122,6 @@ extension TaskDetailViewController {
             fatalError("Wrong segue identifier")
         }
     }
-    
-    @IBAction func cancelToTaskDetailTableViewController(segue: UIStoryboardSegue) {
-        
-    }
-    
-    @IBAction func saveToTaskDetailTableViewController(segue: UIStoryboardSegue) {
-        if let controller = segue.sourceViewController as? TaskChangeMetaTableViewController,
-            metaViewModel = controller.viewModel {
-            viewModel.saveMetaChanges(metaViewModel.metaObject)
-        }
-    }
-    
 }
 
 //// MARK: TableViewDelegate

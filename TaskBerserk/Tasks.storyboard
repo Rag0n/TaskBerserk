@@ -86,7 +86,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGi-32-cHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1319" y="-2235"/>
+            <point key="canvasLocation" x="1333" y="-2241"/>
         </scene>
         <!--Edit-->
         <scene sceneID="suq-ZO-jgc">
@@ -414,11 +414,18 @@
                             <outlet property="delegate" destination="6eS-h5-cZP" id="Cjs-BA-NfX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cm5-Sf-MjE"/>
+                    <navigationItem key="navigationItem" id="cm5-Sf-MjE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="X22-gW-9Y1"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sru-in-5is"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addNewButton" destination="Sru-in-5is" id="EKf-tx-sUH"/>
+                        <outlet property="cancelButton" destination="X22-gW-9Y1" id="YCO-hs-KoL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccz-3I-8bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3604" y="-1409"/>
+            <point key="canvasLocation" x="3630" y="-1409"/>
         </scene>
         <!--Tasks-->
         <scene sceneID="c6x-dj-6Ke">
