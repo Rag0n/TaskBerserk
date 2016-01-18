@@ -12,7 +12,11 @@ import RxCocoa
 import CoreData
 
 class TaskChangeProjectViewModel: TaskChangeProjectViewModeling, DataProviderDelegate {
-    var projectName: String
+    private(set) var projectName: String
+    // used to reload only this path in tableViewController
+    var currentProjectIndexPath: NSIndexPath {
+        return NSIndexPath(forRow: currentProjectPosition, inSection: 0)
+    }
     var managedObjectContext: NSManagedObjectContext!
     let cellIdentifier = "TaskChangeProject"
     
@@ -22,6 +26,7 @@ class TaskChangeProjectViewModel: TaskChangeProjectViewModeling, DataProviderDel
     init(moc: NSManagedObjectContext, projectName: String) {
         self.projectName = projectName
         self.managedObjectContext = moc
+        currentProjectPosition = 0
         setupDataProvider()
     }
     
@@ -31,12 +36,21 @@ class TaskChangeProjectViewModel: TaskChangeProjectViewModeling, DataProviderDel
     
     func viewModelForIndexPath(indexPath: NSIndexPath) -> TaskChangeMetaViewCellModeling {
         let object = dataProvider.objectAtIndexPath(indexPath)
+        if object.nameString == projectName {
+            currentProjectPosition = indexPath.row
+        }
         return TaskChangeMetaViewCellModel(metaObject: object.nameString, currentMetaObjects: [self.projectName])
+    }
+    
+    func changeCurrentProject(indexPath: NSIndexPath) {
+        let newProjectName = dataProvider.objectAtIndexPath(indexPath)
+        projectName = newProjectName.nameString
     }
     
     // MARK: Private
     private var dataProvider: FetchedResultsDataProvider<TaskChangeProjectViewModel>!
     private let disposeBag = DisposeBag()
+    private var currentProjectPosition: Int
     
     private let _popViewController = BehaviorSubject<Bool>(value: false)
     
