@@ -369,7 +369,7 @@
             </objects>
             <point key="canvasLocation" x="2883" y="-2241"/>
         </scene>
-        <!--Task Change Project View Controller-->
+        <!--Project-->
         <scene sceneID="TtC-lo-tW8">
             <objects>
                 <tableViewController storyboardIdentifier="TaskChangeProjectViewController" id="vKP-Ib-lsf" customClass="TaskChangeProjectViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
@@ -414,9 +414,21 @@
                             <outlet property="delegate" destination="vKP-Ib-lsf" id="TBe-lG-ws9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="sJf-DQ-kyS"/>
+                    <navigationItem key="navigationItem" title="Project" id="sJf-DQ-kyS">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fQn-gC-RrD">
+                            <connections>
+                                <segue destination="qZt-pM-681" kind="unwind" unwindAction="cancelToDetailViewController:" id="ULM-zS-B5o"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YN1-nI-T3R">
+                            <connections>
+                                <segue destination="qZt-pM-681" kind="unwind" identifier="saveToDetailViewController" unwindAction="saveToDetailViewController:" id="yWY-ct-3jX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roG-z2-ADO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qZt-pM-681" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4413" y="-2602"/>
         </scene>
