@@ -25,9 +25,6 @@ class TaskDetailViewController: UITableViewController {
                 self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
             }
             .addDisposableTo(disposeBag)
-        
-        
-        
     }
     
     // MARK: IBOutlets
@@ -109,15 +106,15 @@ extension TaskDetailViewController {
         
         switch identifier {
         case viewModel.changeProjectIdentifier:
-            guard let vc = segue.destinationViewController.contentViewController as? TaskChangeMetaTableViewController else {
+            guard let vc = segue.destinationViewController.contentViewController as? TaskChangeProjectViewController else {
                 fatalError("Wrong view controller")
             }
-            vc.viewModel = viewModel.viewModelForIdentifier(viewModel.changeProjectIdentifier)
+            vc.viewModel = viewModel.viewModelForChangeProject()
         case viewModel.changeTagsIdentifier:
             guard let vc = segue.destinationViewController.contentViewController as? TaskChangeMetaTableViewController else {
                 fatalError("Wrong view controller")
             }
-            vc.viewModel = viewModel.viewModelForIdentifier(viewModel.changeTagsIdentifier)
+//            vc.viewModel = viewModel.viewModelForIdentifier(viewModel.changeTagsIdentifier)
         default:
             fatalError("Wrong segue identifier")
         }

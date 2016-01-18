@@ -14,9 +14,12 @@ import CoreData
 class TaskDetailViewModel: TaskDetailViewModeling {
     
     var managedObjectContext: NSManagedObjectContext!
-    
-    let changeProjectIdentifier = "ChangeProject"
-    let changeTagsIdentifier = "ChangeTags"
+    var changeProjectIdentifier: String {
+        return "ChangeProject"
+    }
+    var changeTagsIdentifier: String {
+        return "ChangeTags"
+    }
     
     // TaskDetailViewModel
     
@@ -105,20 +108,28 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         _popViewController.onNext(true)
     }
     
-    func viewModelForIdentifier(identifier: String) -> TaskChangeMetaViewModeling {
-        switch identifier {
-        case changeProjectIdentifier:
-            return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.ProjectType(task.project), task: task)
-        case changeTagsIdentifier:
-            if let tags = task.tags {
-                return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(Array(tags)), task: task)
-            } else {
-                return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(nil), task: task)
-            }
-        default:
-            fatalError("Wrong segue identifier")
-        }
+    func viewModelForChangeProject() -> TaskChangeProjectViewModeling {
+        return TaskChangeProjectViewModel(moc: managedObjectContext, projectName: task.project.name)
     }
+
+    
+//    func viewModelForIdentifier(identifier: String) -> TaskChangeMetTaskChangeMetaViewModelaViewModeling {
+//        switch identifier {
+////        case changeProjectIdentifier:
+////            return TaskChangeProjectViewModel(moc: managedObjectContext, projectName: task.project.name)
+////        case changeProjectIdentifier:
+//            return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: task.project.name)
+////        case changeTagsIdentifier:
+////            if let tags = task.tags {
+////                return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(Array(tags)), task: task)
+////            } else {
+////                return TaskChangeMetaViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(nil), task: task)
+////            }
+//        default:
+//            fatalError("Wrong segue identifier")
+//        }
+//    }
+    
     
     // MARK: Private
     
