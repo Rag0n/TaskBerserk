@@ -119,6 +119,14 @@ extension TaskDetailViewController {
             fatalError("Wrong segue identifier")
         }
     }
+    
+    @IBAction func cancelToDetailViewController(segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func saveToDetailViewController(segue: UIStoryboardSegue) {
+        
+    }
 }
 
 //// MARK: TableViewDelegate
