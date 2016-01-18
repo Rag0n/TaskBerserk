@@ -371,6 +371,15 @@
 			name = MetaTableView;
 			sourceTree = "<group>";
 		};
+		1F27BEE31C4D18BF0038058A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1F8726C81C3C2D3200EEA569 /* TaskTableViewCell.swift */,
+				1F4489411C4A3C2B00179450 /* TaskChangeMetaTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		1F4489361C4A323100179450 /* TaskChangeMetaView */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,11 +395,10 @@
 			isa = PBXGroup;
 			children = (
 				1F8726C61C3C2D2400EEA569 /* TasksTableViewController.swift */,
-				1F8726C81C3C2D3200EEA569 /* TaskTableViewCell.swift */,
 				1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */,
 				1F125C521C4CF62C00954C2E /* TaskChangeProjectViewController.swift */,
 				1F44893F1C4A3B4700179450 /* TaskChangeMetaTableViewController.swift */,
-				1F4489411C4A3C2B00179450 /* TaskChangeMetaTableViewCell.swift */,
+				1F27BEE31C4D18BF0038058A /* Cells */,
 			);
 			name = Tasks;
 			sourceTree = "<group>";
