@@ -378,13 +378,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskChangeProject" id="g7P-aL-pdC" customClass="TaskChangeMetaTableViewCell" customModule="TaskBerserk" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskChangeProject" id="Yxb-er-chM" customClass="TaskChangeMetaTableViewCell" customModule="TaskBerserk" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g7P-aL-pdC" id="5tg-fm-w3l">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yxb-er-chM" id="vPI-WF-pHi">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hFq-uc-JaJ">
+                                            <rect key="frame" x="8" y="8" width="574" height="27"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meta name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yP-iR-v1d">
+                                                    <rect key="frame" x="0.0" y="0.0" width="574" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hFq-uc-JaJ" firstAttribute="top" secondItem="vPI-WF-pHi" secondAttribute="topMargin" id="IWq-7T-Ix8"/>
+                                        <constraint firstItem="hFq-uc-JaJ" firstAttribute="leading" secondItem="vPI-WF-pHi" secondAttribute="leadingMargin" id="Tqg-Gx-sBv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hFq-uc-JaJ" secondAttribute="trailing" constant="10" id="ltJ-A3-qby"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="hFq-uc-JaJ" secondAttribute="bottom" id="sHO-tr-Eqp"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="2yP-iR-v1d" id="M8E-b5-wi3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
