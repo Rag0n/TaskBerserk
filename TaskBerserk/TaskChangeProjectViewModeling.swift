@@ -17,4 +17,5 @@ protocol TaskChangeProjectViewModeling: ManagedObjectContextSettable {
     func numberOfItemsInSection(section: Int) -> Int
     
     func changeCurrentProject(indexPath: NSIndexPath)
+    func addNewProject(newProjectName: String?)
 }

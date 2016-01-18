@@ -47,12 +47,14 @@ class TaskChangeProjectViewModel: TaskChangeProjectViewModeling, DataProviderDel
         projectName = newProjectName.nameString
     }
     
+    func addNewProject(newProjectName: String?) {
+        projectName = newProjectName ?? projectName
+    }
+    
     // MARK: Private
     private var dataProvider: FetchedResultsDataProvider<TaskChangeProjectViewModel>!
     private let disposeBag = DisposeBag()
     private var currentProjectPosition: Int
-    
-    private let _popViewController = BehaviorSubject<Bool>(value: false)
     
     private func setupDataProvider() {
         let request = Project.sortedFetchRequest
