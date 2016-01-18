@@ -79,6 +79,13 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         }
     }
     
+    func changeProject(newProjectName: String) {
+        managedObjectContext.performChanges {
+            self.task.changeProject(newProjectName, moc: self.managedObjectContext)
+        }
+        _project.onNext(newProjectName)
+    }
+    
     func deleteTask() {
         task.managedObjectContext?.performChanges {
             self.task.managedObjectContext?.deleteObject(self.task)

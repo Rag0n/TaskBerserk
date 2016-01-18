@@ -20,6 +20,7 @@ protocol TaskDetailViewModeling: ManagedObjectContextSettable {
     var popViewController: Observable<Bool> { get }
     
     func changeTaskName(newName: String)
+    func changeProject(newProjectName: String)
     
     func deleteTask()
     func cancelChanges()
