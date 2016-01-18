@@ -85,12 +85,12 @@ final class Task: ManagedObject {
         }
         
         // deletes tags if they dont have remaining tasks
-        guard let t = tags else { return }
-        for tag in t {
-            if tag.tasks.filter({ !$0.deleted }).isEmpty {
-                managedObjectContext?.deleteObject(tag)
-            }
-        }
+//        guard let t = tags else { return }
+//        for tag in t {
+//            if tag.tasks.filter({ !$0.deleted }).isEmpty {
+//                managedObjectContext?.deleteObject(tag)
+//            }
+//        }
     }
 }
 
