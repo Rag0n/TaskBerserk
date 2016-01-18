@@ -96,8 +96,7 @@ extension TaskChangeMetaTableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(
             viewModel.cellIdentifier, forIndexPath: indexPath) as! TaskChangeMetaTableViewCell
         
-        let cellViewModel = viewModel.viewModelForIndexPath(indexPath)
-        cell.viewModel = cellViewModel
+        cell.viewModel = viewModel.viewModelForIndexPath(indexPath)
         
         return cell
     }
