@@ -125,6 +125,10 @@ extension TaskDetailViewController {
     }
     
     @IBAction func saveToDetailViewController(segue: UIStoryboardSegue) {
+        if let controller = segue.sourceViewController as? TaskChangeProjectViewController {
+            let changeProjectViewModel = controller.viewModel
+            viewModel.changeProject(changeProjectViewModel.projectName)
+        }
         
     }
 }
