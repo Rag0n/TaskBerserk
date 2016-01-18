@@ -114,7 +114,7 @@ extension TaskDetailViewController {
             guard let vc = segue.destinationViewController.contentViewController as? TaskChangeTagsViewController else {
                 fatalError("Wrong view controller")
             }
-//            vc.viewModel = viewModel.viewModelForIdentifier(viewModel.changeTagsIdentifier)
+            vc.viewModel = viewModel.viewModelForChangeTags()
         default:
             fatalError("Wrong segue identifier")
         }
