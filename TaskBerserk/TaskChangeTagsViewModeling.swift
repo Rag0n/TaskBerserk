@@ -10,15 +10,12 @@ import Foundation
 import RxSwift
 
 protocol TaskChangeTagsViewModeling: ManagedObjectContextSettable {
-//    var metaObject: MetaObject { get }
+    var tagNames: [String] { get }
     var cellIdentifier: String { get }
-//    var metaObjectDescription: String { get }
-//    
-//    func cancelChanges()
-//    func saveChanges()
-//    
+  
     func viewModelForIndexPath(indexPath: NSIndexPath) -> TaskChangeMetaViewCellModeling
-//    func changeCurrentMetaObject(indexPath: NSIndexPath)
-//    func addNewMetaObject(name: String?)
     func numberOfItemsInSection(section: Int) -> Int
+    
+    func changeCurrentTag(indexPath: NSIndexPath)
+    func addNewTag(newTagName: String?)
 }

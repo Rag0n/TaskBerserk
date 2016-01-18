@@ -38,14 +38,19 @@ class TaskChangeTagsViewModel: TaskChangeTagsViewModeling, DataProviderDelegate 
         return TaskChangeMetaViewCellModel(metaObject: object.nameString, currentMetaObjects: tagNames)
     }
     
-//    func changeCurrentProject(indexPath: NSIndexPath) {
-//        let newProjectName = dataProvider.objectAtIndexPath(indexPath)
-//        projectName = newProjectName.nameString
-//    }
-//    
-//    func addNewProject(newProjectName: String?) {
-//        projectName = newProjectName ?? projectName
-//    }
+    
+    func changeCurrentTag(indexPath: NSIndexPath) {
+        let tagName = dataProvider.objectAtIndexPath(indexPath).nameString
+        toggleTagInTagArray(tagName)
+    }
+    
+    func addNewTag(newTagName: String?) {
+        guard let newTagName = newTagName else {
+            return
+        }
+        tagNames.append(newTagName)
+    }
+    
     
     // MARK: Private
     private var dataProvider: FetchedResultsDataProvider<TaskChangeTagsViewModel>!
@@ -63,6 +68,15 @@ class TaskChangeTagsViewModel: TaskChangeTagsViewModeling, DataProviderDelegate 
         }
         
         dataProvider = FetchedResultsDataProvider(fetchedResultsController: frc, delegate: self, transformerFunc: transformerFunc)
+    }
+    
+    private func toggleTagInTagArray(tagName: String) {
+        let tagIndex = tagNames.indexOf(tagName)
+        if let tagIndex = tagIndex {
+            tagNames.removeAtIndex(tagIndex)
+        } else {
+            tagNames.append(tagName)
+        }
     }
     
 //    func changeCurrentMetaObject(indexPath: NSIndexPath) {
