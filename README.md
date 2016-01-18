@@ -7,13 +7,13 @@ Feel free to create issues, especially enhancement.
 # Current state
 Currently app is in early development stage. Current [development][develop-branch] version v0.1.0 contains next improvements:
 
-- Basic functionality
+- [ ] Basic functionality
     - [x] Add tasks
     - [x] Remove tasks
     - [ ] Edit tasks
         - [x] Change task's names
-        - [ ] Change task's project
-        - [ ] Change task's tags
+        - [x] Change task's project
+        - [x] Change task's tags
         - [ ] Change task's priority
 - [ ] Basic gestures
     - [ ] Done task
@@ -36,6 +36,9 @@ Currently app is in early development stage. Current [development][develop-branc
 * v0.5.0 UI
 * v0.6.0 Calendar + notifications
 * v0.7.0 Reports/charts
+* ??? App improvements:  App search(spotlight), App on the Web?(Intheam), 3D Touch, oAuth?
+* ??? Location and mapping support
+* ??? CloudKit
 
 # Installation
 For now the only way to install app is to download and build it from a [release page][releases]. You should also add an AppKey.plist file to project with your Inthe.am API key:
@@ -49,7 +52,7 @@ For now the only way to install app is to download and build it from a [release 
 
 # Changes
 ###### v0.0.5:
-Prototype with support of syncing task via [Inthe.am][intheam] API. App parses JSON into tasks and projects.
+Prototype with support of fetching task via [Inthe.am][intheam] API. App parses JSON into tasks and projects.
 
 # Licence
 TaskBerserk is released under MIT license. For details, see [LICENSE][license].
