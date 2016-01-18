@@ -53,13 +53,12 @@ class TaskChangeProjectViewController: UITableViewController {
 // MARK: TableViewDelegate
 extension TaskChangeProjectViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let oldProjectIndexPath = viewModel.currentProjectIndexPath
         viewModel.changeCurrentProject(indexPath)
         let newCellViewModel = viewModel.viewModelForIndexPath(indexPath)
         let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as! TaskChangeMetaTableViewCell
         cell.viewModel = newCellViewModel
-        // it can be used to improve performance, but we somehow have to toggle old meta object
-        tableView.reloadRowsAtIndexPaths([oldProjectIndexPath, indexPath], withRowAnimation: .Automatic)
+        
+        performSaveSegue()
     }
 }
 

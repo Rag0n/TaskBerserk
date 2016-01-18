@@ -13,10 +13,6 @@ import CoreData
 
 class TaskChangeProjectViewModel: TaskChangeProjectViewModeling, DataProviderDelegate {
     private(set) var projectName: String
-    // used to reload only this path in tableViewController
-    var currentProjectIndexPath: NSIndexPath {
-        return NSIndexPath(forRow: currentProjectPosition, inSection: 0)
-    }
     var managedObjectContext: NSManagedObjectContext!
     let cellIdentifier = "TaskChangeProject"
     
@@ -26,7 +22,6 @@ class TaskChangeProjectViewModel: TaskChangeProjectViewModeling, DataProviderDel
     init(moc: NSManagedObjectContext, projectName: String) {
         self.projectName = projectName
         self.managedObjectContext = moc
-        currentProjectPosition = 0
         setupDataProvider()
     }
     
@@ -36,9 +31,6 @@ class TaskChangeProjectViewModel: TaskChangeProjectViewModeling, DataProviderDel
     
     func viewModelForIndexPath(indexPath: NSIndexPath) -> TaskChangeMetaViewCellModeling {
         let object = dataProvider.objectAtIndexPath(indexPath)
-        if object.nameString == projectName {
-            currentProjectPosition = indexPath.row
-        }
         return TaskChangeMetaViewCellModel(metaObject: object.nameString, currentMetaObjects: [self.projectName])
     }
     
@@ -54,7 +46,6 @@ class TaskChangeProjectViewModel: TaskChangeProjectViewModeling, DataProviderDel
     // MARK: Private
     private var dataProvider: FetchedResultsDataProvider<TaskChangeProjectViewModel>!
     private let disposeBag = DisposeBag()
-    private var currentProjectPosition: Int
     
     private func setupDataProvider() {
         let request = Project.sortedFetchRequest
