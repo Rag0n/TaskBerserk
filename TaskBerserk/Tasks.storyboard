@@ -144,11 +144,12 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Default" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sER-9f-Mnf">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Project name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whv-BK-gc6">
                                                             <rect key="frame" x="65" y="0.0" width="519" height="27"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </textField>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
@@ -358,7 +359,7 @@
                         <outlet property="priorityLowButton" destination="xaK-PR-58t" id="oBP-bP-Q4A"/>
                         <outlet property="priorityMediumButton" destination="9XD-pl-KFG" id="eyG-8O-LVg"/>
                         <outlet property="priorityNoneButton" destination="NYH-Of-Aqq" id="sls-kT-jkk"/>
-                        <outlet property="projectTextField" destination="sER-9f-Mnf" id="aSS-t4-slz"/>
+                        <outlet property="projectLabel" destination="Whv-BK-gc6" id="Nba-ly-hd7"/>
                         <outlet property="saveButton" destination="kSK-s4-MNG" id="CAr-Ce-R6g"/>
                         <outlet property="statusLabel" destination="Sxv-IE-Fvr" id="JBD-Pd-l2b"/>
                         <outlet property="tagsLabel" destination="4a2-7Q-5Wh" id="DrU-aT-VH9"/>

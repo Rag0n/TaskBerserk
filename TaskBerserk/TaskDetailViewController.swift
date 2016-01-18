@@ -30,13 +30,13 @@ class TaskDetailViewController: UITableViewController {
     // MARK: IBOutlets
     
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var projectTextField: UITextField!
     
     @IBOutlet weak var priorityNoneButton: UIButton!
     @IBOutlet weak var priorityLowButton: UIButton!
     @IBOutlet weak var priorityMediumButton: UIButton!
     @IBOutlet weak var priorityHighButton: UIButton!
     
+    @IBOutlet weak var projectLabel: UILabel!
     @IBOutlet weak var urgencyLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var tagsLabel: UILabel!
@@ -80,7 +80,7 @@ class TaskDetailViewController: UITableViewController {
             .addDisposableTo(disposeBag)
         
         viewModel.project
-            .bindTo(projectTextField.rx_text)
+            .bindTo(projectLabel.rx_text)
             .addDisposableTo(disposeBag)
         
         viewModel.urgency
