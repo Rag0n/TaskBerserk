@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F125C4F1C4CF5C900954C2E /* TaskChangeProjectViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F125C4E1C4CF5C900954C2E /* TaskChangeProjectViewModeling.swift */; };
+		1F125C511C4CF5D600954C2E /* TaskChangeProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F125C501C4CF5D600954C2E /* TaskChangeProjectViewModel.swift */; };
+		1F125C531C4CF62C00954C2E /* TaskChangeProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F125C521C4CF62C00954C2E /* TaskChangeProjectViewController.swift */; };
 		1F12FAC31C3AABB9000AC1A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12FAC21C3AABB9000AC1A3 /* AppDelegate.swift */; };
 		1F12FACA1C3AABB9000AC1A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F12FAC91C3AABB9000AC1A3 /* Assets.xcassets */; };
 		1F12FACD1C3AABB9000AC1A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F12FACB1C3AABB9000AC1A3 /* LaunchScreen.storyboard */; };
@@ -144,6 +147,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F125C4E1C4CF5C900954C2E /* TaskChangeProjectViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeProjectViewModeling.swift; sourceTree = "<group>"; };
+		1F125C501C4CF5D600954C2E /* TaskChangeProjectViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeProjectViewModel.swift; sourceTree = "<group>"; };
+		1F125C521C4CF62C00954C2E /* TaskChangeProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeProjectViewController.swift; sourceTree = "<group>"; };
 		1F12FABF1C3AABB9000AC1A3 /* TaskBerserk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskBerserk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F12FAC21C3AABB9000AC1A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F12FAC91C3AABB9000AC1A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -278,6 +284,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F125C4D1C4CF59300954C2E /* TaskChangeProjectView */ = {
+			isa = PBXGroup;
+			children = (
+				1F125C4E1C4CF5C900954C2E /* TaskChangeProjectViewModeling.swift */,
+				1F125C501C4CF5D600954C2E /* TaskChangeProjectViewModel.swift */,
+			);
+			name = TaskChangeProjectView;
+			sourceTree = "<group>";
+		};
 		1F12FAB61C3AABB9000AC1A3 = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +388,7 @@
 				1F8726C61C3C2D2400EEA569 /* TasksTableViewController.swift */,
 				1F8726C81C3C2D3200EEA569 /* TaskTableViewCell.swift */,
 				1F70EE951C43B6AC008AC4F2 /* TaskDetailViewController.swift */,
+				1F125C521C4CF62C00954C2E /* TaskChangeProjectViewController.swift */,
 				1F44893F1C4A3B4700179450 /* TaskChangeMetaTableViewController.swift */,
 				1F4489411C4A3C2B00179450 /* TaskChangeMetaTableViewCell.swift */,
 			);
@@ -509,6 +525,7 @@
 			children = (
 				1FFDFE4D1C3ED60300DA25DD /* TasksTableView */,
 				1F70EE981C43F3F1008AC4F2 /* TaskDetailView */,
+				1F125C4D1C4CF59300954C2E /* TaskChangeProjectView */,
 				1F4489361C4A323100179450 /* TaskChangeMetaView */,
 				1F1E04EF1C4532B3005006FC /* MetaTableView */,
 			);
@@ -799,12 +816,14 @@
 				1F1E04F71C453638005006FC /* MetaTableViewCellModel.swift in Sources */,
 				1F1E04F11C4535F9005006FC /* MetaTableViewModeling.swift in Sources */,
 				1F4489401C4A3B4700179450 /* TaskChangeMetaTableViewController.swift in Sources */,
+				1F125C4F1C4CF5C900954C2E /* TaskChangeProjectViewModeling.swift in Sources */,
 				1F8726C91C3C2D3200EEA569 /* TaskTableViewCell.swift in Sources */,
 				1F44893E1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift in Sources */,
 				1F70EE961C43B6AC008AC4F2 /* TaskDetailViewController.swift in Sources */,
 				1F8697B01C3AB77900CB3FFE /* TaskMapper.swift in Sources */,
 				1FED43B21C4142B40085A5A2 /* FetchedResultsDataProvider.swift in Sources */,
 				1FED43AD1C4119FD0085A5A2 /* NSURL+extensions.swift in Sources */,
+				1F125C511C4CF5D600954C2E /* TaskChangeProjectViewModel.swift in Sources */,
 				1F8726D11C3C2EDB00EEA569 /* TaskTableViewCellModel.swift in Sources */,
 				1F44893C1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift in Sources */,
 				1F8697C51C3B080D00CB3FFE /* NetworkError.swift in Sources */,
@@ -822,6 +841,7 @@
 				1FED43B01C41200F0085A5A2 /* ManagedObjectContextSettable.swift in Sources */,
 				1F74C6FE1C419357001F812B /* NSManagedObjectContext+extensions.swift in Sources */,
 				1F1E04F51C453618005006FC /* MetaTableViewCellModeling.swift in Sources */,
+				1F125C531C4CF62C00954C2E /* TaskChangeProjectViewController.swift in Sources */,
 				1F7EC0F41C494A5A00333C92 /* Importing.swift in Sources */,
 				1FED43A71C41159D0085A5A2 /* Task.swift in Sources */,
 				1F7EC0F61C49579200333C92 /* IntheamImporter.swift in Sources */,

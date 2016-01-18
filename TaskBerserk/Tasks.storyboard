@@ -160,7 +160,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="isM-qp-fqf" kind="presentation" identifier="ChangeProject" id="hHW-Mh-L3S"/>
+                                            <segue destination="8wJ-Vp-5Ql" kind="presentation" identifier="ChangeProject" id="A6F-xf-uia"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -369,6 +369,35 @@
             </objects>
             <point key="canvasLocation" x="2883" y="-2241"/>
         </scene>
+        <!--Task Change Project View Controller-->
+        <scene sceneID="TtC-lo-tW8">
+            <objects>
+                <tableViewController storyboardIdentifier="TaskChangeProjectViewController" id="vKP-Ib-lsf" customClass="TaskChangeProjectViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="m9n-lm-983">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="g7P-aL-pdC">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g7P-aL-pdC" id="5tg-fm-w3l">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vKP-Ib-lsf" id="Jdj-pd-LFo"/>
+                            <outlet property="delegate" destination="vKP-Ib-lsf" id="TBe-lG-ws9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="sJf-DQ-kyS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="roG-z2-ADO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4413" y="-2602"/>
+        </scene>
         <!--Task Change Meta Table View Controller-->
         <scene sceneID="Syy-j4-ofQ">
             <objects>
@@ -483,8 +512,23 @@
             </objects>
             <point key="canvasLocation" x="2883" y="-1409"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x1r-SN-HF3">
+            <objects>
+                <navigationController storyboardIdentifier="TaskChangeProjectNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="8wJ-Vp-5Ql" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QO2-fm-Iew">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vKP-Ib-lsf" kind="relationship" relationship="rootViewController" id="akj-6U-BEu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cFi-e7-Kz6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3693" y="-2602"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="eQG-2C-uKT"/>
-    </inferredMetricsTieBreakers>
 </document>
