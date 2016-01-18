@@ -479,15 +479,26 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="cm5-Sf-MjE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="X22-gW-9Y1"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sru-in-5is"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="X22-gW-9Y1">
+                            <connections>
+                                <segue destination="gem-vf-K0h" kind="unwind" unwindAction="cancelToDetailViewController:" id="y9A-Ph-FMY"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="G7D-fe-nkk">
+                                <connections>
+                                    <segue destination="gem-vf-K0h" kind="unwind" identifier="saveToDetailViewController" unwindAction="saveToDetailViewController:" id="bNX-a1-wpA"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="Sru-in-5is"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="addNewButton" destination="Sru-in-5is" id="EKf-tx-sUH"/>
-                        <outlet property="cancelButton" destination="X22-gW-9Y1" id="YCO-hs-KoL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccz-3I-8bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gem-vf-K0h" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4413" y="-1847"/>
         </scene>
