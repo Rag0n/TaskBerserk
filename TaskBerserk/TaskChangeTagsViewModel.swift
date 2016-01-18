@@ -1,5 +1,5 @@
 ////
-////  TaskChangeMetaViewModel.swift
+////  TaskChangeTagsViewModel.swift
 ////  TaskBerserk
 ////
 ////  Created by Александр on 16.01.16.
@@ -11,7 +11,7 @@
 //import RxCocoa
 //import CoreData
 //
-//class TaskChangeMetaViewModel: TaskChangeMetaViewModeling, DataProviderDelegate {
+//class TaskChangeTagsViewModel: TaskChangeTagsViewModeling, DataProviderDelegate {
 //    var metaObject: MetaObject
 //    var managedObjectContext: NSManagedObjectContext!
 //    let cellIdentifier = "TaskChangeMeta"
@@ -113,7 +113,7 @@
 //    
 //    // MARK: Private
 //    private let task: Task
-//    private var dataProvider: FetchedResultsDataProvider<TaskChangeMetaViewModel>!
+//    private var dataProvider: FetchedResultsDataProvider<TaskChangeTagsViewModel>!
 //    private let disposeBag = DisposeBag()
 //    private var currentMetaObjects: [NameWithCountRepresentable]?
 //    

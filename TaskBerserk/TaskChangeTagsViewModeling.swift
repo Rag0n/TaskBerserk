@@ -1,5 +1,5 @@
 //
-//  TaskChangeMetaViewModeling.swift
+//  TaskChangeTagsViewModeling.swift
 //  TaskBerserk
 //
 //  Created by Александр on 16.01.16.
@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol TaskChangeMetaViewModeling: ManagedObjectContextSettable {
+protocol TaskChangeTagsViewModeling: ManagedObjectContextSettable {
     var metaObject: MetaObject { get }
     var cellIdentifier: String { get }
     var metaObjectDescription: String { get }

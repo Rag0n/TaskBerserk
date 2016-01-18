@@ -433,10 +433,10 @@
             </objects>
             <point key="canvasLocation" x="4413" y="-2602"/>
         </scene>
-        <!--Task Change Meta Table View Controller-->
+        <!--Task Change Tags View Controller-->
         <scene sceneID="Syy-j4-ofQ">
             <objects>
-                <tableViewController storyboardIdentifier="TaskChangeMetaTableViewController" id="6eS-h5-cZP" customClass="TaskChangeMetaTableViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TaskChangeTagsViewController" id="6eS-h5-cZP" customClass="TaskChangeTagsViewController" customModule="TaskBerserk" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wfq-SE-aLK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -489,7 +489,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ccz-3I-8bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3630" y="-1409"/>
+            <point key="canvasLocation" x="4413" y="-1847"/>
         </scene>
         <!--Tasks-->
         <scene sceneID="c6x-dj-6Ke">
@@ -545,7 +545,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVC-KZ-8NJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2883" y="-1409"/>
+            <point key="canvasLocation" x="3693" y="-1847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="x1r-SN-HF3">

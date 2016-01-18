@@ -25,8 +25,8 @@
 		1F2E2DF81C4806C100EFF59C /* TagSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2E2DF71C4806C100EFF59C /* TagSpec.swift */; };
 		1F4489331C4A1F1800179450 /* Tasks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4489321C4A1F1800179450 /* Tasks.storyboard */; };
 		1F4489351C4A1F6000179450 /* Meta.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4489341C4A1F6000179450 /* Meta.storyboard */; };
-		1F4489381C4A327D00179450 /* TaskChangeMetaViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4489371C4A327D00179450 /* TaskChangeMetaViewModeling.swift */; };
-		1F44893A1C4A328F00179450 /* TaskChangeMetaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4489391C4A328F00179450 /* TaskChangeMetaViewModel.swift */; };
+		1F4489381C4A327D00179450 /* TaskChangeTagsViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4489371C4A327D00179450 /* TaskChangeTagsViewModeling.swift */; };
+		1F44893A1C4A328F00179450 /* TaskChangeTagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4489391C4A328F00179450 /* TaskChangeTagsViewModel.swift */; };
 		1F44893C1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44893B1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift */; };
 		1F44893E1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44893D1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift */; };
 		1F4489401C4A3B4700179450 /* TaskChangeMetaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F44893F1C4A3B4700179450 /* TaskChangeMetaTableViewController.swift */; };
@@ -171,8 +171,8 @@
 		1F2E2DF71C4806C100EFF59C /* TagSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSpec.swift; sourceTree = "<group>"; };
 		1F4489321C4A1F1800179450 /* Tasks.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tasks.storyboard; sourceTree = "<group>"; };
 		1F4489341C4A1F6000179450 /* Meta.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Meta.storyboard; sourceTree = "<group>"; };
-		1F4489371C4A327D00179450 /* TaskChangeMetaViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaViewModeling.swift; sourceTree = "<group>"; };
-		1F4489391C4A328F00179450 /* TaskChangeMetaViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaViewModel.swift; sourceTree = "<group>"; };
+		1F4489371C4A327D00179450 /* TaskChangeTagsViewModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeTagsViewModeling.swift; sourceTree = "<group>"; };
+		1F4489391C4A328F00179450 /* TaskChangeTagsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeTagsViewModel.swift; sourceTree = "<group>"; };
 		1F44893B1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaViewCellModeling.swift; sourceTree = "<group>"; };
 		1F44893D1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaViewCellModel.swift; sourceTree = "<group>"; };
 		1F44893F1C4A3B4700179450 /* TaskChangeMetaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskChangeMetaTableViewController.swift; sourceTree = "<group>"; };
@@ -383,8 +383,8 @@
 		1F4489361C4A323100179450 /* TaskChangeMetaView */ = {
 			isa = PBXGroup;
 			children = (
-				1F4489371C4A327D00179450 /* TaskChangeMetaViewModeling.swift */,
-				1F4489391C4A328F00179450 /* TaskChangeMetaViewModel.swift */,
+				1F125C4D1C4CF59300954C2E /* TaskChangeProjectView */,
+				1F829B531C4D24EE002C8DBB /* TaskChangeTagsView */,
 				1F44893B1C4A37B600179450 /* TaskChangeMetaViewCellModeling.swift */,
 				1F44893D1C4A37CD00179450 /* TaskChangeMetaViewCellModel.swift */,
 			);
@@ -471,6 +471,15 @@
 			name = Intheam;
 			sourceTree = "<group>";
 		};
+		1F829B531C4D24EE002C8DBB /* TaskChangeTagsView */ = {
+			isa = PBXGroup;
+			children = (
+				1F4489371C4A327D00179450 /* TaskChangeTagsViewModeling.swift */,
+				1F4489391C4A328F00179450 /* TaskChangeTagsViewModel.swift */,
+			);
+			name = TaskChangeTagsView;
+			sourceTree = "<group>";
+		};
 		1F8697A71C3AB52B00CB3FFE /* dSYM */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,7 +542,6 @@
 			children = (
 				1FFDFE4D1C3ED60300DA25DD /* TasksTableView */,
 				1F70EE981C43F3F1008AC4F2 /* TaskDetailView */,
-				1F125C4D1C4CF59300954C2E /* TaskChangeProjectView */,
 				1F4489361C4A323100179450 /* TaskChangeMetaView */,
 				1F1E04EF1C4532B3005006FC /* MetaTableView */,
 			);
@@ -820,7 +828,7 @@
 			files = (
 				1FED43B41C4143620085A5A2 /* DataProvider.swift in Sources */,
 				1FED43A91C4115DD0085A5A2 /* ManagedObject.swift in Sources */,
-				1F4489381C4A327D00179450 /* TaskChangeMetaViewModeling.swift in Sources */,
+				1F4489381C4A327D00179450 /* TaskChangeTagsViewModeling.swift in Sources */,
 				1F1E04F71C453638005006FC /* MetaTableViewCellModel.swift in Sources */,
 				1F1E04F11C4535F9005006FC /* MetaTableViewModeling.swift in Sources */,
 				1F4489401C4A3B4700179450 /* TaskChangeMetaTableViewController.swift in Sources */,
@@ -865,7 +873,7 @@
 				1F8726CD1C3C2E1C00EEA569 /* TasksTableViewModel.swift in Sources */,
 				1F12FAC31C3AABB9000AC1A3 /* AppDelegate.swift in Sources */,
 				1F79B7B01C3FFF2600976A35 /* UIViewController+extensions.swift in Sources */,
-				1F44893A1C4A328F00179450 /* TaskChangeMetaViewModel.swift in Sources */,
+				1F44893A1C4A328F00179450 /* TaskChangeTagsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,7 @@ protocol TaskDetailViewModeling: ManagedObjectContextSettable {
     func cancelChanges()
     func saveChanges()
     func viewModelForChangeProject() -> TaskChangeProjectViewModeling
-//    func viewModelForIdentifier(identifier: String) -> TaskChangeMetaViewModeling
+//    func viewModelForIdentifier(identifier: String) -> TaskChangeTagsViewModeling
     
     var changeProjectIdentifier: String { get }
     var changeTagsIdentifier: String { get }

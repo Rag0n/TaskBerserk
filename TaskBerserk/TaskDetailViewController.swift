@@ -111,7 +111,7 @@ extension TaskDetailViewController {
             }
             vc.viewModel = viewModel.viewModelForChangeProject()
         case viewModel.changeTagsIdentifier:
-            guard let vc = segue.destinationViewController.contentViewController as? TaskChangeMetaTableViewController else {
+            guard let vc = segue.destinationViewController.contentViewController as? TaskChangeTagsViewController else {
                 fatalError("Wrong view controller")
             }
 //            vc.viewModel = viewModel.viewModelForIdentifier(viewModel.changeTagsIdentifier)

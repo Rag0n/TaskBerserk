@@ -1,5 +1,5 @@
 //
-//  TaskChangeMetaTableViewController.swift
+//  TaskChangeTagsViewController.swift
 //  TaskBerserk
 //
 //  Created by Александр on 16.01.16.
@@ -10,8 +10,8 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class TaskChangeMetaTableViewController: UITableViewController {
-    var viewModel: TaskChangeMetaViewModeling!
+class TaskChangeTagsViewController: UITableViewController {
+    var viewModel: TaskChangeTagsViewModeling!
     
     override func viewDidLoad() {
         cancelButton.rx_tap
@@ -52,7 +52,7 @@ class TaskChangeMetaTableViewController: UITableViewController {
 }
 
 // MARK: TableViewDelegate
-extension TaskChangeMetaTableViewController {
+extension TaskChangeTagsViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         viewModel.changeCurrentMetaObject(indexPath)
         let newCellViewModel = viewModel.viewModelForIndexPath(indexPath)
@@ -65,7 +65,7 @@ extension TaskChangeMetaTableViewController {
 }
 
 // MARK: UITableViewDataSource
-extension TaskChangeMetaTableViewController {
+extension TaskChangeTagsViewController {
     
     func processUpdates(updates: [DataProviderUpdate<TaskChangeMetaViewCellModeling>]?) {
         guard let updates = updates else { return }
