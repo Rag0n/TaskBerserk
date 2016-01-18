@@ -12,12 +12,12 @@ class TaskChangeMetaViewCellModel: TaskChangeMetaViewCellModeling {
     var name: String
     var accessoryType: Bool
     
-    init(metaObject: NameWithCountRepresentable, currentMetaObjects: [NameWithCountRepresentable]?) {
-        name = metaObject.nameString
+    init(metaObject: CustomStringConvertible, currentMetaObjects: [CustomStringConvertible]?) {
+        name = metaObject.description
         
         // check if current meta objects(tags or project) contains current object from database
         if let currentMetaObjects = currentMetaObjects {
-            accessoryType = currentMetaObjects.filter({ $0.nameString == metaObject.nameString }).count > 0
+            accessoryType = currentMetaObjects.filter({ $0.description == metaObject.description }).count > 0
         } else {
             accessoryType = false
         }
