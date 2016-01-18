@@ -21,6 +21,7 @@ protocol TaskDetailViewModeling: ManagedObjectContextSettable {
     
     func changeTaskName(newName: String)
     func changeProject(newProjectName: String)
+    func changeTags(newTags: [String])
     
     func deleteTask()
     func cancelChanges()

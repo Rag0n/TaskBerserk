@@ -60,14 +60,8 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         _urgency.onNext("\(task.urgency)")
         _priority.onNext(task.priority ?? "No priority")
         
-        var tagsText = ""
-        if let tags = task.tags {
-            for tag in tags {
-                tagsText += "\(tag)"
-            }
-        }
-        _tagsText.onNext(tagsText)
         
+        _tagsText.onNext(calculateTagsText())
         _project.onNext("\(task.project)")
         
     }
@@ -84,6 +78,14 @@ class TaskDetailViewModel: TaskDetailViewModeling {
         // TODO: Background thread
         managedObjectContext.performChanges {
             self.task.changeProject(newProjectName, moc: self.managedObjectContext)
+        }
+    }
+    
+    func changeTags(newTags: [String]) {
+        _tagsText.onNext(calculateTagsText(newTags))
+        // TODO: Background thread
+        managedObjectContext.performChanges {
+            self.task.changeTags(newTags, moc: self.managedObjectContext)
         }
     }
     
@@ -123,24 +125,6 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     func viewModelForChangeTags() -> TaskChangeTagsViewModeling {
         return TaskChangeTagsViewModel(moc: managedObjectContext, tags: task.tags)
     }
-
-    
-//    func viewModelForIdentifier(identifier: String) -> TaskChangeMetTaskChangeMetaViewModelaViewModeling {
-//        switch identifier {
-////        case changeProjectIdentifier:
-////            return TaskChangeProjectViewModel(moc: managedObjectContext, projectName: task.project.name)
-////        case changeProjectIdentifier:
-//            return TaskChangeTagsViewModel(managedObject: managedObjectContext, metaObject: task.project.name)
-////        case changeTagsIdentifier:
-////            if let tags = task.tags {
-////                return TaskChangeTagsViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(Array(tags)), task: task)
-////            } else {
-////                return TaskChangeTagsViewModel(managedObject: managedObjectContext, metaObject: MetaObject.TagType(nil), task: task)
-////            }
-//        default:
-//            fatalError("Wrong segue identifier")
-//        }
-//    }
     
     
     // MARK: Private
@@ -154,4 +138,20 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     private let _priority = BehaviorSubject<String>(value: "")
     private let _project = BehaviorSubject<String>(value: "")
     private let _popViewController = BehaviorSubject<Bool>(value: false)
+    
+    private func calculateTagsText(tagNames: [String]? = nil) -> String {
+        var tagsText = ""
+        
+        if let tagNames = tagNames {
+            for tag in tagNames {
+                tagsText += "\(tag) "
+            }
+        } else if let tags = task.tags {
+            for tag in tags {
+                tagsText += "\(tag) "
+            }
+        }
+        
+        return tagsText
+    }
 }
