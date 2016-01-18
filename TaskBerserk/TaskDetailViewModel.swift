@@ -80,10 +80,11 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     }
     
     func changeProject(newProjectName: String) {
+        _project.onNext(newProjectName)
+        // TODO: Background thread
         managedObjectContext.performChanges {
             self.task.changeProject(newProjectName, moc: self.managedObjectContext)
         }
-        _project.onNext(newProjectName)
     }
     
     func deleteTask() {
