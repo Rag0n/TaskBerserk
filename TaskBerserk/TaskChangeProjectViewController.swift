@@ -13,6 +13,40 @@ import RxSwift
 class TaskChangeProjectViewController: UITableViewController {
     var viewModel: TaskChangeProjectViewModeling!
     @IBOutlet weak var addButton: UIBarButtonItem!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addButton.rx_tap
+            .subscribeNext { [weak self] in
+                self?.showAddNewProjectAlert()
+            }
+            .addDisposableTo(disposeBag)
+    }
+    
+    private func showAddNewProjectAlert() {
+        let ac = UIAlertController(title: "New Project", message: nil, preferredStyle: .Alert)
+        
+        ac.addTextFieldWithConfigurationHandler { textField in
+            textField.placeholder = "Enter project name here"
+        }
+        let addTaskAction = UIAlertAction(title: "Add project", style: .Default) { _ in
+            let textField = ac.textFields![0]
+            self.viewModel.addNewProject(textField.text)
+            self.performSaveSegue()
+        }
+        
+        ac.addAction(addTaskAction)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        
+        self.presentViewController(ac, animated: true, completion: nil)
+    }
+    
+    private func performSaveSegue() {
+        performSegueWithIdentifier("saveToDetailViewController", sender: self)
+    }
+    
+    private let disposeBag = DisposeBag()
 }
 
 
