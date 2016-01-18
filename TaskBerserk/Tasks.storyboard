@@ -420,12 +420,12 @@
                                 <segue destination="qZt-pM-681" kind="unwind" unwindAction="cancelToDetailViewController:" id="ULM-zS-B5o"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YN1-nI-T3R">
-                            <connections>
-                                <segue destination="qZt-pM-681" kind="unwind" identifier="saveToDetailViewController" unwindAction="saveToDetailViewController:" id="yWY-ct-3jX"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YN1-nI-T3R"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="YN1-nI-T3R" id="VHU-Yw-AI9"/>
+                        <segue destination="qZt-pM-681" kind="unwind" identifier="saveToDetailViewController" unwindAction="saveToDetailViewController:" id="zsh-s2-a2t"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roG-z2-ADO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qZt-pM-681" userLabel="Exit" sceneMemberID="exit"/>

@@ -12,6 +12,7 @@ import RxSwift
 
 class TaskChangeProjectViewController: UITableViewController {
     var viewModel: TaskChangeProjectViewModeling!
+    @IBOutlet weak var addButton: UIBarButtonItem!
 }
 
 
