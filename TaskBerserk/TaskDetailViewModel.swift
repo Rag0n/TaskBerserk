@@ -119,6 +119,10 @@ class TaskDetailViewModel: TaskDetailViewModeling {
     func viewModelForChangeProject() -> TaskChangeProjectViewModeling {
         return TaskChangeProjectViewModel(moc: managedObjectContext, projectName: task.project.name)
     }
+    
+    func viewModelForChangeTags() -> TaskChangeTagsViewModeling {
+        return TaskChangeTagsViewModel(moc: managedObjectContext, tags: task.tags)
+    }
 
     
 //    func viewModelForIdentifier(identifier: String) -> TaskChangeMetTaskChangeMetaViewModelaViewModeling {
