@@ -12,31 +12,40 @@ import RxSwift
 
 class TaskChangeTagsViewController: UITableViewController {
     var viewModel: TaskChangeTagsViewModeling!
+    @IBOutlet weak var addNewButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        addNewButton.rx_tap
-//            .subscribeNext { [weak self] in
-//                let ac = UIAlertController(title: "New \(self?.viewModel.metaObjectDescription)", message: nil, preferredStyle: .Alert)
-//                
-//                ac.addTextFieldWithConfigurationHandler { textField in
-//                    textField.placeholder = "Enter \(self?.viewModel.metaObjectDescription) name here"
-//                }
-//                let addTaskAction = UIAlertAction(title: "Add \(self?.viewModel.metaObjectDescription)", style: .Default) { _ in
-//                    let textField = ac.textFields![0]
-//                    self?.viewModel.addNewMetaObject(textField.text)
-//                }
-//                
-//                ac.addAction(addTaskAction)
-//                ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-//                
-//                self?.presentViewController(ac, animated: true, completion: nil)
-//            }
-//            .addDisposableTo(disposeBag)
-//    }
+        
+        viewModel.tableViewShouldUpdates
+            .filter { $0 == true }
+            .subscribeNext { _ in self.tableView.reloadData() }
+            .addDisposableTo(disposeBag)
+        
+        addNewButton.rx_tap
+            .subscribeOn(MainScheduler.instance)
+            .subscribeNext { [weak self] in
+                self?.showAddNewTagAlert()
+            }
+            .addDisposableTo(disposeBag)
     }
     
-    @IBOutlet weak var addNewButton: UIBarButtonItem!
+    private func showAddNewTagAlert() {
+        let ac = UIAlertController(title: "New Tag", message: nil, preferredStyle: .Alert)
+        
+        ac.addTextFieldWithConfigurationHandler { textField in
+            textField.placeholder = "Enter tag name here"
+        }
+        let addTaskAction = UIAlertAction(title: "Add tag", style: .Default) { _ in
+            let textField = ac.textFields![0]
+            self.viewModel.addNewTag(textField.text)
+        }
+        
+        ac.addAction(addTaskAction)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        
+        self.presentViewController(ac, animated: true, completion: nil)
+    }
     
     private let disposeBag = DisposeBag()
 }
@@ -44,13 +53,13 @@ class TaskChangeTagsViewController: UITableViewController {
 // MARK: TableViewDelegate
 extension TaskChangeTagsViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        viewModel.changeCurrentMetaObject(indexPath)
-//        let newCellViewModel = viewModel.viewModelForIndexPath(indexPath)
-//        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as! TaskChangeMetaTableViewCell
-//        cell.viewModel = newCellViewModel
+        viewModel.changeCurrentTag(indexPath)
+        let newCellViewModel = viewModel.viewModelForIndexPath(indexPath)
+        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as! TaskChangeMetaTableViewCell
+        cell.viewModel = newCellViewModel
 //        // it can be used to improve performance, but we somehow have to toggle old meta object
-////        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-//        tableView.reloadData()
+//        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        tableView.reloadData()
     }
 }
 
@@ -82,7 +91,6 @@ extension TaskChangeTagsViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // TODO: Запрашивать cellIdentifier у модели
         let cell = tableView.dequeueReusableCellWithIdentifier(
             viewModel.cellIdentifier, forIndexPath: indexPath) as! TaskChangeMetaTableViewCell
         
