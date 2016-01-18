@@ -348,8 +348,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Edit" id="i9C-ev-9Jh">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="AiC-CI-4eE"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="kSK-s4-MNG"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="AiC-CI-4eE"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="kSK-s4-MNG"/>
                     </navigationItem>
                     <connections>
                         <outlet property="cancelButton" destination="AiC-CI-4eE" id="db0-fW-Ddc"/>
