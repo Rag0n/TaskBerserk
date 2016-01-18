@@ -14,38 +14,28 @@ class TaskChangeTagsViewController: UITableViewController {
     var viewModel: TaskChangeTagsViewModeling!
     
     override func viewDidLoad() {
-        cancelButton.rx_tap
-            .subscribeNext { self.viewModel.cancelChanges() }
-            .addDisposableTo(disposeBag)
-        
-        addNewButton.rx_tap
-            .subscribeNext { [weak self] in
-                let ac = UIAlertController(title: "New \(self?.viewModel.metaObjectDescription)", message: nil, preferredStyle: .Alert)
-                
-                ac.addTextFieldWithConfigurationHandler { textField in
-                    textField.placeholder = "Enter \(self?.viewModel.metaObjectDescription) name here"
-                }
-                let addTaskAction = UIAlertAction(title: "Add \(self?.viewModel.metaObjectDescription)", style: .Default) { _ in
-                    let textField = ac.textFields![0]
-                    self?.viewModel.addNewMetaObject(textField.text)
-                }
-                
-                ac.addAction(addTaskAction)
-                ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-                
-                self?.presentViewController(ac, animated: true, completion: nil)
-            }
-            .addDisposableTo(disposeBag)
-        
-        viewModel.popViewController
-            .filter { $0 == true }
-            .subscribeNext { _ in
-                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-            }
-            .addDisposableTo(disposeBag)
+        super.viewDidLoad()
+//        addNewButton.rx_tap
+//            .subscribeNext { [weak self] in
+//                let ac = UIAlertController(title: "New \(self?.viewModel.metaObjectDescription)", message: nil, preferredStyle: .Alert)
+//                
+//                ac.addTextFieldWithConfigurationHandler { textField in
+//                    textField.placeholder = "Enter \(self?.viewModel.metaObjectDescription) name here"
+//                }
+//                let addTaskAction = UIAlertAction(title: "Add \(self?.viewModel.metaObjectDescription)", style: .Default) { _ in
+//                    let textField = ac.textFields![0]
+//                    self?.viewModel.addNewMetaObject(textField.text)
+//                }
+//                
+//                ac.addAction(addTaskAction)
+//                ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+//                
+//                self?.presentViewController(ac, animated: true, completion: nil)
+//            }
+//            .addDisposableTo(disposeBag)
+//    }
     }
     
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var addNewButton: UIBarButtonItem!
     
     private let disposeBag = DisposeBag()
@@ -54,13 +44,13 @@ class TaskChangeTagsViewController: UITableViewController {
 // MARK: TableViewDelegate
 extension TaskChangeTagsViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        viewModel.changeCurrentMetaObject(indexPath)
-        let newCellViewModel = viewModel.viewModelForIndexPath(indexPath)
-        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as! TaskChangeMetaTableViewCell
-        cell.viewModel = newCellViewModel
-        // it can be used to improve performance, but we somehow have to toggle old meta object
-//        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        tableView.reloadData()
+//        viewModel.changeCurrentMetaObject(indexPath)
+//        let newCellViewModel = viewModel.viewModelForIndexPath(indexPath)
+//        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath) as! TaskChangeMetaTableViewCell
+//        cell.viewModel = newCellViewModel
+//        // it can be used to improve performance, but we somehow have to toggle old meta object
+////        tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+//        tableView.reloadData()
     }
 }
 
