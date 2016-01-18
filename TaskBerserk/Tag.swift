@@ -12,7 +12,7 @@ import CoreData
 final class Tag: ManagedObject {
     @NSManaged private(set) var name: String
     @NSManaged private(set) var updatedAt: NSDate
-    @NSManaged private(set) var tasks: Set<Task>
+    @NSManaged private(set) var tasks: Set<Task>?
     
     static func findOrCreateTags(tagNames: [String], inContext moc: NSManagedObjectContext) -> Set<Tag> {
         var tags = [Tag]()
@@ -56,6 +56,9 @@ extension Tag: NameWithCountRepresentable {
     }
     
     var countString: String {
-        return "\(tasks.count)"
+        if let tasks = tasks {
+            return "\(tasks.count)"
+        }
+        return "0"
     }
 }
