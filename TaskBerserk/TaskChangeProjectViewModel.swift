@@ -12,14 +12,14 @@ import RxCocoa
 import CoreData
 
 class TaskChangeProjectViewModel: TaskChangeProjectViewModeling, DataProviderDelegate {
-    var projectName: CustomStringConvertible
+    var projectName: String
     var managedObjectContext: NSManagedObjectContext!
     let cellIdentifier = "TaskChangeProject"
     
     typealias ViewModel = TaskChangeMetaViewCellModeling
-    typealias Object = CustomStringConvertible
+    typealias Object = NameWithCountRepresentable
     
-    init(moc: NSManagedObjectContext, projectName: CustomStringConvertible) {
+    init(moc: NSManagedObjectContext, projectName: String) {
         self.projectName = projectName
         self.managedObjectContext = moc
         setupDataProvider()
@@ -31,7 +31,7 @@ class TaskChangeProjectViewModel: TaskChangeProjectViewModeling, DataProviderDel
     
     func viewModelForIndexPath(indexPath: NSIndexPath) -> TaskChangeMetaViewCellModeling {
         let object = dataProvider.objectAtIndexPath(indexPath)
-        return TaskChangeMetaViewCellModel(metaObject: object, currentMetaObjects: [self.projectName])
+        return TaskChangeMetaViewCellModel(metaObject: object.nameString, currentMetaObjects: [self.projectName])
     }
     
     // MARK: Private
@@ -49,9 +49,9 @@ class TaskChangeProjectViewModel: TaskChangeProjectViewModeling, DataProviderDel
         
         let transformerFunc: (Object) -> ViewModel = { [weak self] object in
             if let projectName = self?.projectName {
-                return TaskChangeMetaViewCellModel(metaObject: object, currentMetaObjects: [projectName])
+                return TaskChangeMetaViewCellModel(metaObject: object.nameString, currentMetaObjects: [projectName])
             } else {
-                return TaskChangeMetaViewCellModel(metaObject: object, currentMetaObjects: nil)
+                return TaskChangeMetaViewCellModel(metaObject: object.nameString, currentMetaObjects: nil)
             }
         }
         
