@@ -479,19 +479,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="cm5-Sf-MjE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="X22-gW-9Y1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="X22-gW-9Y1">
                             <connections>
-                                <segue destination="gem-vf-K0h" kind="unwind" unwindAction="cancelToDetailViewController:" id="y9A-Ph-FMY"/>
+                                <segue destination="gem-vf-K0h" kind="unwind" unwindAction="saveToDetailViewController:" id="ekj-Gn-ohl"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="save" id="G7D-fe-nkk">
-                                <connections>
-                                    <segue destination="gem-vf-K0h" kind="unwind" identifier="saveToDetailViewController" unwindAction="saveToDetailViewController:" id="bNX-a1-wpA"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="add" id="Sru-in-5is"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sru-in-5is"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addNewButton" destination="Sru-in-5is" id="EKf-tx-sUH"/>
