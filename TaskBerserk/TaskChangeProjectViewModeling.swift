@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 
 protocol TaskChangeProjectViewModeling: ManagedObjectContextSettable {
+    var projectName: String { get }
     var cellIdentifier: String { get }
     var currentProjectIndexPath: NSIndexPath { get }
     
