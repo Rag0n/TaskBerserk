@@ -18,4 +18,6 @@ protocol TaskChangeTagsViewModeling: ManagedObjectContextSettable {
     
     func changeCurrentTag(indexPath: NSIndexPath)
     func addNewTag(newTagName: String?)
+    
+    var tableViewShouldUpdates: Observable<Bool> { get }
 }

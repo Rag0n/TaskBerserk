@@ -16,6 +16,10 @@ class TaskChangeTagsViewModel: TaskChangeTagsViewModeling, DataProviderDelegate 
     var managedObjectContext: NSManagedObjectContext!
     let cellIdentifier = "TaskChangeTags"
     
+    var tableViewShouldUpdates: Observable<Bool> {
+        return _tableViewShouldUpdates.asObservable()
+    }
+    
     typealias ViewModel = TaskChangeMetaViewCellModeling
     typealias Object = NameWithCountRepresentable
     
@@ -48,13 +52,18 @@ class TaskChangeTagsViewModel: TaskChangeTagsViewModeling, DataProviderDelegate 
         guard let newTagName = newTagName else {
             return
         }
-        tagNames.append(newTagName)
+        self.tagNames.append(newTagName)
+        managedObjectContext.performChanges {
+            Tag.findOrCreateTag(newTagName, inContext: self.managedObjectContext)
+            self._tableViewShouldUpdates.onNext(true)
+        }
     }
     
     
     // MARK: Private
     private var dataProvider: FetchedResultsDataProvider<TaskChangeTagsViewModel>!
     private let disposeBag = DisposeBag()
+    private let _tableViewShouldUpdates = BehaviorSubject<Bool>(value: false)
     
     private func setupDataProvider() {
         let request = Tag.sortedFetchRequest
