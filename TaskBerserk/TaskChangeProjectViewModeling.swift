@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol TaskChangeProjectViewModeling {
-    
+protocol TaskChangeProjectViewModeling: ManagedObjectContextSettable {
+    func viewModelForIndexPath(indexPath: NSIndexPath) -> TaskChangeMetaViewCellModeling
+    func numberOfItemsInSection(section: Int) -> Int
 }
